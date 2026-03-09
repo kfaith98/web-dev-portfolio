@@ -77,26 +77,75 @@ Email
 */
 const addSupplier = () => {
   let newSupplier = {};
-  rl.question('Category: ', (categoryInput) => {
-    newSupplier.category = categoryInput;
+
+  function askCategory() {
+    rl.question('Category: ', (categoryInput) => {
+      if (categoryInput.trim() === '') {
+      console.log('Incorrect input. Please try again.');
+      askCategory();
+      } else {
+        newSupplier.category = categoryInput;
+        askContactPerson();
+      };
+    });
+  };
+  askCategory();
+ 
+  function askContactPerson() {
     rl.question('Contact Person: ', (contactPersonInput) => {
-      newSupplier.contactPerson = contactPersonInput;
-      rl.question('Company Name: ', (companyNameInput) => {
+      if (contactPersonInput.trim() === '') {
+      console.log('Incorrect input. Please try again.');
+      askContactPerson();
+      } else {
+        newSupplier.contactPerson = contactPersonInput;
+        askCompanyName();
+      };
+    });
+  };
+
+  function askCompanyName() {
+    rl.question('Company Name: ', (companyNameInput) => {
+      if (companyNameInput.trim() === '') {
+      console.log('Incorrect input. Please try again.');
+      askCompanyName();
+      } else {
         newSupplier.companyName = companyNameInput;
-        rl.question('Contact Number: ', (contactNumberInput) => {
-          newSupplier.contactNumber = contactNumberInput;
-          rl.question('Email: ', (emailInput) => {
-            newSupplier.email = emailInput;
-            supplierList.push(newSupplier);
-            console.log('Supplier added successfully');
-            console.log('Total suppliers:', supplierList.length);
-            showDashboard();
-          })
-        })
-      })
-    })
-  })
-}
+        askContactNumber();
+      };
+    });
+  };
+
+  function askContactNumber() {
+    rl.question('Contact Number: ', (contactNumberInput)  => {
+      if (contactNumberInput.trim() === '') {
+      console.log('Incorrect input. Please try again.');
+      askContactNumber();
+      } else {
+        newSupplier.contactNumber = contactNumberInput;
+        askEmail();
+      };
+    });
+  };
+  
+  function askEmail() {
+    rl.question('Email: ', (emailInput)  => {
+      if (emailInput.trim() === '' || (!emailInput.includes('@'))) {
+      console.log('Incorrect input. Please try again.');
+      askEmail();
+      } else {
+        newSupplier.email = emailInput;
+        pushNewSupplier();
+      };
+    });
+  };
+
+  function pushNewSupplier() {
+    supplierList.push(newSupplier);
+    console.log('Supplier added successfully');
+    console.log('Total suppliers:', supplierList.length);
+    showDashboard();
+  };
+};
 
 // Edit an existing supplier’s details
 const editSupplier = () => {
