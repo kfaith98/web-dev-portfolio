@@ -117,7 +117,7 @@ const addSupplier = () => {
 
   function askContactNumber() {
     rl.question('Contact Number: ', (contactNumberInput)  => {
-      if (contactNumberInput.trim() === '') {
+      if (contactNumberInput.trim() === '' || isNaN(contactNumberInput.trim())) {
       console.log('Incorrect input. Please try again.');
       askContactNumber();
       } else {
