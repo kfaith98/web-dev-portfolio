@@ -1,0 +1,133 @@
+Catering
+Category: Catering
+Contact Person: Maria Santos
+Company Name: Golden Spoon Catering
+Contact Number: 09171234567
+Email: maria@goldenspooncatering.com
+
+Catering
+Category: Catering
+Contact Person: Daniel Cruz
+Company Name: Elite Feast Catering
+Contact Number: 09182345678
+Email: daniel@elitefeast.com
+
+Lights and Sounds
+Category: Lights and Sounds
+Contact Person: Carlo Reyes
+Company Name: BrightWave Events
+Contact Number: 09193456789
+Email: carlo@brightwaveevents.com
+
+Lights and Sounds
+Category: Lights and Sounds
+Contact Person: Angela Lopez
+Company Name: Sonic Boom Productions
+Contact Number: 09204567890
+Email: angela@sonicboompro.com
+
+Venue
+Category: Venue
+Contact Person: Victor Lim
+Company Name: Grand Palace Hall
+Contact Number: 09215678901
+Email: victor@grandpalacehall.com
+
+Venue
+Category: Venue
+Contact Person: Liza Mendoza
+Company Name: Emerald Garden Pavilion
+Contact Number: 09226789012
+Email: liza@emeraldgarden.com
+
+Photography
+Category: Photography
+Contact Person: Joshua Tan
+Company Name: Perfect Shot Studios
+Contact Number: 09237890123
+Email: joshua@perfectshotstudios.com
+
+Photography
+Category: Photography
+Contact Person: Kim Navarro
+Company Name: Timeless Frames Photography
+Contact Number: 09248901234
+Email: kim@timelessframes.com
+
+Event Stylist
+Category: Event Stylist
+Contact Person: Patricia Gomez
+Company Name: DreamDay Event Styling
+Contact Number: 09259012345
+Email: patricia@dreamdaystyling.com
+
+Event Stylist
+Category: Event Stylist
+Contact Person: Ryan Castillo
+Company Name: Elegant Touch Designs
+Contact Number: 09260123456
+Email: ryan@eleganttouchdesigns.com
+
+
+Category: Lighting
+Contact Person: Daniel Cruz
+Company Name: Golden Lights Events
+Contact Number: 09171230001
+Email: daniel@goldenlights.com
+
+Category: Catering
+Contact Person: Maria Santos
+Company Name: Golden Petals Catering
+Contact Number: 09171230002
+Email: maria@goldenpetals.com
+
+Category: Production
+Contact Person: Kevin Lim
+Company Name: Golden Stage Productions
+Contact Number: 09171230003
+Email: kevin@goldenstage.com
+
+Category: Event Planning
+Contact Person: Angela Reyes
+Company Name: Golden Moments Events
+Contact Number: 09171230004
+Email: angela@goldenmoments.com
+
+Category: Photography
+Contact Person: Marco Villanueva
+Company Name: Bright Light Studios
+Contact Number: 09171230005
+Email: marco@brightlight.com
+
+Category: Lighting
+Contact Person: Sophia Tan
+Company Name: Bright Lights Event Rentals
+Contact Number: 09171230006
+Email: sophia@brightlights.com
+
+Category: Event Planning
+Contact Person: Luis Navarro
+Company Name: Elite Event Masters
+Contact Number: 09171230007
+Email: luis@eliteevents.com
+
+
+Category: Event Coordination
+Contact Person: Carla Mendoza
+Company Name: Prime Events Management
+Contact Number: 09171230008
+Email: carla@primeevents.com
+
+
+Category: Catering
+Contact Person: John Castillo
+Company Name: Royal Feast Catering
+Contact Number: 09171230009
+Email: john@royalfeast.com
+
+
+Category: Event Styling
+Contact Person: Bianca Flores
+Company Name: Elegant Event Designs
+Contact Number: 09171230010
+Email: bianca@elegantevents.com
