@@ -8,212 +8,253 @@
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li>About</li>
-        <li>Skills</li>
-        <li>Projects</li>
-        <li>Experience</li>
-        <li>Blog</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
+    <div class="nav-container">
+      <nav id="nav">
+        <div class="header-container">
+          <h2 class="header-logo">
+            <a href="home-page.html">FP</a>
+          </h2>
 
-    <section>
-      <div>
-        <img
-          src="./files/Facebook_Logo_Primary.png"
-          width="63"
-          height="64"
-          alt="Facebook logo"
-        />
+          <ul id="nav-links">
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#skills">Skills</a>
+            </li>
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#experience">Experience</a>
+            </li>
+            <li>
+              <a href="./blog.html" target="_blank">Blog</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <aside>
+      <div class="back-to-top">
+        <a href="#nav">
+          <p>← back to top</p>
+        </a>
       </div>
 
-      <div>
-        <img
-          src="./files/LI-In-Bug.png"
-          width="70"
-          height="64"
-          alt="LinkedIn logo"
-        />
+      <div class="socials">
+        <a href="https://www.facebook.com/faithgputon" target="_blank">
+          <img src="./files/Facebook_Logo_Primary.png" alt="Facebook logo" />
+        </a>
+
+        <a href="https://www.linkedin.com/in/faithputon" target="_blank">
+          <img src="./files/LI-In-Bug.png" alt="LinkedIn logo" />
+        </a>
+
+        <a href="https://github.com/kfaith98" target="_blank">
+          <img src="./files/GitHub_Invertocat_Black.svg" alt="GitHub logo" />
+        </a>
+      </div>
+    </aside>
+
+    <section id="about" class="container">
+      <div class="about-name-and-title">
+        <h1>Faith Puton</h1>
+        <h2>Full-Stack Web Developer</h2>
       </div>
 
-      <div>
-        <img
-          src="./files/GitHub_Invertocat_Black.svg"
-          width="63"
-          height="64"
-          alt="LinkedIn logo"
-        />
-      </div>
-    </section>
-
-    <section>
-      <h1>Faith Puton</h1>
-      <h2>Full-Stack Web Developer</h2>
-      <p>
-        I’m an aspiring full-stack web developer, currently working as an events
-        producer and enrolled in a local web development bootcamp.
-        <br />
-        I’m pursuing holistic growth (professionally, intellectually,
-        personally, etc.) by reskilling in technology.
-        <br />
-        Want to know more about my journey? Check out my
-        <a href="./blog.html" target="_blank">blog</a> here!
-      </p>
-    </section>
-
-    <section>
-      <h2>Skills</h2>
-      <h3>Front-End</h3>
-      <div>
-        <p>HTML</p>
-
-        <img
-          src="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png"
-          width="63"
-          height="64"
-          alt="HTML5 logo"
-        />
-      </div>
-
-      <div>
-        <p>CSS</p>
-        <img
-          src="https://raw.githubusercontent.com/CSS-Next/logo.css/main/css.svg"
-          width="63"
-          height="64"
-          alt="CSS logo"
-        />
-      </div>
-
-      <div>
-        <p>JavaScript</p>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
-          width="63"
-          height="64"
-          alt="JavaScript logo"
-        />
-      </div>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-      <div>
-        <h3>Event Suppliers Database Management System</h3>
-        <h4>JavaScript Console App</h4>
-        <ul>
-          <li>
-            A simple supplier management system that runs in the command line
-          </li>
-          <li>
-            Allows users to add, edit, remove, search, and display suppliers
-          </li>
-          <li>Data is stored using JavaScript arrays and objects</li>
-        </ul>
-        <button>GitHub</button>
-      </div>
-
-      <div>
-        <h3>Vanilla JavaScript App</h3>
-        <h4>Coming soon!</h4>
-        <button>Live Demo</button>
-        <button>GitHub</button>
-      </div>
-
-      <div>
-        <h3>Backend API (Node)</h3>
-        <h4>Coming soon!</h4>
-        <button>Live Demo</button>
-        <button>GitHub</button>
-      </div>
-
-      <div>
-        <h3>Web App (React)</h3>
-        <h4>Coming soon!</h4>
-        <button>Live Demo</button>
-        <button>GitHub</button>
-      </div>
-
-      <div>
-        <h3>Full-Stack MERN Team Project</h3>
-        <h4>Coming soon!</h4>
-        <button>Live Demo</button>
-        <button>GitHub</button>
-      </div>
-    </section>
-
-    <section>
-      <h2>Experience</h2>
-
-      <div>
-        <h3>2023 - Present</h3>
-        <h4>Digicon Events Corporation</h4>
-        <h5>Events Producer</h5>
-        <p>Event planning and production for brands/corporate clients</p>
-      </div>
-
-      <div>
-        <h3>2020 - 2023</h3>
-        <h4>MME Connections</h4>
-        <h5>Account Executive</h5>
+      <div class="about-description">
         <p>
-          Marketing strategy development and project implementation (such as,
-          but not limited to events, brand activations, promotions, trial
-          generation activities, audio-visual productions, etc.)
+          I’m an aspiring full-stack web developer, currently working as an
+          events producer and enrolled in a local web development bootcamp.
+          <br />
+          I’m pursuing holistic growth (professionally, intellectually,
+          personally, etc.) by reskilling in technology.
+          <br />
+          Want to know more about my journey? Check out my
+          <a href="./blog.html" target="_blank">blog</a> here!
         </p>
       </div>
-
-      <button>View Full Resume</button>
     </section>
 
-    <footer>
-      <h2>Contact</h2>
-      <p>Please don’t hesitate to reach out and get in touch!</p>
+    <section id="skills" class="container">
+      <div id="skills-header">
+        <h2>Skills</h2>
+        <h3>Front-End</h3>
+      </div>
 
-      <form>
-        <label for="fullName">Name:</label>
-        <input
-          type="text"
-          id="fullName"
-          name="fullName"
-          placeholder="Enter your name"
-          style="width: 250px"
-          maxlength="8"
-          minlength="3"
-          required
-        />
-        <br />
-        <br />
+      <div class="skills-layout">
+        <div class="front-end-skills">
+          <p>HTML</p>
 
-        <label for="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Enter your email address"
-          style="width: 250px"
-          required
-        />
+          <img
+            src="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png"
+            width="63"
+            height="64"
+            alt="HTML5 logo"
+          />
+        </div>
 
-        <br />
-        <br />
-        <!-- input type textarea -->
-        <label for="message">Message:</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="5"
-          cols="50"
-          placeholder="Enter your message here"
-          style="resize: none"
-        ></textarea>
-        <br />
-        <br />
-      
-        <input type="submit" value="Submit" />
-      </form>
+        <div class="front-end-skills">
+          <p>CSS</p>
+          <img
+            src="https://raw.githubusercontent.com/CSS-Next/logo.css/main/css.svg"
+            width="63"
+            height="64"
+            alt="CSS logo"
+          />
+        </div>
+
+        <div class="front-end-skills">
+          <p>JavaScript</p>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
+            width="63"
+            height="64"
+            alt="JavaScript logo"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container">
+      <div class="projects-header">
+        <h2>Projects</h2>
+      </div>
+
+      <div class="projects-layout">
+        <div class="project-item-container">
+          <h3>Event Suppliers Database Management System</h3>
+          <h4>JavaScript Console App</h4>
+          <p class="project-description">
+            A simple supplier management system that runs in the command line
+            and allows users to add, edit, remove, search, and display suppliers
+          </p>
+          <div id="project-buttons">
+            <button>GitHub</button>
+          </div>
+        </div>
+
+        <div class="project-item-container">
+          <h3>Project 2</h3>
+          <h4>Vanilla JavaScript App</h4>
+          <p class="project-description">Coming soon!</p>
+          <div id="project-buttons">
+            <button>Live Demo</button>
+            <button>GitHub</button>
+          </div>
+        </div>
+
+        <div class="project-item-container">
+          <h3>Project 3</h3>
+          <h4>Backend API (Node)</h4>
+          <p class="project-description">Coming soon!</p>
+          <div id="project-buttons">
+            <button>Live Demo</button>
+            <button>GitHub</button>
+          </div>
+        </div>
+
+        <div class="project-item-container">
+          <h3>Project 4</h3>
+          <h4>Web App (React)</h4>
+          <p class="project-description">Coming soon!</p>
+          <div id="project-buttons">
+            <button>Live Demo</button>
+            <button>GitHub</button>
+          </div>
+        </div>
+
+        <div class="project-item-container">
+          <h3>Project 5</h3>
+          <h4>Full-Stack MERN Team Project</h4>
+          <p class="project-description">Coming soon!</p>
+          <div id="project-buttons">
+            <button>Live Demo</button>
+            <button>GitHub</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="container">
+      <div class="experience-header">
+        <h2>Experience</h2>
+      </div>
+
+      <div class="work-item-container">
+        <div class="work-item-1">
+          <h3 class="work-period">2023 - Present</h3>
+          <div class="work-details">
+            <h4>Digicon Events Corporation</h4>
+            <h5>Events Producer</h5>
+            <p class="work-description">
+              Event planning and production for brands/corporate clients
+            </p>
+          </div>
+        </div>
+
+        <div class="work-item-2">
+          <h3 class="work-period">2020 - 2023</h3>
+          <div class="work-details">
+            <h4>MME Connections</h4>
+            <h5>Account Executive</h5>
+            <p class="work-description">
+              Marketing strategy development and project implementation (such
+              as, but not limited to events, brand activations, promotions,
+              trial generation activities, audio-visual productions, etc.)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-button">
+        <a
+          href="./files/faith-puton-cv.pdf"
+          download="faith-puton-cv.pdf"
+          class="download-btn"
+        >
+          View Full Resume
+        </a>
+      </div>
+    </section>
+
+    <footer id="contact" class="container">
+      <div class="contact-header">
+        <h2>Contact</h2>
+        <p>Please don’t hesitate to reach out and get in touch!</p>
+      </div>
+
+      <div class="form-container">
+        <form>
+          <div class="form-input">
+            <label for="fullName">Name</label>
+            <input type="text" id="fullName" name="fullName" required />
+          </div>
+
+          <div class="form-input">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-input">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              style="resize: none"
+            ></textarea>
+          </div>
+
+          <div id="submit-container">
+            <input type="submit" value="Submit" class="submit" />
+          </div>
+        </form>
+      </div>
     </footer>
   </body>
 </html>
