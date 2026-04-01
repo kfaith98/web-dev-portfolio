@@ -1,18 +1,72 @@
+:root {
+  --font-heading: "Fira Sans", sans-serif;
+  --font-body: "Libre Franklin", sans-serif;
+  --font-ui: "Rubik", sans-serif;
+  --bg-main: #1d1e22;
+  --bg-secondary: #393f4d;
+  --text-main: #d4d4dc;
+  --accent: #feda6a;
+  --accent-secondary: #fcbe03;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading);
+}
+
+nav a,
+.submit {
+  font-family: var(--font-ui);
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
 nav {
-  background-color: antiquewhite;
+  background-color: var(--bg-secondary);
   width: 100%;
-  border: 1px solid orange;
+}
+
+.nav-container {
+  position: fixed;
+  width: 100%;
 }
 
 a {
   text-decoration: none;
   display: inline-block;
+  color: wheat;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-secondary);
+  text-decoration: underline;
 }
 
 aside {
@@ -26,13 +80,26 @@ aside {
   flex-direction: column;
   left: 16px;
   z-index: 99;
+  margin-top: 100px;
+  opacity: 0;
+  pointer-events: none; /* prevent clicking when hidden */
+  transition: opacity 0.5s ease; /* smooth fade */
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .back-to-top p {
   margin-top: 8px;
-  color: #2f355c;
+  color: var(--accent);
   writing-mode: vertical-lr;
   font-size: large;
+}
+
+.back-to-top p:hover {
+  color: var(--text-main);
 }
 
 .socials {
@@ -56,7 +123,12 @@ aside {
   content: "";
   width: 2px;
   height: 70px;
-  background: #2f355c;
+  background: var(--accent);
+}
+
+section {
+  padding: 80px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .header-container {
@@ -64,10 +136,11 @@ aside {
   justify-content: space-between;
   align-items: center;
   padding: 24px 2rem;
+  height: 70px;
 }
 
 .header-logo a {
-  color: black;
+  color: var(--text-main);
   font-size: 2.5rem;
   display: inline-block;
   transition:
@@ -76,7 +149,7 @@ aside {
 }
 
 .header-logo a:hover {
-  color: red;
+  color: var(--accent);
   transform: scale(1.2);
 }
 
@@ -87,15 +160,20 @@ ul#nav-links {
 }
 
 #nav-links a {
-  color: black;
+  color: var(--text-main);
   transition:
     transform 0.2s ease-in-out,
     color 0.2s ease-in-out;
 }
 
 #nav-links a:hover {
-  color: red;
+  color: var(--accent);
   transform: scale(1.1);
+}
+
+#nav-links a.active {
+  color: var(--accent);
+  font-weight: bold;
 }
 
 .container {
@@ -104,46 +182,42 @@ ul#nav-links {
   padding: 20px;
 }
 
-#about {
+#about,
+#blog {
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+}
 
-  border: 1px solid yellow;
+.about-text-and-photo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .about-name-and-title {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   padding: 10px;
 }
 
 .about-description {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  width: 70%;
-  text-align: center;
+  padding-top: 10px;
 }
 
 .about-description p {
-  width: 90%;
+  max-width: 500px;
+  padding-bottom: 10px;
 }
 
 #skills {
   display: grid;
   gap: 24px;
-
   padding-bottom: 15px;
   place-items: center;
-  border: 1px solid pink;
 }
 
 #skills-header {
@@ -161,6 +235,8 @@ ul#nav-links {
   width: 100%;
   max-width: 500px;
   place-items: center;
+  background-color: var(--bg-secondary);
+  color: var(--text-main);
 }
 
 .front-end-skills {
@@ -180,7 +256,6 @@ ul#nav-links {
   flex-direction: column;
   align-items: center;
   padding-bottom: 15px;
-  border: 1px solid violet;
 }
 
 .projects-header,
@@ -201,7 +276,17 @@ ul#nav-links {
   display: flex;
   flex-direction: column;
   padding: 15px;
-  border: 1px solid violet;
+  border: 1px solid #e2e8f0;
+  background-color: var(--bg-secondary);
+  color: var(--text-main);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.project-item-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .project-description {
@@ -209,10 +294,39 @@ ul#nav-links {
   padding-bottom: 10px;
 }
 
-#project-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: auto;
+.git-button {
+  background-color: var(--accent);
+  color: var(--bg-main);
+  border: none;
+  cursor: pointer;
+  padding: 0.4em 0.8em;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  transition: background 0.3s;
+  font-size: 1rem;
+}
+
+.live-demo-button,
+.primary-btn,
+.secondary-btn {
+  background-color: var(--accent-secondary);
+  color: var(--bg-main);
+  border: none;
+  cursor: pointer;
+  padding: 0.4em 0.8em;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  transition: background 0.3s;
+  font-size: 1rem;
+}
+
+.git-button:hover,
+.live-demo-button:hover,
+.primary-btn:hover,
+.secondary-btn:hover {
+  background-color: var(--text-main);
 }
 
 #experience {
@@ -220,7 +334,6 @@ ul#nav-links {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid coral;
   padding: 20px;
 }
 
@@ -239,7 +352,7 @@ ul#nav-links {
   top: 0;
   width: 2px;
   height: 100%;
-  background-color: #2f355c;
+  background-color: var(--accent);
 }
 
 .work-item-1,
@@ -248,7 +361,6 @@ ul#nav-links {
   flex-direction: column;
   gap: 4px;
   padding: 10px;
-  border: 1px solid crimson;
   position: relative;
   padding-left: 60px;
 }
@@ -264,6 +376,7 @@ ul#nav-links {
   background-color: white;
   border: 3px solid #2f355c;
   border-radius: 50%;
+  border-color: var(--accent);
 }
 
 .work-period {
@@ -275,20 +388,53 @@ ul#nav-links {
   width: 100%;
 }
 
-.resume-button {
-  .download-btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 5px;
-    transition: background 0.3s;
-  }
+.resume-button .download-btn {
+  background-color: var(--accent-secondary);
+  color: var(--bg-main);
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
 
-  .download-btn:hover {
-    background-color: #0056b3;
-  }
+.resume-button .download-btn:hover {
+  background-color: var(--text-main);
+}
+
+.blog-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.blog-post {
+  background-color: var(--bg-secondary);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.post-title {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 5px;
+}
+
+.post-date {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--accent-secondary);
+  margin-bottom: 15px;
+}
+
+.post-content p {
+  line-height: 1.6;
+  color: var(--text-main);
 }
 
 #contact {
@@ -296,13 +442,13 @@ ul#nav-links {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid darkgreen;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
-  background-color: bisque;
+  background-color: var(--bg-secondary);
+  color: var(--text-main);
   padding: 25px 15px;
   margin: 10px;
   max-width: 650px;
@@ -348,6 +494,23 @@ textarea {
 .submit {
   padding: 16px;
   width: 140px;
+  background-color: var(--accent-secondary);
+  color: var(--bg-main);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.submit:hover {
+  background-color: var(--text-main);
+}
+
+.about-name-and-title h2,
+#skills-header h3,
+.projects-layout h3,
+.work-period,
+.blog-header h3 {
+  color: var(--accent);
 }
 
 @media (max-width: 768px) {
@@ -366,6 +529,11 @@ textarea {
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
+  }
+
+  #nav-links a.active {
+    color: var(--accent);
+    font-weight: bold;
   }
 
   .skills-layout {

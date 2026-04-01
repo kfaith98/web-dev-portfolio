@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Faith Puton | Home</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
     <script src="./script.js" defer></script>
   </head>
   <body>
@@ -48,36 +54,52 @@
 
       <div class="socials">
         <a href="https://www.facebook.com/faithgputon" target="_blank">
-          <img src="./files/Facebook_Logo_Primary.png" alt="Facebook logo" />
+          <img src="./files/Facebook_Logo_Secondary.png" alt="Facebook logo" />
         </a>
 
         <a href="https://www.linkedin.com/in/faithputon" target="_blank">
-          <img src="./files/LI-In-Bug.png" alt="LinkedIn logo" />
+          <img src="./files/InBug-White.png" alt="LinkedIn logo" />
         </a>
 
         <a href="https://github.com/kfaith98" target="_blank">
-          <img src="./files/GitHub_Invertocat_Black.svg" alt="GitHub logo" />
+          <img src="./files/GitHub_Invertocat_White.svg" alt="GitHub logo" />
         </a>
       </div>
     </aside>
 
     <section id="about" class="container">
-      <div class="about-name-and-title">
-        <h1>Faith Puton</h1>
-        <h2>Full-Stack Web Developer</h2>
-      </div>
+      <div class="about-text-and-photo">
+        <div class="about-name-and-title">
+          <h1>Faith Puton</h1>
+          <h2>Full-Stack Web Developer</h2>
 
-      <div class="about-description">
-        <p>
-          I’m an aspiring full-stack web developer, currently working as an
-          events producer and enrolled in a local web development bootcamp.
-          <br />
-          I’m pursuing holistic growth (professionally, intellectually,
-          personally, etc.) by reskilling in technology.
-          <br />
-          Want to know more about my journey? Check out my
-          <a href="./blog.html" target="_blank">blog</a> here!
-        </p>
+          <div class="about-description">
+            <p>
+              I’m an aspiring full-stack web developer, currently working as an
+              events producer and enrolled in a local web development bootcamp.
+              I’m pursuing holistic growth (professionally, intellectually,
+              personally, etc.) by reskilling in technology.
+              <br />
+              <br />
+              Want to know more about my journey? Check out my
+              <a href="./blog.html">blog</a> here!
+            </p>
+          </div>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="primary-btn">View Projects</a>
+            <a href="#contact" class="secondary-btn">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="profile-icon">
+          <img
+            src="./files/fp-profile-icon.webp"
+            width="300"
+            height="300"
+            alt="Faith Puton's animated profile icon"
+          />
+        </div>
       </div>
     </section>
 
@@ -134,8 +156,13 @@
             A simple supplier management system that runs in the command line
             and allows users to add, edit, remove, search, and display suppliers
           </p>
-          <div id="project-buttons">
-            <button>GitHub</button>
+          <div class="project-buttons">
+            <a
+              href="https://github.com/kfaith98/web-dev-portfolio/tree/p1-js-console-app"
+              target="_blank"
+              class="git-button"
+              >GitHub</a
+            >
           </div>
         </div>
 
@@ -143,9 +170,10 @@
           <h3>Project 2</h3>
           <h4>Vanilla JavaScript App</h4>
           <p class="project-description">Coming soon!</p>
-          <div id="project-buttons">
-            <button>Live Demo</button>
-            <button>GitHub</button>
+          <div class="project-buttons">
+            <span class="live-demo-button disabled" aria-disabled="true" tabindex="-1">Live Demo</span>
+
+            <a class="git-button disabled" aria-disabled="true" tabindex="-1">GitHub</a>
           </div>
         </div>
 
@@ -153,9 +181,10 @@
           <h3>Project 3</h3>
           <h4>Backend API (Node)</h4>
           <p class="project-description">Coming soon!</p>
-          <div id="project-buttons">
-            <button>Live Demo</button>
-            <button>GitHub</button>
+          <div class="project-buttons">
+            <a href="" target="_blank" class="live-demo-button">Live Demo</a>
+
+            <a href="" target="_blank" class="git-button">GitHub</a>
           </div>
         </div>
 
@@ -163,9 +192,10 @@
           <h3>Project 4</h3>
           <h4>Web App (React)</h4>
           <p class="project-description">Coming soon!</p>
-          <div id="project-buttons">
-            <button>Live Demo</button>
-            <button>GitHub</button>
+          <div class="project-buttons">
+            <a href="" target="_blank" class="live-demo-button">Live Demo</a>
+
+            <a href="" target="_blank" class="git-button">GitHub</a>
           </div>
         </div>
 
@@ -173,9 +203,10 @@
           <h3>Project 5</h3>
           <h4>Full-Stack MERN Team Project</h4>
           <p class="project-description">Coming soon!</p>
-          <div id="project-buttons">
-            <button>Live Demo</button>
-            <button>GitHub</button>
+          <div class="project-buttons">
+            <a href="" target="_blank" class="live-demo-button">Live Demo</a>
+
+            <a href="" target="_blank" class="git-button">GitHub</a>
           </div>
         </div>
       </div>
