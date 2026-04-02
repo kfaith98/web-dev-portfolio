@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
+    <script src="./posts.js"></script>
     <script src="./script.js" defer></script>
   </head>
   <body>
@@ -18,8 +19,19 @@
       <nav id="nav">
         <div class="header-container">
           <h2 class="header-logo">
-            <a href="home-page.html">FP</a>
+            <a href="index.html">FP</a>
           </h2>
+
+          <button
+            class="burger-btn"
+            id="burger-btn"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
 
           <ul id="nav-links">
             <li>
@@ -35,7 +47,7 @@
               <a href="#experience">Experience</a>
             </li>
             <li>
-              <a href="./blog.html" target="_blank">Blog</a>
+              <a href="#blog-preview">Blog</a>
             </li>
             <li>
               <a href="#contact">Contact</a>
@@ -94,7 +106,7 @@
 
         <div class="profile-icon">
           <img
-            src="./files/fp-profile-icon.webp"
+            src="./files/fp-profile-icon-compressed.webp"
             width="300"
             height="300"
             alt="Faith Puton's animated profile icon"
@@ -153,8 +165,8 @@
           <h3>Event Suppliers Database Management System</h3>
           <h4>JavaScript Console App</h4>
           <p class="project-description">
-            A simple supplier management system that runs in the command line
-            and allows users to add, edit, remove, search, and display suppliers
+            CLI tool for managing event suppliers with CRUD operations and
+            search functionality. Built using JavaScript and Node.js.
           </p>
           <div class="project-buttons">
             <a
@@ -171,9 +183,19 @@
           <h4>Vanilla JavaScript App</h4>
           <p class="project-description">Coming soon!</p>
           <div class="project-buttons">
-            <span class="live-demo-button disabled" aria-disabled="true" tabindex="-1">Live Demo</span>
+            <span
+              class="live-demo-button disabled"
+              aria-disabled="true"
+              tabindex="-1"
+              >Live Demo</span
+            >
 
-            <a class="git-button disabled" aria-disabled="true" tabindex="-1">GitHub</a>
+            <span
+              class="git-button disabled"
+              aria-disabled="true"
+              tabindex="-1"
+              >GitHub</span
+            >
           </div>
         </div>
 
@@ -182,9 +204,19 @@
           <h4>Backend API (Node)</h4>
           <p class="project-description">Coming soon!</p>
           <div class="project-buttons">
-            <a href="" target="_blank" class="live-demo-button">Live Demo</a>
+            <span
+              class="live-demo-button disabled"
+              aria-disabled="true"
+              tabindex="-1"
+              >Live Demo</span
+            >
 
-            <a href="" target="_blank" class="git-button">GitHub</a>
+            <span
+              class="git-button disabled"
+              aria-disabled="true"
+              tabindex="-1"
+              >GitHub</span
+            >
           </div>
         </div>
 
@@ -193,9 +225,19 @@
           <h4>Web App (React)</h4>
           <p class="project-description">Coming soon!</p>
           <div class="project-buttons">
-            <a href="" target="_blank" class="live-demo-button">Live Demo</a>
+            <span
+              class="live-demo-button disabled"
+              aria-disabled="true"
+              tabindex="-1"
+              >Live Demo</span
+            >
 
-            <a href="" target="_blank" class="git-button">GitHub</a>
+            <span
+              class="git-button disabled"
+              aria-disabled="true"
+              tabindex="-1"
+              >GitHub</span
+            >
           </div>
         </div>
 
@@ -204,9 +246,19 @@
           <h4>Full-Stack MERN Team Project</h4>
           <p class="project-description">Coming soon!</p>
           <div class="project-buttons">
-            <a href="" target="_blank" class="live-demo-button">Live Demo</a>
+            <span
+              class="live-demo-button disabled"
+              aria-disabled="true"
+              tabindex="-1"
+              >Live Demo</span
+            >
 
-            <a href="" target="_blank" class="git-button">GitHub</a>
+            <span
+              class="git-button disabled"
+              aria-disabled="true"
+              tabindex="-1"
+              >GitHub</span
+            >
           </div>
         </div>
       </div>
@@ -254,22 +306,35 @@
       </div>
     </section>
 
+    <section id="blog-preview" class="container">
+      <div class="projects-header">
+        <h2>Latest Blog Posts</h2>
+      </div>
+
+      <div id="blog-preview-container" class="blog-posts"></div>
+
+      <div class="blog-preview-footer">
+        <a href="./blog.html" class="primary-btn">View All Posts</a>
+      </div>
+    </section>
+
     <footer id="contact" class="container">
       <div class="contact-header">
         <h2>Contact</h2>
         <p>Please don’t hesitate to reach out and get in touch!</p>
+        <a href="mailto:kfaith.puton@gmail.com">kfaith.puton@gmail.com</a>
       </div>
 
       <div class="form-container">
         <form>
           <div class="form-input">
             <label for="fullName">Name</label>
-            <input type="text" id="fullName" name="fullName" required />
+            <input type="text" id="fullName" name="fullName" autocomplete="name" required />
           </div>
 
           <div class="form-input">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="email" autocomplete="email" required />
           </div>
 
           <div class="form-input">
@@ -277,6 +342,7 @@
             <textarea
               id="message"
               name="message"
+              autocomplete="off"
               style="resize: none"
             ></textarea>
           </div>

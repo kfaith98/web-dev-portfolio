@@ -1,29 +1,50 @@
-// blog.js
-
-const posts = [
-  {
-    title: "My First Blog Post",
-    date: "April 1, 2026",
-    content: `
-      <p>Hello! This is my first blog post. I can write my story, share a project update, or jot down my thoughts here.</p>
-    `
-  }
-  // Add more posts here
-];
-
-// Select the container
 const blogContainer = document.getElementById("blog-posts");
 
-// Render each post
-posts.forEach(post => {
+function createPost(post) {
   const article = document.createElement("article");
   article.className = "blog-post";
 
   article.innerHTML = `
     <h3 class="post-title">${post.title}</h3>
     <p class="post-date">${post.date}</p>
-    <div class="post-content">${post.content}</div>
+    <div class="post-content">
+      <p>${post.content}</p>
+    </div>
   `;
 
-  blogContainer.appendChild(article);
+  return article;
+}
+
+// Sort newest posts automatically
+function renderPosts(posts) {
+  if (!blogContainer) return;
+
+  blogContainer.innerHTML = "";
+
+  const sortedPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  sortedPosts.forEach(post => {
+    blogContainer.appendChild(createPost(post));
+  });
+}
+
+renderPosts(posts);
+
+// Burger menu on mobile
+const burgerBtn = document.getElementById("burger-btn");
+const navLinksList = document.getElementById("nav-links");
+
+burgerBtn.addEventListener("click", () => {
+  const isOpen = navLinksList.classList.toggle("open");
+  burgerBtn.classList.toggle("open");
+  burgerBtn.setAttribute("aria-expanded", isOpen);
+});
+
+// Close menu when a nav link is clicked
+navLinksList.addEventListener("click", (e) => {
+  if (e.target.tagName === "A") {
+    navLinksList.classList.remove("open");
+    burgerBtn.classList.remove("open");
+    burgerBtn.setAttribute("aria-expanded", false);
+  }
 });
