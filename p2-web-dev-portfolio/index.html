@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faith Puton | Home</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./posts.js"></script>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="nav-container">
+      <nav id="nav">
+        <div class="header-container">
+          <h2 class="header-logo">
+            <a href="index.html">FP</a>
+          </h2>
+
+          <button
+            class="burger-btn"
+            id="burger-btn"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <ul id="nav-links">
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#skills">Skills</a>
+            </li>
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#experience">Experience</a>
+            </li>
+            <li>
+              <a href="#blog-preview">Blog</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <aside>
+      <div class="back-to-top">
+        <a href="#nav">
+          <p>← back to top</p>
+        </a>
+      </div>
+
+      <div class="socials">
+        <a href="https://www.facebook.com/faithgputon" target="_blank">
+          <img src="./files/Facebook_Logo_Secondary.png" alt="Facebook logo" />
+        </a>
+
+        <a href="https://www.linkedin.com/in/faithputon" target="_blank">
+          <img src="./files/InBug-White.png" alt="LinkedIn logo" />
+        </a>
+
+        <a href="https://github.com/kfaith98" target="_blank">
+          <img src="./files/GitHub_Invertocat_White.svg" alt="GitHub logo" />
+        </a>
+      </div>
+    </aside>
+
+    <section id="about" class="container">
+      <div class="about-text-and-photo">
+        <div class="about-name-and-title">
+          <h1>Faith Puton</h1>
+          <h2>Full-Stack Web Developer</h2>
+
+          <div class="about-description">
+            <p>
+              I’m an aspiring full-stack web developer, currently working as an
+              events producer and enrolled in a local web development bootcamp.
+              I’m pursuing holistic growth (professionally, intellectually,
+              personally, etc.) by reskilling in technology.
+              <br />
+              <br />
+              Want to know more about my journey? Check out my
+              <a href="./blog.html">blog</a> here!
+            </p>
+          </div>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="primary-btn">View Projects</a>
+            <a href="#contact" class="secondary-btn">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="profile-icon">
+          <img
+            src="./files/fp-profile-icon-compressed.webp"
+            width="300"
+            height="300"
+            alt="Faith Puton's animated profile icon"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="container">
+      <div id="skills-header">
+        <h2>Skills</h2>
+        <h3>Front-End</h3>
+      </div>
+
+      <div class="skills-layout">
+        <div class="front-end-skills">
+          <p>HTML</p>
+
+          <img
+            src="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png"
+            width="63"
+            height="64"
+            alt="HTML5 logo"
+          />
+        </div>
+
+        <div class="front-end-skills">
+          <p>CSS</p>
+          <img
+            src="https://raw.githubusercontent.com/CSS-Next/logo.css/main/css.svg"
+            width="63"
+            height="64"
+            alt="CSS logo"
+          />
+        </div>
+
+        <div class="front-end-skills">
+          <p>JavaScript</p>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
+            width="63"
+            height="64"
+            alt="JavaScript logo"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container">
+      <div class="projects-header">
+        <h2>Projects</h2>
+      </div>
+
+      <div class="projects-layout">
+        <div class="project-item-container">
+          <h3>Event Suppliers Database Management System</h3>
+          <h4>JavaScript Console App</h4>
+          <p class="project-description">
+            CLI tool for managing event suppliers with CRUD operations and
+            search functionality. Built using JavaScript and Node.js.
+          </p>
+          <div class="project-buttons">
+            <a
+              href="https://github.com/kfaith98/web-dev-portfolio/tree/p1-js-console-app"
+              target="_blank"
+              class="git-button"
+              >GitHub</a
+            >
+          </div>
+        </div>
+
+        <div class="project-item-container">
+          <h3>Project 2</h3>
+          <h4>Vanilla JavaScript App</h4>
+          <p class="project-description">Coming soon!</p>
+          <div class="project-buttons">
+            <span
+              class="live-demo-button disabled"
+              aria-disabled="true"
+              tabindex="-1"
+              >Live Demo</span
+            >
+
+            <span
+              class="git-button disabled"
+              aria-disabled="true"
+              tabindex="-1"
+              >GitHub</span
+            >
+          </div>
+        </div>
+
+        <div class="project-item-container">
+          <h3>Project 3</h3>
+          <h4>Backend API (Node)</h4>
+          <p class="project-description">Coming soon!</p>
+          <div class="project-buttons">
+            <span
+              class="live-demo-button disabled"
+              aria-disabled="true"
+              tabindex="-1"
+              >Live Demo</span
+            >
+
+            <span
+              class="git-button disabled"
+              aria-disabled="true"
+              tabindex="-1"
+              >GitHub</span
+            >
+          </div>
+        </div>
+
+        <div class="project-item-container">
+          <h3>Project 4</h3>
+          <h4>Web App (React)</h4>
+          <p class="project-description">Coming soon!</p>
+          <div class="project-buttons">
+            <span
+              class="live-demo-button disabled"
+              aria-disabled="true"
+              tabindex="-1"
+              >Live Demo</span
+            >
+
+            <span
+              class="git-button disabled"
+              aria-disabled="true"
+              tabindex="-1"
+              >GitHub</span
+            >
+          </div>
+        </div>
+
+        <div class="project-item-container">
+          <h3>Project 5</h3>
+          <h4>Full-Stack MERN Team Project</h4>
+          <p class="project-description">Coming soon!</p>
+          <div class="project-buttons">
+            <span
+              class="live-demo-button disabled"
+              aria-disabled="true"
+              tabindex="-1"
+              >Live Demo</span
+            >
+
+            <span
+              class="git-button disabled"
+              aria-disabled="true"
+              tabindex="-1"
+              >GitHub</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="container">
+      <div class="experience-header">
+        <h2>Experience</h2>
+      </div>
+
+      <div class="work-item-container">
+        <div class="work-item-1">
+          <h3 class="work-period">2023 - Present</h3>
+          <div class="work-details">
+            <h4>Digicon Events Corporation</h4>
+            <h5>Events Producer</h5>
+            <p class="work-description">
+              Event planning and production for brands/corporate clients
+            </p>
+          </div>
+        </div>
+
+        <div class="work-item-2">
+          <h3 class="work-period">2020 - 2023</h3>
+          <div class="work-details">
+            <h4>MME Connections</h4>
+            <h5>Account Executive</h5>
+            <p class="work-description">
+              Marketing strategy development and project implementation (such
+              as, but not limited to events, brand activations, promotions,
+              trial generation activities, audio-visual productions, etc.)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-button">
+        <a
+          href="./files/faith-puton-cv.pdf"
+          download="faith-puton-cv.pdf"
+          class="download-btn"
+        >
+          View Full Resume
+        </a>
+      </div>
+    </section>
+
+    <section id="blog-preview" class="container">
+      <div class="projects-header">
+        <h2>Latest Blog Posts</h2>
+      </div>
+
+      <div id="blog-preview-container" class="blog-posts"></div>
+
+      <div class="blog-preview-footer">
+        <a href="./blog.html" class="primary-btn">View All Posts</a>
+      </div>
+    </section>
+
+    <footer id="contact" class="container">
+      <div class="contact-header">
+        <h2>Contact</h2>
+        <p>Please don’t hesitate to reach out and get in touch!</p>
+        <a href="mailto:kfaith.puton@gmail.com">kfaith.puton@gmail.com</a>
+      </div>
+
+      <div class="form-container">
+        <form>
+          <div class="form-input">
+            <label for="fullName">Name</label>
+            <input type="text" id="fullName" name="fullName" autocomplete="name" required />
+          </div>
+
+          <div class="form-input">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
+          </div>
+
+          <div class="form-input">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              autocomplete="off"
+              style="resize: none"
+            ></textarea>
+          </div>
+
+          <div id="submit-container">
+            <input type="submit" value="Submit" class="submit" />
+          </div>
+        </form>
+      </div>
+    </footer>
+  </body>
+</html>
