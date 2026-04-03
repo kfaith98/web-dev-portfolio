@@ -1,11 +1,10 @@
-const sections = document.querySelectorAll("section, footer");
-const navLinks = document.querySelectorAll("#nav-links a");
-const backToTop = document.querySelector(".back-to-top");
-const SCROLL_THRESHOLD = 10; // Threshold in pixels for scroll detection
+const sections = document.querySelectorAll('section, footer');
+const navLinks = document.querySelectorAll('#nav-links a');
+const backToTop = document.querySelector('.back-to-top');
 
-window.addEventListener("scroll", () => {
+window.addEventListener('scroll', () => {
   // Smooth scroll highlight
-  let current = "";
+  let current = '';
 
   sections.forEach((section) => {
     const rect = section.getBoundingClientRect();
@@ -17,23 +16,23 @@ window.addEventListener("scroll", () => {
   });
 
   navLinks.forEach((link) => {
-    link.classList.remove("active");
+    link.classList.remove('active');
 
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active");
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
     }
   });
 
   // Back to Top button animation
   if (window.scrollY > 300) {
-    backToTop.classList.add("show");
+    backToTop.classList.add('show');
   } else {
-    backToTop.classList.remove("show");
+    backToTop.classList.remove('show');
   }
 });
 
-const title = document.querySelector(".about-name-and-title h2");
-const text = "Full-Stack Web Developer";
+const title = document.querySelector('.about-name-and-title h2');
+const text = 'Full-Stack Web Developer';
 let typingIndex = 0;
 let forward = true; // true if typing forward (progressing), false if deleting
 let typingTimeout = null; // Stores the timeout ID for the typing animation
@@ -71,17 +70,17 @@ function typeLoop() {
 typeLoop();
 
 // Blog preview in home page
-const previewContainer = document.getElementById("blog-preview-container");
+const previewContainer = document.getElementById('blog-preview-container');
 
 function createPreview(post) {
-  const article = document.createElement("article");
-  article.className = "blog-post";
+  const article = document.createElement('article');
+  article.className = 'blog-post';
 
   article.innerHTML = `
-    <h3 class="post-title">${post.title}</h3>
-    <p class="post-date">${post.date}</p>
+    <h3 class='post-title'>${post.title}</h3>
+    <p class='post-date'>${post.date}</p>
     <p>${post.preview}</p>
-    <a href="./blog.html" class="primary-btn">Read More</a>
+    <a href='./blog.html' class='primary-btn'>Read More</a>
   `;
 
   return article;
@@ -92,7 +91,7 @@ function renderPreview(posts) {
 
   const latestPosts = [...posts].reverse().slice(0, 2);
 
-  latestPosts.forEach(post => {
+  latestPosts.forEach((post) => {
     previewContainer.appendChild(createPreview(post));
   });
 }
@@ -100,20 +99,25 @@ function renderPreview(posts) {
 renderPreview(posts);
 
 // Burger menu on mobile
-const burgerBtn = document.getElementById("burger-btn");
-const navLinksList = document.getElementById("nav-links");
+function setupBurgerMenu() {
+  const burgerBtn = document.getElementById('burger-btn');
+  const navLinksList = document.getElementById('nav-links');
 
-burgerBtn.addEventListener("click", () => {
-  const isOpen = navLinksList.classList.toggle("open");
-  burgerBtn.classList.toggle("open");
-  burgerBtn.setAttribute("aria-expanded", isOpen);
-});
+  if (!burgerBtn || !navLinksList) return;
 
-// Close menu when a nav link is clicked
-navLinksList.addEventListener("click", (e) => {
-  if (e.target.tagName === "A") {
-    navLinksList.classList.remove("open");
-    burgerBtn.classList.remove("open");
-    burgerBtn.setAttribute("aria-expanded", false);
-  }
-});
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = navLinksList.classList.toggle('open');
+    burgerBtn.classList.toggle('open');
+    burgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+
+  navLinksList.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+      navLinksList.classList.remove('open');
+      burgerBtn.classList.remove('open');
+      burgerBtn.setAttribute('aria-expanded', false);
+    }
+  });
+}
+
+setupBurgerMenu();

@@ -1,7 +1,7 @@
 const posts = [
   {
-    title: "My Journey into Web Development",
-    date: "April 1, 2026",
+    title: 'My Journey into Web Development',
+    date: 'April 1, 2026',
     content: `
     <p>As I reflect on the past few months, I’m struck by how much I’ve grown—not just as a professional, but as a learner and a person. My journey into full-stack web development didn’t start in a classroom, nor did it begin with code. It began with curiosity, a desire to reskill, and the belief that growth is holistic: professional, intellectual, and personal.</p>
     <br />
@@ -27,6 +27,6 @@ const posts = [
     <br />
     <p>As I continue building my portfolio, projects, and blog, I am reminded daily that every line of code, every small project, and every new concept is part of a bigger story: the story of becoming a well-rounded developer and a lifelong learner. And for me, that story is just beginning.</p>
     `,
-    preview: "Know more about my journey in this post...",
+    preview: 'Know more about my journey in this post...',
   },
 ];
