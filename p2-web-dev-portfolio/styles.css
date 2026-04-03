@@ -569,6 +569,26 @@ ul#nav-links {
   max-width: 65ch;
 }
 
+.back-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 700px;
+}
+
+.back-btn {
+  background-color: var(--accent-secondary);
+  color: var(--bg-main);
+  border: none;
+  cursor: pointer;
+  padding: 0.4em 0.8em;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+  font-size: 1rem;
+}
+
+
 #contact {
   display: flex;
   flex-direction: column;
@@ -614,6 +634,7 @@ textarea {
 
 textarea {
   height: 200px;
+  resize: none;
 }
 
 #submit-container {
@@ -750,10 +771,21 @@ textarea {
   .post-title {
     font-size: 1.3rem;
   }
+
+  .back-btn {
+    font-size: 0.9rem;
+    padding: 0.4em 0.8em;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 900px) {
   .container {
     padding-left: 80px;
+  }
+}
+
+@media (max-width: 768px), (max-height: 500px) and (orientation: landscape) {
+  aside {
+    display: none;
   }
 }
