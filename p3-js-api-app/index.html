@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EventMatch AI — Smart Event Supplier Recommender</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>EventMatch AI</h1>
+      <p>Describe your event and get AI-powered supplier recommendations.</p>
+    </header>
+
+    <main>
+      <section id="input-section">
+        <label for="event-description">Tell us about your event:</label>
+        <textarea
+          id="event-description"
+          placeholder="e.g., 50-person outdoor wedding next month, budget around 100k, somewhere in Tagaytay..."
+          rows="6"
+        ></textarea>
+        <button id="match-button" type="button">Find Suppliers</button>
+      </section>
+
+      <section id="results-section">
+        <!-- Results will render here -->
+      </section>
+    </main>
+
+    <footer>
+      <p>Built for Project 3 · Web Dev Bootcamp</p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
