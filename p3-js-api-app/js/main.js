@@ -1,3 +1,5 @@
+import { loadSuppliers } from './suppliers.js';
+
 const matchButton = document.getElementById("match-button");
 const eventDescription = document.getElementById("event-description");
 
@@ -6,3 +8,5 @@ matchButton.addEventListener("click", () => {
   console.log("User input:", userInput);
   // We'll wire this up to the AI on Day 3
 });
+
+console.log(await loadSuppliers());

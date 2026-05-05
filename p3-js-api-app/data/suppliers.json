@@ -1,0 +1,1032 @@
+[
+  {
+    "id": "venue-001",
+    "name": "The Glass Garden Hall",
+    "category": "venue",
+    "location": "Quezon City",
+    "minPrice": 120000,
+    "maxPrice": 300000,
+    "minCapacity": 80,
+    "maxCapacity": 250,
+    "services": [
+      "indoor event hall",
+      "basic stage setup",
+      "bridal holding room",
+      "guest parking",
+      "sound system",
+      "air-conditioned venue",
+      "event coordination assistance",
+      "catering partner referrals"
+    ],
+    "description": "The Glass Garden Hall is a bright, modern indoor venue with tall windows, greenery-inspired interiors, and a clean elegant atmosphere. It works well for weddings, debuts, corporate celebrations, formal dinners, and milestone events that need a polished but welcoming setting. The venue is best for clients who want a premium, organized, and photo-friendly space without needing a full luxury hotel ballroom.",
+    "eventTypes": [
+      "wedding",
+      "debut",
+      "corporate event",
+      "anniversary",
+      "birthday",
+      "formal dinner",
+      "product launch"
+    ],
+    "tags": [
+      "elegant",
+      "modern",
+      "indoor",
+      "premium",
+      "garden-inspired",
+      "photo-friendly",
+      "formal",
+      "air-conditioned",
+      "family-friendly",
+      "accessible location"
+    ]
+  },
+  {
+    "id": "venue-002",
+    "name": "Casa Almeria Tagaytay",
+    "category": "venue",
+    "location": "Tagaytay",
+    "minPrice": 180000,
+    "maxPrice": 450000,
+    "minCapacity": 50,
+    "maxCapacity": 180,
+    "services": [
+      "outdoor garden ceremony area",
+      "indoor reception pavilion",
+      "panoramic ridge view",
+      "bridal and groom suites",
+      "in-house event coordination",
+      "guest parking",
+      "preferred catering list",
+      "rain contingency tent"
+    ],
+    "description": "Casa Almeria Tagaytay is a hillside garden venue overlooking Taal, with a Mediterranean-inspired pavilion and manicured lawns. It is well-suited for couples who want a destination feel without flying out of Luzon, and it handles intimate to mid-sized weddings, anniversaries, and milestone celebrations. The property is best for clients prioritizing scenery, natural light, and a relaxed but elevated atmosphere.",
+    "eventTypes": [
+      "wedding",
+      "anniversary",
+      "debut",
+      "engagement party",
+      "intimate gathering"
+    ],
+    "tags": [
+      "scenic",
+      "outdoor",
+      "garden",
+      "premium",
+      "destination feel",
+      "romantic",
+      "natural light",
+      "ridge view",
+      "mediterranean-inspired",
+      "photo-friendly"
+    ]
+  },
+  {
+    "id": "venue-003",
+    "name": "The Workshop Loft Makati",
+    "category": "venue",
+    "location": "Makati",
+    "minPrice": 45000,
+    "maxPrice": 95000,
+    "minCapacity": 20,
+    "maxCapacity": 80,
+    "services": [
+      "industrial-style loft space",
+      "open floor layout",
+      "built-in projector and screen",
+      "wifi and basic AV",
+      "bar counter",
+      "freight elevator access",
+      "flexible furniture setup"
+    ],
+    "description": "The Workshop Loft Makati is a raw, industrial-style event space with exposed brick, polished concrete floors, and warm pendant lighting. It is a strong fit for product launches, brand activations, intimate weddings, creative meetups, and milestone birthdays that lean modern or minimalist. The venue is best for clients who want a cool, urban backdrop without the formality or cost of a hotel function room.",
+    "eventTypes": [
+      "product launch",
+      "intimate wedding",
+      "birthday",
+      "corporate event",
+      "creative workshop",
+      "engagement party"
+    ],
+    "tags": [
+      "industrial",
+      "modern",
+      "urban",
+      "mid-range",
+      "minimalist",
+      "indoor",
+      "intimate",
+      "creative",
+      "photo-friendly",
+      "central location"
+    ]
+  },
+  {
+    "id": "venue-004",
+    "name": "Hacienda San Rafael",
+    "category": "venue",
+    "location": "Bulacan",
+    "minPrice": 90000,
+    "maxPrice": 220000,
+    "minCapacity": 100,
+    "maxCapacity": 400,
+    "services": [
+      "expansive open lawn",
+      "covered reception area",
+      "heritage-style hall",
+      "ample parking",
+      "in-house generator",
+      "preferred supplier network",
+      "bridal cottage",
+      "on-site coordination team"
+    ],
+    "description": "Hacienda San Rafael is a heritage-style country estate in Bulacan with wide open grounds, a covered reception hall, and a relaxed provincial atmosphere. It handles large gatherings comfortably and is well-suited for traditional Filipino weddings, family reunions, and big debuts. The estate is best for clients who want generous space, a rustic-elegant backdrop, and a venue that can comfortably host extended families.",
+    "eventTypes": [
+      "wedding",
+      "debut",
+      "family reunion",
+      "anniversary",
+      "birthday"
+    ],
+    "tags": [
+      "rustic",
+      "heritage",
+      "outdoor",
+      "spacious",
+      "traditional",
+      "provincial",
+      "family-friendly",
+      "mid-range",
+      "large capacity",
+      "scenic"
+    ]
+  },
+  {
+    "id": "venue-005",
+    "name": "Sky Deck 33",
+    "category": "venue",
+    "location": "Bonifacio Global City",
+    "minPrice": 250000,
+    "maxPrice": 600000,
+    "minCapacity": 60,
+    "maxCapacity": 200,
+    "services": [
+      "rooftop function space",
+      "skyline views",
+      "indoor lounge",
+      "premium bar setup",
+      "valet parking",
+      "in-house AV",
+      "dedicated event manager",
+      "five-star catering partners"
+    ],
+    "description": "Sky Deck 33 is a luxury rooftop venue in BGC with floor-to-ceiling glass, panoramic city views, and a sleek lounge interior. It is designed for high-end weddings, corporate galas, milestone birthdays, and brand events that want a striking, photo-forward backdrop. The venue is best for clients with a generous budget who want guests to walk in and feel impressed before the program even starts.",
+    "eventTypes": [
+      "wedding",
+      "corporate gala",
+      "milestone birthday",
+      "anniversary",
+      "brand event",
+      "product launch"
+    ],
+    "tags": [
+      "luxury",
+      "rooftop",
+      "skyline view",
+      "modern",
+      "premium",
+      "indoor",
+      "photo-friendly",
+      "central location",
+      "high-end",
+      "evening events"
+    ]
+  },
+  {
+    "id": "venue-006",
+    "name": "The Backyard Antipolo",
+    "category": "venue",
+    "location": "Antipolo",
+    "minPrice": 35000,
+    "maxPrice": 75000,
+    "minCapacity": 15,
+    "maxCapacity": 60,
+    "services": [
+      "open garden area",
+      "covered alfresco dining space",
+      "string lighting setup",
+      "basic tables and chairs",
+      "casual bar nook",
+      "ample parking",
+      "kitchen prep area"
+    ],
+    "description": "The Backyard Antipolo is a casual outdoor garden space with string lights, plant-filled corners, and a relaxed homey feel. It is a great fit for intimate weddings, small birthdays, baby showers, bridal showers, and laid-back gatherings that prioritize warmth over formality. The venue is best for clients on a tighter budget who still want a charming, photo-friendly outdoor setting close to the metro.",
+    "eventTypes": [
+      "intimate wedding",
+      "birthday",
+      "baby shower",
+      "bridal shower",
+      "family gathering",
+      "engagement party"
+    ],
+    "tags": [
+      "intimate",
+      "outdoor",
+      "garden",
+      "budget-friendly",
+      "casual",
+      "cozy",
+      "string lights",
+      "homey",
+      "small capacity",
+      "photo-friendly"
+    ]
+  },
+  {
+    "id": "catering-001",
+    "name": "Tita Lourdes Kitchen",
+    "category": "catering",
+    "location": "Quezon City",
+    "minPrice": 35000,
+    "maxPrice": 120000,
+    "minCapacity": 30,
+    "maxCapacity": 150,
+    "services": [
+      "Filipino home-style menu",
+      "buffet setup",
+      "service crew",
+      "basic table linens",
+      "dessert station",
+      "free menu tasting for confirmed bookings"
+    ],
+    "description": "Tita Lourdes Kitchen is a family-run catering service known for hearty, home-style Filipino dishes served buffet-style. The team is well-loved for birthdays, family reunions, christenings, and casual milestone celebrations where comfort food is the priority. They are best for clients who want generous portions, familiar Pinoy flavors, and a warm, no-fuss service experience at a reasonable price.",
+    "eventTypes": [
+      "birthday",
+      "family reunion",
+      "christening",
+      "anniversary",
+      "corporate gathering",
+      "intimate wedding"
+    ],
+    "tags": [
+      "filipino cuisine",
+      "home-style",
+      "buffet",
+      "budget-friendly",
+      "family-run",
+      "comfort food",
+      "casual",
+      "generous portions",
+      "mid-range",
+      "warm service"
+    ]
+  },
+  {
+    "id": "catering-002",
+    "name": "Verde Plant-Based Catering",
+    "category": "catering",
+    "location": "Pasig",
+    "minPrice": 60000,
+    "maxPrice": 200000,
+    "minCapacity": 20,
+    "maxCapacity": 120,
+    "services": [
+      "fully plant-based menu",
+      "plated and buffet options",
+      "allergen-aware preparation",
+      "menu customization",
+      "modern table styling",
+      "service crew",
+      "menu tasting"
+    ],
+    "description": "Verde Plant-Based Catering specializes in fully vegetarian and vegan menus with a modern, ingredient-forward approach. Their dishes lean Mediterranean and Asian-fusion, and the team is experienced with dietary restrictions including gluten-free, nut-free, and soy-free requests. They are best for clients hosting health-conscious crowds, plant-based weddings, or events where dietary inclusivity is a priority without sacrificing presentation.",
+    "eventTypes": [
+      "wedding",
+      "intimate gathering",
+      "corporate event",
+      "birthday",
+      "anniversary",
+      "wellness event"
+    ],
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "plant-based",
+      "allergen-aware",
+      "modern",
+      "health-conscious",
+      "mediterranean",
+      "asian-fusion",
+      "mid-range",
+      "inclusive"
+    ]
+  },
+  {
+    "id": "catering-003",
+    "name": "Maison Blanc Fine Dining",
+    "category": "catering",
+    "location": "Makati",
+    "minPrice": 180000,
+    "maxPrice": 500000,
+    "minCapacity": 40,
+    "maxCapacity": 200,
+    "services": [
+      "plated multi-course fine dining",
+      "international and modern Filipino menus",
+      "cocktail hour service",
+      "premium tableware and linens",
+      "wine pairing options",
+      "trained service brigade",
+      "menu tasting and customization"
+    ],
+    "description": "Maison Blanc is a high-end catering team specializing in plated fine dining with international and modern Filipino menus. Their service is polished and ceremonial, with trained brigades and curated wine pairings, making them a strong fit for luxury weddings, corporate galas, and milestone events. They are best for clients who want a restaurant-grade dining experience and are willing to invest for the level of detail.",
+    "eventTypes": [
+      "wedding",
+      "corporate gala",
+      "milestone birthday",
+      "anniversary",
+      "diplomatic event",
+      "brand dinner"
+    ],
+    "tags": [
+      "fine dining",
+      "plated service",
+      "luxury",
+      "premium",
+      "international cuisine",
+      "modern filipino",
+      "wine pairing",
+      "formal",
+      "high-end",
+      "polished"
+    ]
+  },
+  {
+    "id": "catering-004",
+    "name": "Smoke and Fire Mobile Grill",
+    "category": "catering",
+    "location": "Mandaluyong",
+    "minPrice": 40000,
+    "maxPrice": 130000,
+    "minCapacity": 30,
+    "maxCapacity": 120,
+    "services": [
+      "live grilling station",
+      "smoked meats and barbecue menu",
+      "side dishes and salads",
+      "casual buffet setup",
+      "mobile food cart",
+      "service crew",
+      "vegetarian add-ons"
+    ],
+    "description": "Smoke and Fire Mobile Grill brings a live barbecue and smokehouse experience to events, with on-site grilling, smoked brisket, ribs, chicken, and Filipino-style sides. The casual format works well for outdoor parties, casual weddings, corporate team builds, and birthdays where guests enjoy interactive food stations. They are best for clients who want a fun, smoky, crowd-pleasing menu that doubles as an experience.",
+    "eventTypes": [
+      "birthday",
+      "casual wedding",
+      "corporate team build",
+      "anniversary",
+      "outdoor party",
+      "family gathering"
+    ],
+    "tags": [
+      "barbecue",
+      "live cooking",
+      "casual",
+      "outdoor",
+      "interactive",
+      "crowd-pleasing",
+      "mid-range",
+      "fun",
+      "smoky",
+      "mobile"
+    ]
+  },
+  {
+    "id": "lights-001",
+    "name": "Pulse Productions",
+    "category": "lights and sounds",
+    "location": "Quezon City",
+    "minPrice": 60000,
+    "maxPrice": 250000,
+    "minCapacity": 50,
+    "maxCapacity": 1000,
+    "services": [
+      "professional sound system",
+      "stage lighting design",
+      "LED wall rental",
+      "DJ booth setup",
+      "wireless microphones",
+      "on-site technical crew",
+      "concert-grade audio for large venues"
+    ],
+    "description": "Pulse Productions is a full-service lights and sounds team with experience scaling from intimate receptions to concert-style productions. Their setups are reliable for weddings, debuts, corporate conferences, and brand activations, and they bring their own technical crew on-site. They are best for clients who want professional-grade audio and dynamic lighting without coordinating multiple vendors.",
+    "eventTypes": [
+      "wedding",
+      "debut",
+      "corporate conference",
+      "concert",
+      "brand activation",
+      "milestone birthday"
+    ],
+    "tags": [
+      "professional",
+      "scalable",
+      "concert-grade",
+      "LED wall",
+      "stage lighting",
+      "reliable",
+      "mid-range",
+      "premium",
+      "full-service",
+      "experienced crew"
+    ]
+  },
+  {
+    "id": "lights-002",
+    "name": "Glow Studio Manila",
+    "category": "lights and sounds",
+    "location": "Pasig",
+    "minPrice": 35000,
+    "maxPrice": 110000,
+    "minCapacity": 20,
+    "maxCapacity": 200,
+    "services": [
+      "mood and ambient lighting design",
+      "fairy light installations",
+      "uplighting in custom colors",
+      "compact sound system",
+      "wireless microphones",
+      "intimate venue specialization"
+    ],
+    "description": "Glow Studio Manila focuses on mood and ambient lighting, specializing in warm, romantic atmospheres rather than concert-style production. They are a great fit for intimate weddings, garden parties, anniversaries, and dinners where the lighting is meant to set a feeling rather than dominate the room. They are best for clients who want soft, photo-friendly lighting and a clean, understated audio setup.",
+    "eventTypes": [
+      "intimate wedding",
+      "anniversary",
+      "garden party",
+      "birthday",
+      "engagement party",
+      "bridal shower"
+    ],
+    "tags": [
+      "mood lighting",
+      "ambient",
+      "romantic",
+      "intimate",
+      "warm",
+      "photo-friendly",
+      "fairy lights",
+      "uplighting",
+      "mid-range",
+      "soft"
+    ]
+  },
+  {
+    "id": "lights-003",
+    "name": "Bright Box Events",
+    "category": "lights and sounds",
+    "location": "Caloocan",
+    "minPrice": 18000,
+    "maxPrice": 55000,
+    "minCapacity": 30,
+    "maxCapacity": 150,
+    "services": [
+      "basic sound system",
+      "wireless microphones",
+      "simple stage lighting",
+      "party lights and disco ball",
+      "DJ equipment rental",
+      "on-site operator"
+    ],
+    "description": "Bright Box Events is a budget-friendly lights and sounds provider focused on birthdays, christenings, school events, and casual celebrations. Their packages cover the essentials without the bells and whistles, and they are reliable for events that need clean audio and simple lighting at an accessible price. They are best for clients on a tight budget who still want a properly run program.",
+    "eventTypes": [
+      "birthday",
+      "christening",
+      "school event",
+      "family reunion",
+      "small corporate gathering",
+      "casual party"
+    ],
+    "tags": [
+      "budget-friendly",
+      "essentials",
+      "reliable",
+      "casual",
+      "simple",
+      "small to mid scale",
+      "party lights",
+      "accessible",
+      "no-frills",
+      "starter package"
+    ]
+  },
+  {
+    "id": "lights-004",
+    "name": "Aurora Lighting Design",
+    "category": "lights and sounds",
+    "location": "Bonifacio Global City",
+    "minPrice": 120000,
+    "maxPrice": 400000,
+    "minCapacity": 80,
+    "maxCapacity": 500,
+    "services": [
+      "custom lighting design",
+      "architectural uplighting",
+      "gobo and monogram projection",
+      "premium sound systems",
+      "live band audio support",
+      "lighting programmer on site",
+      "event production consultation"
+    ],
+    "description": "Aurora Lighting Design is a high-end production team known for custom lighting concepts, architectural uplighting, and gobo monogram projections. Their work elevates luxury weddings, corporate galas, and brand events with cinematic atmosphere and detailed programming. They are best for clients investing in a fully designed visual experience and willing to plan lighting as a creative element, not just utility.",
+    "eventTypes": [
+      "wedding",
+      "corporate gala",
+      "brand event",
+      "milestone birthday",
+      "product launch",
+      "anniversary"
+    ],
+    "tags": [
+      "luxury",
+      "custom design",
+      "premium",
+      "cinematic",
+      "architectural lighting",
+      "gobo projection",
+      "high-end",
+      "creative",
+      "polished",
+      "designer"
+    ]
+  },
+  {
+    "id": "photo-001",
+    "name": "Joaquin Cruz Photography",
+    "category": "photography",
+    "location": "Quezon City",
+    "minPrice": 45000,
+    "maxPrice": 120000,
+    "minCapacity": 10,
+    "maxCapacity": 300,
+    "services": [
+      "full-day event coverage",
+      "engagement and prenup sessions",
+      "edited high-resolution photos",
+      "online gallery delivery",
+      "second shooter option",
+      "printed photo album add-on"
+    ],
+    "description": "Joaquin Cruz Photography is a documentary-style wedding and event photographer focused on candid moments and natural light. His work suits couples and clients who want their day captured authentically rather than heavily posed, and he is comfortable with intimate ceremonies up to large weddings. He is best for clients who value storytelling, real emotion, and a photographer who blends in rather than directs.",
+    "eventTypes": [
+      "wedding",
+      "engagement",
+      "anniversary",
+      "debut",
+      "intimate gathering",
+      "milestone birthday"
+    ],
+    "tags": [
+      "documentary",
+      "candid",
+      "natural light",
+      "storytelling",
+      "wedding specialist",
+      "mid-range",
+      "authentic",
+      "unobtrusive",
+      "experienced",
+      "editorial"
+    ]
+  },
+  {
+    "id": "photo-002",
+    "name": "Frame and Field Studio",
+    "category": "photography",
+    "location": "Mandaluyong",
+    "minPrice": 25000,
+    "maxPrice": 70000,
+    "minCapacity": 10,
+    "maxCapacity": 150,
+    "services": [
+      "event photo coverage",
+      "on-site photo booth setup",
+      "instant prints",
+      "edited digital gallery",
+      "props and backdrop",
+      "social media-ready edits"
+    ],
+    "description": "Frame and Field Studio offers event photography paired with on-site photo booth setups and instant prints. The team is a fun fit for birthdays, corporate parties, debuts, and casual weddings where guests want to take home a tangible keepsake. They are best for clients who want both proper documentation and a built-in entertainment element that keeps guests engaged.",
+    "eventTypes": [
+      "birthday",
+      "debut",
+      "corporate party",
+      "casual wedding",
+      "anniversary",
+      "brand activation"
+    ],
+    "tags": [
+      "photo booth",
+      "instant prints",
+      "fun",
+      "interactive",
+      "budget-friendly",
+      "casual",
+      "guest engagement",
+      "mid-range",
+      "social media-ready",
+      "props included"
+    ]
+  },
+  {
+    "id": "photo-003",
+    "name": "Mira Santos Films",
+    "category": "photography",
+    "location": "Makati",
+    "minPrice": 90000,
+    "maxPrice": 280000,
+    "minCapacity": 30,
+    "maxCapacity": 250,
+    "services": [
+      "cinematic videography",
+      "photography and video bundle",
+      "drone aerial coverage",
+      "same-day edit option",
+      "edited highlight film",
+      "raw footage delivery"
+    ],
+    "description": "Mira Santos Films is a cinematic photo and video team known for wedding films with a soft, romantic editorial feel. They offer drone coverage, same-day edits, and full highlight reels suited for couples who want their wedding presented as a story on film. They are best for clients who care equally about both photo and video, and who want a polished, share-ready output.",
+    "eventTypes": [
+      "wedding",
+      "engagement",
+      "milestone birthday",
+      "anniversary",
+      "debut",
+      "brand event"
+    ],
+    "tags": [
+      "cinematic",
+      "videography",
+      "editorial",
+      "romantic",
+      "drone coverage",
+      "premium",
+      "wedding specialist",
+      "polished",
+      "highlight film",
+      "share-ready"
+    ]
+  },
+  {
+    "id": "photo-004",
+    "name": "Nine Lens Collective",
+    "category": "photography",
+    "location": "Pasig",
+    "minPrice": 60000,
+    "maxPrice": 180000,
+    "minCapacity": 20,
+    "maxCapacity": 400,
+    "services": [
+      "team-based event coverage",
+      "multiple shooters",
+      "corporate event documentation",
+      "edited photo gallery",
+      "fast turnaround delivery",
+      "headshot stations",
+      "press-ready images"
+    ],
+    "description": "Nine Lens Collective is a team-based photography group built for larger events that need multiple shooters and quick turnaround. They cover corporate conferences, brand launches, large weddings, and press events, and they regularly deliver press-ready images within tight deadlines. They are best for clients running bigger productions where one photographer would not be enough.",
+    "eventTypes": [
+      "corporate conference",
+      "brand launch",
+      "large wedding",
+      "press event",
+      "product launch",
+      "concert"
+    ],
+    "tags": [
+      "team coverage",
+      "multiple shooters",
+      "corporate",
+      "fast turnaround",
+      "press-ready",
+      "mid-range",
+      "premium",
+      "scalable",
+      "professional",
+      "deadline-driven"
+    ]
+  },
+  {
+    "id": "styling-001",
+    "name": "Bloom and Branch Studio",
+    "category": "styling",
+    "location": "Quezon City",
+    "minPrice": 80000,
+    "maxPrice": 250000,
+    "minCapacity": 30,
+    "maxCapacity": 200,
+    "services": [
+      "floral arrangements",
+      "ceremony and reception styling",
+      "table centerpieces",
+      "arch and backdrop design",
+      "concept development",
+      "on-site setup and teardown"
+    ],
+    "description": "Bloom and Branch Studio is a floral-forward styling team known for lush, garden-inspired arrangements and soft romantic palettes. They handle ceremony arches, reception centerpieces, and full event styling for weddings, debuts, and intimate celebrations. They are best for clients who want florals to be a defining design element and prefer organic, natural styling over rigid or themed setups.",
+    "eventTypes": [
+      "wedding",
+      "debut",
+      "anniversary",
+      "engagement party",
+      "intimate gathering",
+      "bridal shower"
+    ],
+    "tags": [
+      "floral-forward",
+      "garden-inspired",
+      "romantic",
+      "soft palette",
+      "organic",
+      "mid-range",
+      "premium",
+      "wedding specialist",
+      "natural",
+      "lush"
+    ]
+  },
+  {
+    "id": "styling-002",
+    "name": "Konsept Co.",
+    "category": "styling",
+    "location": "Makati",
+    "minPrice": 150000,
+    "maxPrice": 500000,
+    "minCapacity": 50,
+    "maxCapacity": 400,
+    "services": [
+      "full event design and styling",
+      "custom set construction",
+      "themed installations",
+      "branded backdrops",
+      "lighting design coordination",
+      "concept development",
+      "production management"
+    ],
+    "description": "Konsept Co. is a high-end event design studio specializing in custom set construction, themed installations, and branded environments. Their work fits luxury weddings, corporate brand events, and large milestone celebrations that call for a fully designed environment rather than off-the-shelf decor. They are best for clients with a strong concept and the budget to bring it to life as a built-out experience.",
+    "eventTypes": [
+      "wedding",
+      "brand event",
+      "corporate gala",
+      "milestone birthday",
+      "product launch",
+      "anniversary"
+    ],
+    "tags": [
+      "luxury",
+      "custom design",
+      "themed",
+      "set construction",
+      "premium",
+      "high-end",
+      "brand activation",
+      "concept-driven",
+      "polished",
+      "designer"
+    ]
+  },
+  {
+    "id": "styling-003",
+    "name": "Pastel Party Co.",
+    "category": "styling",
+    "location": "Marikina",
+    "minPrice": 25000,
+    "maxPrice": 70000,
+    "minCapacity": 15,
+    "maxCapacity": 80,
+    "services": [
+      "themed party styling",
+      "balloon arrangements",
+      "dessert table setup",
+      "backdrop and signage",
+      "themed props and tableware",
+      "on-site setup"
+    ],
+    "description": "Pastel Party Co. is a playful styling team specializing in kids' birthdays, baby showers, christenings, and themed celebrations. Their work leans bright, soft, and whimsical, with strong balloon work and dessert table setups. They are best for clients planning family-oriented celebrations who want a clearly themed look without committing to a full luxury production.",
+    "eventTypes": [
+      "kids birthday",
+      "baby shower",
+      "christening",
+      "gender reveal",
+      "family gathering",
+      "bridal shower"
+    ],
+    "tags": [
+      "playful",
+      "themed",
+      "kids-friendly",
+      "balloons",
+      "dessert table",
+      "budget-friendly",
+      "whimsical",
+      "soft palette",
+      "family",
+      "casual"
+    ]
+  },
+  {
+    "id": "styling-004",
+    "name": "Noir Events Styling",
+    "category": "styling",
+    "location": "Bonifacio Global City",
+    "minPrice": 90000,
+    "maxPrice": 280000,
+    "minCapacity": 40,
+    "maxCapacity": 250,
+    "services": [
+      "modern minimalist styling",
+      "monochrome and neutral palettes",
+      "tablescape design",
+      "ceremony and reception styling",
+      "rental coordination",
+      "concept moodboarding"
+    ],
+    "description": "Noir Events Styling leans modern, minimalist, and sculptural, working primarily in monochrome and neutral palettes. They are a strong fit for couples and clients who want a clean editorial look without florals overwhelming the space. They are best for clients who appreciate restraint, architectural design, and a contemporary aesthetic that photographs well under any lighting.",
+    "eventTypes": [
+      "wedding",
+      "engagement party",
+      "corporate event",
+      "anniversary",
+      "milestone birthday",
+      "brand dinner"
+    ],
+    "tags": [
+      "modern",
+      "minimalist",
+      "monochrome",
+      "neutral palette",
+      "editorial",
+      "sculptural",
+      "premium",
+      "contemporary",
+      "clean",
+      "photo-friendly"
+    ]
+  },
+  {
+    "id": "ent-001",
+    "name": "DJ Mika Reyes",
+    "category": "entertainment",
+    "location": "Quezon City",
+    "minPrice": 18000,
+    "maxPrice": 55000,
+    "minCapacity": 20,
+    "maxCapacity": 300,
+    "services": [
+      "wedding and party DJ sets",
+      "open format mixing",
+      "MC coordination",
+      "personalized playlist consultation",
+      "wireless mic for emcee",
+      "backup equipment"
+    ],
+    "description": "DJ Mika Reyes is a versatile open-format DJ comfortable across weddings, debuts, corporate parties, and milestone birthdays. She works closely with clients to build playlists that fit the crowd and program flow, and is known for keeping the dance floor active without leaning on a single genre. She is best for clients who want a DJ who reads the room well and balances guest requests with curated sets.",
+    "eventTypes": [
+      "wedding",
+      "debut",
+      "birthday",
+      "corporate party",
+      "anniversary",
+      "engagement party"
+    ],
+    "tags": [
+      "DJ",
+      "open format",
+      "versatile",
+      "dance floor",
+      "mid-range",
+      "wedding-friendly",
+      "personalized",
+      "experienced",
+      "energetic",
+      "crowd-reading"
+    ]
+  },
+  {
+    "id": "ent-002",
+    "name": "The Velvet Trio",
+    "category": "entertainment",
+    "location": "Makati",
+    "minPrice": 35000,
+    "maxPrice": 90000,
+    "minCapacity": 20,
+    "maxCapacity": 150,
+    "services": [
+      "acoustic live music",
+      "ceremony performance",
+      "cocktail hour set",
+      "dinner background music",
+      "song requests and customization",
+      "own sound equipment"
+    ],
+    "description": "The Velvet Trio is an acoustic live group performing soft jazz, bossa nova, and stripped-down covers of pop and OPM. Their sets fit ceremonies, cocktail hours, intimate dinners, and anniversaries where the goal is warm ambient music rather than a dance party. They are best for clients who want live music as an atmosphere builder and prefer an elegant, mellow vibe.",
+    "eventTypes": [
+      "wedding",
+      "anniversary",
+      "intimate dinner",
+      "engagement party",
+      "corporate dinner",
+      "bridal shower"
+    ],
+    "tags": [
+      "acoustic",
+      "live music",
+      "jazz",
+      "bossa nova",
+      "ambient",
+      "elegant",
+      "mid-range",
+      "intimate",
+      "mellow",
+      "ceremony-friendly"
+    ]
+  },
+  {
+    "id": "ent-003",
+    "name": "Riot Squad Live Band",
+    "category": "entertainment",
+    "location": "Pasig",
+    "minPrice": 60000,
+    "maxPrice": 180000,
+    "minCapacity": 80,
+    "maxCapacity": 800,
+    "services": [
+      "full live band performance",
+      "OPM, pop, rock, and dance covers",
+      "front act and main set",
+      "lights and sound coordination",
+      "MC available on request",
+      "song customization for first dance"
+    ],
+    "description": "Riot Squad Live Band is a high-energy cover band that performs OPM, pop, rock, and dance hits for weddings, corporate parties, and milestone celebrations. Their setup is built for larger events with a real dance floor, and they coordinate easily with lights and sound providers. They are best for clients who want live energy as the centerpiece of the night and a band that can keep a big crowd moving.",
+    "eventTypes": [
+      "wedding",
+      "corporate party",
+      "milestone birthday",
+      "anniversary",
+      "company anniversary",
+      "brand event"
+    ],
+    "tags": [
+      "live band",
+      "high energy",
+      "OPM",
+      "cover band",
+      "dance floor",
+      "premium",
+      "large events",
+      "versatile setlist",
+      "experienced",
+      "crowd-pleasing"
+    ]
+  },
+  {
+    "id": "ent-004",
+    "name": "Magic and Mischief Co.",
+    "category": "entertainment",
+    "location": "Quezon City",
+    "minPrice": 12000,
+    "maxPrice": 40000,
+    "minCapacity": 10,
+    "maxCapacity": 100,
+    "services": [
+      "kids party hosts and clowns",
+      "magic show performances",
+      "face painting",
+      "balloon twisting",
+      "mascot appearances",
+      "themed games and activities"
+    ],
+    "description": "Magic and Mischief Co. is a kids-focused entertainment team offering magic shows, hosts, face painting, balloon twisting, and themed party games. They are a strong fit for kids' birthdays, christenings, family days, and school events where the priority is keeping children engaged and entertained throughout the program. They are best for clients planning family-oriented celebrations who want professional party hosts rather than DIY entertainment.",
+    "eventTypes": [
+      "kids birthday",
+      "christening",
+      "family day",
+      "school event",
+      "company family day",
+      "gender reveal"
+    ],
+    "tags": [
+      "kids entertainment",
+      "magic show",
+      "party hosts",
+      "face painting",
+      "balloons",
+      "budget-friendly",
+      "family-friendly",
+      "playful",
+      "interactive",
+      "themed activities"
+    ]
+  }
+]
