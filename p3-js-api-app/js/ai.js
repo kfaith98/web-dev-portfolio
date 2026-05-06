@@ -55,30 +55,29 @@ ${outputInstructions}`;
 export async function callAI(prompt) {
   // throw new Error("test");
 
-  await new Promise(r => setTimeout(r, 1500));
+  // await new Promise(r => setTimeout(r, 1500));
 
-  // Reasoning for placeholder only, from supplier descriptions
-  // Stub test due to Gemini downtime
-  return {
-    summary: "Found 4 suppliers across venue, catering, lights, and photography that fit your event.",
-    recommendations: [
-      { supplierId: "venue-001", reasoning: "Bright, modern indoor venue with tall windows, greenery-inspired interiors, and a clean elegant atmosphere" },
-      { supplierId: "catering-004", reasoning: "Best for clients who want a fun, smoky, crowd-pleasing menu that doubles as an experience." },
-      { supplierId: "lights-002", reasoning: "Focuses on mood and ambient lighting, specializing in warm, romantic atmospheres rather than concert-style production." },
-      { supplierId: "photo-003", reasoning: "For clients who care equally about both photo and video, and who want a polished, share-ready output." }
-    ]
-  };
+  // // Reasoning for placeholder only, from supplier descriptions
+  // // Stub test due to Gemini downtime
+  // return {
+  //   summary: "Found 4 suppliers across venue, catering, lights, and photography that fit your event.",
+  //   recommendations: [
+  //     { supplierId: "venue-001", reasoning: "Bright, modern indoor venue with tall windows, greenery-inspired interiors, and a clean elegant atmosphere" },
+  //     { supplierId: "catering-004", reasoning: "Best for clients who want a fun, smoky, crowd-pleasing menu that doubles as an experience." },
+  //     { supplierId: "lights-002", reasoning: "Focuses on mood and ambient lighting, specializing in warm, romantic atmospheres rather than concert-style production." },
+  //     { supplierId: "photo-003", reasoning: "For clients who care equally about both photo and video, and who want a polished, share-ready output." }
+  //   ]
+  // };
 
-  // const response = await fetch("/.netlify/functions/match", {
-  //   method: "POST",
-  //   headers: { "Content-Type": "application/json" },
-  //   body: JSON.stringify({ prompt }),
-  // });
+  const response = await fetch("/.netlify/functions/match", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ prompt }),
+  });
 
-  // if (!response.ok) throw new Error("Request failed.");
+  if (!response.ok) throw new Error("Request failed.");
 
-  // const data = await response.json();
-  // console.log("API response data:", data);
-  // const text = data.candidates[0].content.parts[0].text;
-  // return JSON.parse(text);
+  const data = await response.json();
+  const text = data.candidates[0].content.parts[0].text;
+  return JSON.parse(text);
 } 

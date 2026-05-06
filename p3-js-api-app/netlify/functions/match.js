@@ -1,4 +1,4 @@
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${process.env.GEMINI_API_KEY}`;
 
 export default async (request, context) => {
   try {
@@ -35,7 +35,7 @@ export default async (request, context) => {
     }
 
     const data = await response.json();
-    return Response.json({ data });
+    return Response.json(data);
   } catch (error) {
     console.error(error);
     return Response.json({ error: "Failed to fetch data" }, { status: 500 });
