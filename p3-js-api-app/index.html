@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EventMatch AI — Smart Event Supplier Recommender</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
@@ -14,6 +20,8 @@
 
     <main>
       <section id="input-section">
+        <p class="prompts-hint">Try one of these:</p>
+        <div id="sample-prompts"></div>
         <label for="event-description">Tell us about your event:</label>
         <textarea
           id="event-description"
@@ -23,13 +31,9 @@
         <button id="match-button" type="button">Find Suppliers</button>
       </section>
 
-      <div id="summary">
-        
-      </div>
+      <div id="summary"></div>
 
-      <section id="results-section">
-  
-      </section>
+      <section id="results-section"></section>
     </main>
 
     <footer>

@@ -1,3 +1,22 @@
+:root {
+  --font-heading: "Fraunces", serif;
+  --font-body: system-ui, sans-serif;
+  --bg-main: #faf8f4;
+  --bg-secondary: #ffffff;
+  --text-main: #1f1b16;
+  --text-muted: #6b6157;
+  --accent: #7c2d2d;
+  --border: #e8e4dd;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.125rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --radius: 8px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,24 +24,71 @@
 }
 
 body {
-  font-family:
-    system-ui,
-    -apple-system,
-    sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-body);
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem 1rem;
-  color: #222;
 }
 
 header {
   text-align: center;
-  margin-bottom: 2rem;
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-5);
+  /* margin-bottom: 2rem; */
+}
+
+header p {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  max-width: 60ch;
+  margin: 0 auto;
 }
 
 h1 {
-  margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+
+#sample-prompts {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.prompts-hint {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.sample-button {
+  background: var(--bg-secondary);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sample-button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: var(--space-2);
 }
 
 #input-section {
@@ -33,32 +99,105 @@ h1 {
 }
 
 textarea {
+  background: var(--bg-secondary);
   width: 100%;
-  padding: 0.75rem;
+  padding: var(--space-3);
   font-family: inherit;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   resize: vertical;
 }
 
-button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  background: #2563eb;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+textarea::placeholder {
+  color: var(--text-muted);
 }
 
-button:hover {
-  background: #1d4ed8;
+textarea:focus {
+  border-color: var(--accent);
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+#match-button {
+  font-size: 1rem;
+  background: var(--accent);
+  color: var(--bg-secondary);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  padding: var(--space-3) var(--space-5);
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+#match-button:hover {
+  filter: brightness(0.9);
+}
+
+#match-button:disabled {
+  cursor: not-allowed;
+   opacity: 0.6;
+}
+
+article {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+#results-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.card-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.card-location {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.card-price-range {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: var(--space-2);
+}
+
+.card-services {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.card-reasoning {
+  font-style: italic;
+  border-left: 3px solid var(--accent);
+  padding-left: var(--space-3);
+}
+
+#summary:not(:empty) {
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin: var(--space-5) 0;
+  background: rgba(124, 45, 45, 0.04);
+  padding: var(--space-4);
+  border-radius: var(--radius);
 }
 
 footer {
   text-align: center;
   margin-top: 3rem;
-  color: #666;
+  color: var(--text-muted);
   font-size: 0.9rem;
 }
