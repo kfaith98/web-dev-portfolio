@@ -3,7 +3,6 @@ const summary = document.querySelector("#summary");
 const samplePromptsContainer = document.querySelector("#sample-prompts");
 
 export function renderCards(enrichedRecs) {
-  //   console.log("renderCards called with", enrichedRecs.length, "recs");
   results.replaceChildren();
 
   if (enrichedRecs.length === 0) return;
@@ -11,6 +10,7 @@ export function renderCards(enrichedRecs) {
   enrichedRecs.forEach((rec) => {
     const wrapper = document.createElement("article");
     wrapper.innerHTML = `
+    <span class="card-category"></span>
     <h3 class="card-name"></h3>
     <h4 class="card-location"></h4>
     <h4 class="card-price-range"></h4>
@@ -18,6 +18,7 @@ export function renderCards(enrichedRecs) {
     <p class="card-reasoning"></p>
     `;
     wrapper.querySelector(".card-name").textContent = rec.name;
+    wrapper.querySelector('.card-category').textContent = rec.category;
     wrapper.querySelector(".card-location").textContent = rec.location;
     wrapper.querySelector(".card-price-range").textContent =
       `₱${rec.minPrice.toLocaleString()} – ₱${rec.maxPrice.toLocaleString()}`;
@@ -62,5 +63,6 @@ export function startLoadingMessages() {
     index = (index + 1) % messages.length;
   }, 2000);
 
+  // returns cleanup function so caller controls lifecycle
   return () => clearInterval(intervalId);
 }

@@ -1,12 +1,8 @@
 export function buildPrompt(eventDescription, suppliers) {
-  // 1. System framing
   const systemFraming =
     "You are EventMatch AI, a friendly recommender that matches users with the best event suppliers from a curated list.";
-  // 2. Context (suppliers)
   const context = `Available suppliers:\n${JSON.stringify(suppliers)}`;
-  // 3. User input
   const userInput = `User's event description:\n${eventDescription}`;
-  // 4. Output instructions
   const outputInstructions = `
 
 Return only valid JSON using this exact shape:
@@ -43,7 +39,6 @@ Rules:
 - Do not use suppliers outside the provided list.
 `;
 
-  // return the combined string
   return `${systemFraming}
 
 ${context}
@@ -54,17 +49,16 @@ ${outputInstructions}`;
 }
 
 export async function callAI(prompt) {
-  // throw new Error("test"); 
+  // throw new Error("test");
 
   // await new Promise((r) => setTimeout(r, 1500));
-  // await new Promise(resolve => setTimeout(resolve, 8000));
+  await new Promise((resolve) => setTimeout(resolve, 8000));
 
   // Stub for callAI — returns same shape as live Gemini response.
-  // Mirrors a real BGC corporate gala query so UI work matches live mode.
   return {
     summary:
       "Here are five premium suppliers in BGC and Metro Manila well-suited for a polished, high-end corporate gala for 100 guests. Each has been selected for their experience with formal events and ability to deliver an elevated, photo-forward experience.",
-      // "While we've noted your preference for no flowers due to allergies, the primary challenge is finding an outdoor wedding venue in Tagaytay that leaves enough budget for other essential services like catering, photography, and styling for a 50-person event. The most suitable venue alone has a minimum price of 180,000 pesos, which leaves insufficient funds to cover additional suppliers within your 200,000 pesos total budget. We recommend reviewing your budget or considering alternative locations if you wish to proceed with an outdoor setting.",
+    // "While we've noted your preference for no flowers due to allergies, the primary challenge is finding an outdoor wedding venue in Tagaytay that leaves enough budget for other essential services like catering, photography, and styling for a 50-person event. The most suitable venue alone has a minimum price of 180,000 pesos, which leaves insufficient funds to cover additional suppliers within your 200,000 pesos total budget. We recommend reviewing your budget or considering alternative locations if you wish to proceed with an outdoor setting.",
     recommendations: [
       {
         supplierId: "venue-005",

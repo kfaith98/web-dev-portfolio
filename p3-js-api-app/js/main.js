@@ -1,6 +1,11 @@
 import { loadSuppliers } from "./suppliers.js";
 import { buildPrompt, callAI } from "./ai.js";
-import { renderCards, renderSummary, renderSamplePrompts, startLoadingMessages } from "./ui.js";
+import {
+  renderCards,
+  renderSummary,
+  renderSamplePrompts,
+  startLoadingMessages,
+} from "./ui.js";
 
 const samplePrompts = [
   {

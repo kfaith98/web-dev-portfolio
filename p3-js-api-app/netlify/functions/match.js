@@ -2,7 +2,6 @@ const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-
 
 export default async (request, context) => {
   try {
-    
     if (request.method !== "POST")
       return Response.json({ error: "Method not allowed" }, { status: 405 });
     if (!process.env.GEMINI_API_KEY)

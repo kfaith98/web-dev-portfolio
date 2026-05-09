@@ -1,6 +1,6 @@
 :root {
   --font-heading: "Fraunces", serif;
-  --font-body: system-ui, sans-serif;
+  --font-body: "DM Sans", sans-serif;
   --bg-main: #faf8f4;
   --bg-secondary: #ffffff;
   --text-main: #1f1b16;
@@ -30,14 +30,13 @@ body {
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: clamp(2rem, 5vw, 4rem);
 }
 
 header {
   text-align: center;
   padding-top: var(--space-6);
   padding-bottom: var(--space-5);
-  /* margin-bottom: 2rem; */
 }
 
 header p {
@@ -77,11 +76,13 @@ h1 {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-family: inherit;
 }
 
 .sample-button:hover {
   border-color: var(--accent);
   color: var(--accent);
+  font-family: inherit;
 }
 
 label {
@@ -106,7 +107,7 @@ textarea {
   font-size: 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  resize: vertical;
+  resize: none;
 }
 
 textarea::placeholder {
@@ -129,6 +130,7 @@ textarea:focus {
   padding: var(--space-3) var(--space-5);
   font-weight: 500;
   transition: background 0.2s ease;
+  font-family: inherit;
 }
 
 #match-button:hover {
@@ -137,21 +139,44 @@ textarea:focus {
 
 #match-button:disabled {
   cursor: not-allowed;
-   opacity: 0.6;
+  opacity: 0.6;
 }
 
 article {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: var(--space-5);
+  padding: var(--space-6);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+article:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-color: var(--accent);
 }
 
 #results-section {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-5);
+}
+
+.card-category {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: var(--space-1) var(--space-2);
+  border-radius: 999px;
+  margin-bottom: var(--space-2);
+  background: rgba(124, 45, 45, 0.08);
+  color: var(--accent);
+  text-transform: uppercase;
 }
 
 .card-name {
@@ -164,18 +189,19 @@ article {
   font-size: 0.95rem;
   font-weight: 400;
   color: var(--text-muted);
-  margin-bottom: var(--space-2);
+  margin-top: calc(var(--space-1) * -1);
 }
 
 .card-price-range {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--accent);
+  margin-top: var(--space-3);
   margin-bottom: var(--space-2);
 }
 
 .card-services {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   color: var(--text-muted);
   margin-bottom: var(--space-3);
 }
@@ -190,9 +216,8 @@ article {
   font-size: 1.0625rem;
   color: var(--text-main);
   margin: var(--space-5) 0;
-  background: rgba(124, 45, 45, 0.04);
   padding: var(--space-4);
-  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
 }
 
 footer {
