@@ -32,7 +32,7 @@ window.addEventListener('scroll', () => {
 });
 
 const title = document.querySelector('.about-name-and-title h2');
-const text = 'Full-Stack Web Developer';
+const text = 'Web developer in training';
 let typingIndex = 0;
 let forward = true; // true if typing forward (progressing), false if deleting
 let typingTimeout = null; // Stores the timeout ID for the typing animation
