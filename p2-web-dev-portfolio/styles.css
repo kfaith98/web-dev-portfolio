@@ -336,6 +336,20 @@ ul#nav-links {
   text-align: center;
 }
 
+.additional-skills {
+  grid-column: 1 / -1;
+  margin-top: 20px;
+  text-align: center;
+  justify-self: stretch;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.additional-skills p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
 #projects {
   display: flex;
   flex-direction: column;

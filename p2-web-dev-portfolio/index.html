@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Faith Puton | Home</title>
-    <link rel="icon" type="image/webp" href="./files/favicon_io/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="./files/favicon_io/favicon-32x32.png"
+    />
     <link rel="stylesheet" href="styles.css" />
     <script src="./posts.js"></script>
     <script src="./script.js" defer></script>
@@ -78,14 +82,14 @@
       <div class="about-text-and-photo">
         <div class="about-name-and-title">
           <h1>Faith Puton</h1>
-          <h2>Full-Stack Web Developer</h2>
+          <h2>Web developer in training</h2>
 
           <div class="about-description">
             <p>
-              I’m an aspiring full-stack web developer, currently working as an
-              events producer and enrolled in a local web development bootcamp.
-              I’m pursuing holistic growth (professionally, intellectually,
-              personally, etc.) by reskilling in technology.
+              I’m a full-stack web developer in training, currently working as
+              an events producer and enrolled in a local web development
+              bootcamp. I’m pursuing holistic growth (professionally,
+              intellectually, personally, etc.) by reskilling in technology.
               <br />
               <br />
               Want to know more about my journey? Check out my
@@ -147,6 +151,12 @@
             alt="JavaScript logo"
           />
         </div>
+        <div class="additional-skills">
+          <p>
+            Also worked with: Gemini API, Netlify Functions, Node.js, and basic
+            prompt engineering
+          </p>
+        </div>
       </div>
     </section>
 
@@ -160,8 +170,10 @@
           <h3>Event Suppliers Database Management System</h3>
           <h4>JavaScript Console App</h4>
           <p class="project-description">
-            CLI tool for managing event suppliers with CRUD operations and
-            search functionality. Built using JavaScript and Node.js.
+            A console-based tool that helps event organizers manage their
+            supplier database — adding, editing, removing, and searching through
+            suppliers by name, contact, or category. Built with JavaScript and
+            Node.js.
           </p>
           <div class="project-buttons">
             <a
@@ -174,22 +186,27 @@
         </div>
 
         <div class="project-item-container">
-          <h3>Project 2</h3>
+          <h3>EventMatch AI</h3>
           <h4>Vanilla JavaScript App</h4>
-          <p class="project-description">Coming soon!</p>
+          <p class="project-description">
+            An AI-powered web app that helps event organizers in the Philippines
+            describe their event in plain language and get matched with relevant
+            suppliers — each with reasoning for why it's a fit. Built with
+            vanilla JS, Google Gemini API, and Netlify Functions.
+          </p>
           <div class="project-buttons">
-            <span
-              class="live-demo-button disabled"
-              aria-disabled="true"
-              tabindex="-1"
-              >Live Demo</span
+            <a
+              href="https://eventmatch-ai.netlify.app/"
+              target="_blank"
+              class="live-demo-button"
+              >Live Demo</a
             >
 
-            <span
-              class="git-button disabled"
-              aria-disabled="true"
-              tabindex="-1"
-              >GitHub</span
+            <a
+              href="https://github.com/kfaith98/web-dev-portfolio/tree/p3-js-api-app"
+              target="_blank"
+              class="git-button"
+              >GitHub</a
             >
           </div>
         </div>
@@ -206,10 +223,7 @@
               >Live Demo</span
             >
 
-            <span
-              class="git-button disabled"
-              aria-disabled="true"
-              tabindex="-1"
+            <span class="git-button disabled" aria-disabled="true" tabindex="-1"
               >GitHub</span
             >
           </div>
@@ -227,10 +241,7 @@
               >Live Demo</span
             >
 
-            <span
-              class="git-button disabled"
-              aria-disabled="true"
-              tabindex="-1"
+            <span class="git-button disabled" aria-disabled="true" tabindex="-1"
               >GitHub</span
             >
           </div>
@@ -248,10 +259,7 @@
               >Live Demo</span
             >
 
-            <span
-              class="git-button disabled"
-              aria-disabled="true"
-              tabindex="-1"
+            <span class="git-button disabled" aria-disabled="true" tabindex="-1"
               >GitHub</span
             >
           </div>
@@ -324,21 +332,29 @@
         <form>
           <div class="form-input">
             <label for="fullName">Name</label>
-            <input type="text" id="fullName" name="fullName" autocomplete="name" required />
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              autocomplete="name"
+              required
+            />
           </div>
 
           <div class="form-input">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" autocomplete="email" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+            />
           </div>
 
           <div class="form-input">
             <label for="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              autocomplete="off"
-            ></textarea>
+            <textarea id="message" name="message" autocomplete="off"></textarea>
           </div>
 
           <div id="submit-container">
