@@ -28,7 +28,13 @@ Output format:
 
 Recommendation count and coverage:
 - Always return 3 to 5 recommendations. Never return an empty array.
-- Prioritize covering distinct categories (venue, catering, photography, etc.) over multiple suppliers from the same category.
+- Prioritize covering distinct categories (venue, catering, photography, etc.) over multiple suppliers from the same category, unless the user has requested multiple options per category.
+
+Multiple options per category (only when requested):
+- If the user explicitly asks for multiple options per category (e.g. "top 3 per category", "show me several catering options", "give me 3 venues to choose from"), return up to 3 suppliers per category instead of 1.
+- Use "up to 3" as a cap, not a quota. If fewer than 3 suppliers fit the user's constraints in a category, return only those that fit.
+- When multiple options per category are requested, the total recommendation count may exceed the 3-to-5 range.
+- All hard constraints, soft constraints, and substitution rules still apply.
 
 Hard constraints (must never be violated, even via substitution):
 - Allergies and dietary restrictions.
