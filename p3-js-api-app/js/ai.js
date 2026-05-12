@@ -18,25 +18,44 @@ Return only valid JSON using this exact shape:
 }
 
 Rules:
-- Recommend 3 to 5 suppliers.
+
+Output format:
+- Return only valid JSON in the exact shape specified above.
 - Do not use markdown fences.
 - Do not include preamble, commentary, or extra text.
 - Use supplierId only, not supplier names.
-- Reasoning must be 1 to 2 sentences per match.
-- Be friendly, helpful, and not salesy.
-- Honor all user constraints: allergies, dietary restrictions, exclusions, event type, guest count, location, and budget.
-- If the user already has a supplier category, exclude that category.
-- If the user mentions a budget, only recommend suppliers whose minPrice and maxPrice are compatible with that budget.
-- Treat any user-mentioned budget as the total event budget unless they specify otherwise (e.g. "200k for the venue alone").
-- Recommend a combination of suppliers whose minimum prices together fit within that budget.
-- Use each supplier's minPrice as the conservative estimate when checking the sum.
-- Sum the minimum prices of all suppliers you plan to recommend. If this sum exceeds the user's total budget, return an empty recommendations array and explain why in the summary.
-- If no combination fits, return empty recommendations and explain in summary.
+- Do not invent suppliers. Do not use suppliers outside the provided list.
+
+Recommendation count and coverage:
+- Always return 3 to 5 recommendations. Never return an empty array.
 - Prioritize covering distinct categories (venue, catering, photography, etc.) over multiple suppliers from the same category.
-- Mention the specific constraint respected in each recommendation's reasoning.
-- If no good matches exist, return "recommendations": [] and explain why in summary.
-- Do not invent suppliers.
-- Do not use suppliers outside the provided list.
+
+Hard constraints (must never be violated, even via substitution):
+- Allergies and dietary restrictions.
+- Explicit user exclusions (e.g. "no flowers", "avoid seafood").
+- Guest count compatibility.
+- If the user already has a supplier category covered, exclude that category from recommendations.
+
+Soft constraints and substitution (may be relaxed with acknowledgment):
+- Soft constraints are location and total budget.
+- Treat any user-mentioned budget as the total event budget unless they specify otherwise (e.g. "200k for the venue alone").
+- Use each supplier's minPrice as the conservative estimate. Sum the minPrice of all recommended suppliers; this sum should fit within the user's budget when possible.
+- Only substitute when the user's literal request cannot be fulfilled. If their stated location and budget can produce a viable package, do not substitute.
+- When substitution is required: substitute suppliers from a nearby or comparable area that fits the budget. If the budget cannot fit a full package anywhere, prioritize essential categories (venue, catering) and reduce the number of suppliers rather than dropping quality.
+- Any substitution must be acknowledged in the summary. Never substitute silently.
+- Acknowledge location substitutions only when the user explicitly required a specific location.
+
+Summary structure:
+- Summary must be 2 to 3 sentences maximum.
+- If a substitution was made (location, budget tier, package scope), lead the summary with a brief note naming what changed and why. Example: "Your ₱200k budget couldn't fit a Tagaytay package, so we found comparable outdoor venues in Antipolo." Then briefly describe the recommendation set.
+- If no substitution was made, the summary should simply describe the recommendation set.
+
+Reasoning structure (per recommendation):
+- 1 to 2 sentences per match.
+- Mention the specific constraint respected in the reasoning.
+
+Tone:
+- Be friendly, helpful, and not salesy.
 `;
 
   return `${systemFraming}
