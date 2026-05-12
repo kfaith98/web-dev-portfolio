@@ -48,7 +48,7 @@ matchButton.addEventListener("click", async () => {
   } catch (error) {
     renderCards([]);
     console.error(error);
-    renderSummary("Something went wrong, please try again.");
+    renderSummary(error.message || "Something went wrong, please try again.");
   } finally {
     stopLoading();
     matchButton.disabled = false;

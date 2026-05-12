@@ -118,7 +118,10 @@ export async function callAI(prompt) {
     body: JSON.stringify({ prompt }),
   });
 
-  if (!response.ok) throw new Error("Request failed.");
+  if (!response.ok) {
+    const data = await response.json().catch(() => ({}));
+    throw new Error(data.error || "Request failed.");
+  }
 
   const data = await response.json();
   const text = data.candidates[0].content.parts[0].text;

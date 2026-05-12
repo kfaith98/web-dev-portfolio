@@ -37,6 +37,9 @@ export default async (request, context) => {
     return Response.json(data);
   } catch (error) {
     console.error(error);
-    return Response.json({ error: "Failed to fetch data" }, { status: 500 });
+    return Response.json(
+      { error: error.message || "Failed to fetch data" },
+      { status: 500 },
+    );
   }
 };
