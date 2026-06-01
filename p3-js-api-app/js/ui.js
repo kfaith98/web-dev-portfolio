@@ -1,6 +1,7 @@
 const results = document.querySelector("#results-section");
 const summary = document.querySelector("#summary");
 const samplePromptsContainer = document.querySelector("#sample-prompts");
+const errorBox = document.querySelector("#error");
 
 export function renderCards(enrichedRecs) {
   results.replaceChildren();
@@ -44,6 +45,10 @@ export function renderSamplePrompts(prompts, textarea) {
 
     samplePromptsContainer.appendChild(samplePromptBtn);
   });
+}
+
+export function renderError(message) {
+  errorBox.textContent = message;
 }
 
 export function startLoadingMessages() {

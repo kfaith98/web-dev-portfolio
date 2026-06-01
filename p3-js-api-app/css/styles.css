@@ -7,6 +7,7 @@
   --text-muted: #6b6157;
   --accent: #7c2d2d;
   --border: #e8e4dd;
+  --error: #a23b2d;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 1rem;
@@ -158,6 +159,15 @@ article:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   border-color: var(--accent);
+}
+
+#error:not(:empty) {
+  font-size: 1.0625rem;
+  color: var(--error);
+  margin: var(--space-5) 0;
+  padding: var(--space-4);
+  border-left: 3px solid var(--error);
+  background: rgba(162, 59, 45, 0.06);
 }
 
 #results-section {

@@ -4,6 +4,7 @@ import {
   renderCards,
   renderSummary,
   renderSamplePrompts,
+  renderError,
   startLoadingMessages,
 } from "./ui.js";
 
@@ -29,12 +30,25 @@ const suppliers = await loadSuppliers();
 
 matchButton.addEventListener("click", async () => {
   const userInput = eventDescription.value.trim();
+
+  if (!userInput) {
+    renderSummary("Tell me a bit about your event and I'll find suppliers. ✨");
+    return;
+  }
+
+  if (userInput.length < 10) {
+    renderSummary(
+      "Could you add a little more detail? Even a sentence helps. ✨",
+    );
+    return;
+  }
   const prompt = buildPrompt(userInput, suppliers);
 
   matchButton.disabled = true;
   matchButton.textContent = "Finding suppliers…";
   const stopLoading = startLoadingMessages();
   renderCards([]);
+  renderError("");
 
   try {
     const result = await callAI(prompt);
@@ -47,8 +61,9 @@ matchButton.addEventListener("click", async () => {
     renderSummary(result.summary);
   } catch (error) {
     renderCards([]);
+    renderSummary("");
+    renderError(error.message || "Something went wrong, please try again.");
     console.error(error);
-    renderSummary(error.message || "Something went wrong, please try again.");
   } finally {
     stopLoading();
     matchButton.disabled = false;

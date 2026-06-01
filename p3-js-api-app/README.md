@@ -25,7 +25,7 @@ EventMatch AI is the third project of my web development bootcamp — a one-week
 - Natural language event input with AI-reasoned supplier matches
 - Hard vs soft constraint handling (allergies/dietary/guest count never bent; location/budget substituted with explicit acknowledgment in the summary)
 - Top-N per category triggered by natural language ("give me 3 venues", "a few catering options") — returns up to 3 matches in the requested category
-- Five preset sample prompts for quick testing
+- Two preset sample prompts for quick testing
 - End-to-end error surfacing — upstream Gemini errors propagate through the Netlify function to the UI instead of collapsing into a generic message
 
 ## Tech stack
@@ -50,6 +50,7 @@ Requires [Node.js](https://nodejs.org), the [Netlify CLI](https://docs.netlify.c
    ```
    GEMINI_API_KEY=your_key_here
    ```
+   > ⚠️ `.env` is gitignored — never commit your API key. If a key is ever exposed, rotate it immediately.
 
 3. Start the local dev server (serves static files and the serverless function together):
    ```bash
