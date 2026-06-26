@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { EventsContext } from "../context/EventsContext";
 import { Link } from "react-router-dom";
-import { fakeEvents } from "../data/fakeData";
 import EventCard from "../components/EventCard";
 import EventModal from "../components/EventModal";
 
 function EventsList() {
   const [isOpen, setIsOpen] = useState(false);
+  const { state } = useContext(EventsContext);
 
   return (
     <div>
@@ -13,7 +14,7 @@ function EventsList() {
         <h1>Events</h1>
         <button onClick={() => setIsOpen(true)}>Add Event</button>
         <div style={{ display: "grid", gap: 12 }}>
-          {fakeEvents.map((event) => (
+          {state.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
         </div>
