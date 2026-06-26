@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
-import { fakeEvents } from "../data/fakeData";
+import { EventsContext } from "../context/EventsContext";
 import SupplierCard from "../components/SupplierCard";
 import SupplierModal from "../components/SupplierModal";
 
 function EventDetail() {
   const { id } = useParams();
-  const event = fakeEvents[0];
-
+  const { state } = useContext(EventsContext);
   const [isOpen, setIsOpen] = useState(false);
+
+  const event = state.find((e) => e.id === id);
+
+  if (!event) {
+    return "Event not found.";
+  }
 
   return (
     <div>
