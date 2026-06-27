@@ -9,10 +9,10 @@ export default function EventModal({ onClose, event, onSaved }) {
 
   const handleSave = () => {
     if (event) {
-      dispatch({ type: "EDIT_EVENT", id: event.id, name, date, location });
+      dispatch({ type: "EDIT_EVENT", id: event.id, event: { name, date, location } });
       onSaved?.();
     } else {
-      dispatch({ type: "ADD_EVENT", name, date, location });
+      dispatch({ type: "ADD_EVENT", event: { name, date, location } });
     }
     onClose();
   };

@@ -23,10 +23,10 @@ function EventDetail() {
       <button onClick={() => setIsOpen(true)}>Add Supplier</button>
       <div style={{ display: "grid", gap: 12 }}>
         {event.suppliers.map((supplier) => (
-          <SupplierCard key={supplier.id} supplier={supplier} />
+          <SupplierCard key={supplier.id} supplier={supplier} eventId={event.id} />
         ))}
       </div>
-      {isOpen && <SupplierModal onClose={() => setIsOpen(false)} />}
+      {isOpen && <SupplierModal eventId={event.id} onClose={() => setIsOpen(false)} />}
     </div>
   );
 }
