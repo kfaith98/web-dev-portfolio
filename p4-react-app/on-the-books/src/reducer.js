@@ -3,9 +3,7 @@ export function eventsReducer(state, action) {
     case "ADD_EVENT": {
       const newEvent = {
         id: crypto.randomUUID(),
-        name: action.name,
-        date: action.date,
-        location: action.location,
+        ...action.event,
         suppliers: [],
       };
       return [...state, newEvent];
@@ -15,15 +13,70 @@ export function eventsReducer(state, action) {
         event.id === action.id
           ? {
               ...event,
-              name: action.name,
-              date: action.date,
-              location: action.location,
+              ...action.event,
             }
           : event,
       );
     }
     case "DELETE_EVENT": {
       return state.filter((event) => event.id !== action.id);
+    }
+    case "ADD_SUPPLIER": {
+      const newEventSupplier = { id: crypto.randomUUID(), ...action.supplier };
+      return state.map((event) =>
+        event.id === action.eventId
+          ? {
+              ...event,
+              suppliers: [...event.suppliers, newEventSupplier],
+            }
+          : event,
+      );
+    }
+    case "EDIT_SUPPLIER": {
+      return state.map((event) =>
+        event.id === action.eventId
+          ? {
+              ...event,
+              suppliers: event.suppliers.map((supplier) =>
+                supplier.id === action.supplierId
+                  ? {
+                      ...supplier,
+                      ...action.supplier,
+                    }
+                  : supplier,
+              ),
+            }
+          : event,
+      );
+    }
+    case "DELETE_SUPPLIER": {
+      return state.map((event) =>
+        event.id === action.eventId
+          ? {
+              ...event,
+              suppliers: event.suppliers.filter(
+                (supplier) => supplier.id !== action.supplierId,
+              ),
+            }
+          : event,
+      );
+    }
+    case "UPDATE_STATUS": {
+      return state.map((event) =>
+        event.id === action.eventId
+          ? {
+              ...event,
+              suppliers: event.suppliers.map((supplier) =>
+                supplier.id === action.supplierId
+                  ? {
+                      ...supplier,
+                      status: action.status,
+                    }
+                  : supplier,
+              ),
+            }
+          : event,
+      );
     }
 
     default:
