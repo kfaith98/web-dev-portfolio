@@ -1,0 +1,19 @@
+/* EventDetail.module.css */
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 2px solid black;
+}
+
+.event-body {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+}
+
+.left-column h1 {
+  font-size: 50px;
+  line-height: 1.2;
+}
