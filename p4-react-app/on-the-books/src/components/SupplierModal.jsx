@@ -118,6 +118,7 @@ export default function SupplierModal({ eventId, onClose, supplier, onSaved }) {
             type="button"
             onClick={handleSave}
             disabled={!form.name.trim() || !form.category}
+            className={"btn-primary"}
           >
             Save
           </button>

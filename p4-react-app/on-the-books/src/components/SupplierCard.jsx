@@ -3,6 +3,7 @@ import { EventsContext } from "../context/EventsContext";
 import SupplierModal from "./SupplierModal";
 import StatusBadge from "./StatusBadge";
 import { STATUSES } from "../data/constants";
+import styles from "../css/SupplierCard.module.css";
 
 export default function SupplierCard({ supplier, eventId }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -29,14 +30,7 @@ export default function SupplierCard({ supplier, eventId }) {
   };
 
   return (
-    <div
-      style={{
-        border: "1px solid #E5E7EB",
-        borderRadius: "12px",
-        padding: "16px 20px",
-        background: "#fff",
-      }}
-    >
+    <div className={styles["supplier-card"]}>
       <h3 style={{ margin: "0 0 6px" }}>{supplier.name}</h3>
       <p style={{ margin: 0, color: "#6B7280", fontSize: "0.9rem" }}>
         {supplier.category} · {supplier.contact} · {supplier.budget}
@@ -67,12 +61,14 @@ export default function SupplierCard({ supplier, eventId }) {
         </select>
       </label>
       <br />
-      <button type="button" onClick={handleEdit}>
-        Edit
-      </button>
-      <button type="button" onClick={handleDelete}>
-        Delete
-      </button>
+      <div className={styles["card-actions"]}>
+        <button type="button" onClick={handleEdit}>
+          Edit
+        </button>
+        <button type="button" onClick={handleDelete} className={"btn-danger"}>
+          Delete
+        </button>
+      </div>
       {isEditing && (
         <SupplierModal
           eventId={eventId}

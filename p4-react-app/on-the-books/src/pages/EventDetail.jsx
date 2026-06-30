@@ -104,7 +104,7 @@ function EventDetail() {
           </div>
           <div>
             <label>Sort by:</label>
-        
+
             <select
               name="sort"
               value={sortKey}
@@ -115,7 +115,9 @@ function EventDetail() {
               <option value="status">Status</option>
             </select>
           </div>
-          <button onClick={() => setIsOpen(true)}>Add Supplier</button>
+          <button onClick={() => setIsOpen(true)} className={"btn-primary"}>
+            Add Supplier
+          </button>
         </div>
 
         <div className={styles["right-column"]}>

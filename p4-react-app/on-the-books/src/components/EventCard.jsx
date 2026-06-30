@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import EventModal from "./EventModal";
 import { EventsContext } from "../context/EventsContext";
 import { Link } from "react-router-dom";
+import styles from "../css/EventCard.module.css";
 
 export default function EventCard({ event }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -50,18 +51,24 @@ export default function EventCard({ event }) {
           >
             {event.suppliers.length} suppliers
           </p>
-          <button type="button" onClick={handleEdit}>
-            Edit
-          </button>
-          <button type="button" onClick={handleDelete}>
-            Delete
-          </button>
+          <div className={styles["card-actions"]}>
+            <button type="button" onClick={handleEdit}>
+              Edit
+            </button>
+            <button type="button" onClick={handleDelete}>
+              Delete
+            </button>
+          </div>
         </div>
       </Link>
       {isEditing && (
-        <EventModal event={event} onClose={() => setIsEditing(false)} onSaved={handleSaved}/>
+        <EventModal
+          event={event}
+          onClose={() => setIsEditing(false)}
+          onSaved={handleSaved}
+        />
       )}
-      {showToast && <div>Saved ✓</div>} 
+      {showToast && <div>Saved ✓</div>}
     </>
   );
 }
