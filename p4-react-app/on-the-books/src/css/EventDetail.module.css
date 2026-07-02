@@ -25,6 +25,17 @@
   background: white;
 }
 
+.btn-back {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+  padding-left: 60px;
+}
+
+.btn-back button {
+  background-color: #eef0ff;
+}
+
 @media (max-width: 768px) {
   .event-body {
     display: grid;

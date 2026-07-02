@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 
 :root {
   --text: #6b6375;
@@ -14,8 +14,8 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --heading: "Plus Jakarta Sans", system-ui, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -99,10 +99,32 @@ button {
   border: 1px solid var(--danger);
 }
 
+input,
+textarea,
 select {
   border: 1px solid var(--border);
   border-radius: 5px;
   padding: 3px;
   font: inherit;
   font-size: small;
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #1f2937;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 0.9rem;
+}
+
+.empty-state {
+  display: flex;
+  align-items: center;     
+  justify-content: center;  
+  min-height: 50vh;         
+  text-align: center;
 }

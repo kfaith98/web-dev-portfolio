@@ -52,9 +52,10 @@ function EventDetail() {
 
   return (
     <div>
-      <div className={styles["event-header"]}>
-        <h2>On the Books</h2>
-        <Link to="/">← Back to events</Link>
+      <div className={styles["btn-back"]}>
+        <button type="button">
+          <Link to="/">← Back to events</Link>
+        </button>
       </div>
 
       <div className={styles["event-body"]}>
@@ -122,7 +123,9 @@ function EventDetail() {
 
         <div className={styles["right-column"]}>
           {visibleSuppliers.length === 0 ? (
-            <p>{handleEmptyStates()}</p>
+            <div className="empty-state">
+              <p>{handleEmptyStates()}</p>
+            </div>
           ) : (
             <div style={{ display: "grid", gap: 12 }}>
               {visibleSuppliers.map((supplier) => (

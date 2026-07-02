@@ -68,7 +68,7 @@ export default function EventCard({ event }) {
           onSaved={handleSaved}
         />
       )}
-      {showToast && <div>Saved ✓</div>}
+      {showToast && <div className={"toast"}>Saved ✓</div>}
     </>
   );
 }
