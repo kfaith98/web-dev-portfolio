@@ -67,58 +67,58 @@ function EventDetail() {
               <p>Location: {event.location}</p>
             </div>
 
-            <div>
-              <p>
-                {event.suppliers.length} total suppliers ·{" "}
-                {supplierStatus.join(" · ")}
-              </p>
+            <div className={styles["event-summary"]}>
+              <p className={styles["total-suppliers"]}>{event.suppliers.length} total suppliers</p>
+              <p>{supplierStatus.join(" · ")}</p>
             </div>
           </div>
 
-          <div>
-            <label>Filter by:</label>
-            <select
-              name="category"
-              value={categoryFilter}
-              onChange={(e) => setCategoryFilter(e.target.value)}
-            >
-              <option value="">All Categories</option>
-              {CATEGORIES.map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
-            </select>
+          <div className={styles["filter-sort-section"]}>
+            <div>
+              <label>Filter by:</label>
+              <select
+                name="category"
+                value={categoryFilter}
+                onChange={(e) => setCategoryFilter(e.target.value)}
+              >
+                <option value="">All Categories</option>
+                {CATEGORIES.map((category) => (
+                  <option key={category} value={category}>
+                    {category}
+                  </option>
+                ))}
+              </select>
 
-            <select
-              name="status"
-              value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value)}
-            >
-              <option value="">All Statuses</option>
-              {STATUSES.map((status) => (
-                <option key={status} value={status}>
-                  {status}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label>Sort by:</label>
+              <select
+                name="status"
+                value={statusFilter}
+                onChange={(e) => setStatusFilter(e.target.value)}
+              >
+                <option value="">All Statuses</option>
+                {STATUSES.map((status) => (
+                  <option key={status} value={status}>
+                    {status}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label>Sort by:</label>
 
-            <select
-              name="sort"
-              value={sortKey}
-              onChange={(e) => setSortKey(e.target.value)}
-            >
-              <option value="">Select option…</option>
-              <option value="category">Category</option>
-              <option value="status">Status</option>
-            </select>
+              <select
+                name="sort"
+                value={sortKey}
+                onChange={(e) => setSortKey(e.target.value)}
+              >
+                <option value="">Select option…</option>
+                <option value="category">Category</option>
+                <option value="status">Status</option>
+              </select>
+            </div>
+            <button onClick={() => setIsOpen(true)} className={"btn-primary"}>
+              Add Supplier
+            </button>
           </div>
-          <button onClick={() => setIsOpen(true)} className={"btn-primary"}>
-            Add Supplier
-          </button>
         </div>
 
         <div className={styles["right-column"]}>

@@ -1,6 +1,15 @@
 .event-card {
-  /* border-radius: 8px;
-  padding: 20px;
-  background: white; */
+  display: grid;
+  gap: 12px;
   text-align: left;
+}
+
+.event-title {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.event-title button {
+  margin-bottom: 10px;
 }

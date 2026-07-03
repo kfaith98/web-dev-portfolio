@@ -11,7 +11,7 @@ function EventsList() {
 
   return (
     <div>
-      <div style={{ maxWidth: 640, margin: "0 auto", padding: "0 16px" }}>
+      <div className={styles["event-title"]}>
         <h1>Events</h1>
         <button onClick={() => setIsOpen(true)} className={"btn-primary"}>
           Add Event
@@ -22,10 +22,7 @@ function EventsList() {
             <p>No events yet. Add one to get started.</p>
           </div>
         ) : (
-          <div
-            style={{ display: "grid", gap: 12 }}
-            className={styles["event-card"]}
-          >
+          <div className={styles["event-card"]}>
             {state.map((event) => (
               <EventCard key={event.id} event={event} />
             ))}
