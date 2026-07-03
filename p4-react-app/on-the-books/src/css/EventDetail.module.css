@@ -14,6 +14,18 @@
 
 .left-column {
   padding-left: 30px;
+  padding-right: 30px;
+  animation: fade-slide-in 0.4s ease-out;
+}
+@keyframes fade-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .left-column h1 {
@@ -24,9 +36,9 @@
 .event-summary {
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 1px solid #e5e5e5; 
+  border-top: 1px solid #e5e5e5;
   font-size: 0.875rem;
-  color: #666; 
+  color: #666;
 }
 
 .total-suppliers {
@@ -42,13 +54,13 @@
 }
 
 .filter-sort-section {
-  display: flex; 
+  display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .filter-sort-section select {
-  width: 100%
+  width: 100%;
 }
 
 .btn-back {
@@ -59,13 +71,22 @@
 }
 
 .btn-back button {
-  background-color: #eef0ff;
+  background-color: var(--accent-bg);
+}
+
+.add-supplier:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {
   .event-body {
     display: grid;
     grid-template-columns: 1fr;
+  }
+
+  .left-column {
+    padding: 0 20px;
   }
 
   .btn-back {

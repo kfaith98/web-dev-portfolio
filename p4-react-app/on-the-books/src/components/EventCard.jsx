@@ -41,10 +41,10 @@ export default function EventCard({ event }) {
           </p>
           <p>{event.suppliers.length} suppliers</p>
           <div className={styles["card-actions"]}>
-            <button type="button" onClick={handleEdit}>
+            <button type="button" onClick={handleEdit} className={"btn-edit"}>
               Edit
             </button>
-            <button type="button" onClick={handleDelete}>
+            <button type="button" onClick={handleDelete} className={"btn-danger"}>
               Delete
             </button>
           </div>

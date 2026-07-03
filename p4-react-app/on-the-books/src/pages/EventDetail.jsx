@@ -68,7 +68,9 @@ function EventDetail() {
             </div>
 
             <div className={styles["event-summary"]}>
-              <p className={styles["total-suppliers"]}>{event.suppliers.length} total suppliers</p>
+              <p className={styles["total-suppliers"]}>
+                {event.suppliers.length} total suppliers
+              </p>
               <p>{supplierStatus.join(" · ")}</p>
             </div>
           </div>
@@ -115,7 +117,10 @@ function EventDetail() {
                 <option value="status">Status</option>
               </select>
             </div>
-            <button onClick={() => setIsOpen(true)} className={"btn-primary"}>
+            <button
+              onClick={() => setIsOpen(true)}
+              className={`btn-primary ${styles["add-supplier"]}`}
+            >
               Add Supplier
             </button>
           </div>
