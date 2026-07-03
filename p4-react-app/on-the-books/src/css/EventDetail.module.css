@@ -1,0 +1,74 @@
+/* EventDetail.module.css */
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.event-body {
+  display: grid;
+  grid-template-columns: 450px minmax(0, 900px);
+  gap: 24px;
+}
+
+.left-column {
+  padding-left: 30px;
+}
+
+.left-column h1 {
+  font-size: 50px;
+  line-height: 1.2;
+}
+
+.event-summary {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e5e5; 
+  font-size: 0.875rem;
+  color: #666; 
+}
+
+.total-suppliers {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.event-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 20px;
+  background: white;
+}
+
+.filter-sort-section {
+  display: flex; 
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-sort-section select {
+  width: 100%
+}
+
+.btn-back {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+  padding-left: 30px;
+}
+
+.btn-back button {
+  background-color: #eef0ff;
+}
+
+@media (max-width: 768px) {
+  .event-body {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .btn-back {
+    padding-left: 20px;
+  }
+}

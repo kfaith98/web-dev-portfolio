@@ -1,0 +1,14 @@
+.supplier-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 20px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}

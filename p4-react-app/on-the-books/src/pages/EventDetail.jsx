@@ -4,7 +4,9 @@ import { EventsContext } from "../context/EventsContext";
 import SupplierCard from "../components/SupplierCard";
 import SupplierModal from "../components/SupplierModal";
 import { CATEGORIES, STATUSES } from "../data/constants";
+import styles from "../css/EventDetail.module.css";
 
+// EventDetail.jsx
 function EventDetail() {
   const { id } = useParams();
   const { state } = useContext(EventsContext);
@@ -50,80 +52,100 @@ function EventDetail() {
 
   return (
     <div>
-      <Link to="/">← Back to events</Link>
-      <div>
-        <h1>{event.name}</h1>
-        <p>Date: {event.date}</p>
-        <p>Location: {event.location}</p>
+      <div className={styles["btn-back"]}>
+        <button type="button">
+          <Link to="/">← Back to events</Link>
+        </button>
       </div>
-      <br />
-      <div>
-        <p>
-          {event.suppliers.length} total suppliers ·{" "}
-          {supplierStatus.join(" · ")}
-        </p>
-      </div>
-      <div>
-        <label>Filter by:</label>
-        <br />
-        <select
-          name="category"
-          value={categoryFilter}
-          onChange={(e) => setCategoryFilter(e.target.value)}
-        >
-          <option value="">All Categories</option>
-          {CATEGORIES.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
 
-        <select
-          name="status"
-          value={statusFilter}
-          onChange={(e) => setStatusFilter(e.target.value)}
-        >
-          <option value="">All Statuses</option>
-          {STATUSES.map((status) => (
-            <option key={status} value={status}>
-              {status}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <label>Sort by:</label>
-        <br />
-        <select
-          name="sort"
-          value={sortKey}
-          onChange={(e) => setSortKey(e.target.value)}
-        >
-          <option value="">Select option…</option>
-          <option value="category">Category</option>
-          <option value="status">Status</option>
-        </select>
-      </div>
-      <button onClick={() => setIsOpen(true)}>Add Supplier</button>
+      <div className={styles["event-body"]}>
+        <div className={styles["left-column"]}>
+          <div className={styles["event-card"]}>
+            <div>
+              <h1>{event.name}</h1>
+              <p>Date: {event.date}</p>
+              <p>Location: {event.location}</p>
+            </div>
 
-      {visibleSuppliers.length === 0 ? (
-        <p>{handleEmptyStates()}</p>
-      ) : (
-        <div style={{ display: "grid", gap: 12 }}>
-          {visibleSuppliers.map((supplier) => (
-            <SupplierCard
-              key={supplier.id}
-              supplier={supplier}
-              eventId={event.id}
-            />
-          ))}
+            <div className={styles["event-summary"]}>
+              <p className={styles["total-suppliers"]}>{event.suppliers.length} total suppliers</p>
+              <p>{supplierStatus.join(" · ")}</p>
+            </div>
+          </div>
+
+          <div className={styles["filter-sort-section"]}>
+            <div>
+              <label>Filter by:</label>
+              <select
+                name="category"
+                value={categoryFilter}
+                onChange={(e) => setCategoryFilter(e.target.value)}
+              >
+                <option value="">All Categories</option>
+                {CATEGORIES.map((category) => (
+                  <option key={category} value={category}>
+                    {category}
+                  </option>
+                ))}
+              </select>
+
+              <select
+                name="status"
+                value={statusFilter}
+                onChange={(e) => setStatusFilter(e.target.value)}
+              >
+                <option value="">All Statuses</option>
+                {STATUSES.map((status) => (
+                  <option key={status} value={status}>
+                    {status}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label>Sort by:</label>
+
+              <select
+                name="sort"
+                value={sortKey}
+                onChange={(e) => setSortKey(e.target.value)}
+              >
+                <option value="">Select option…</option>
+                <option value="category">Category</option>
+                <option value="status">Status</option>
+              </select>
+            </div>
+            <button onClick={() => setIsOpen(true)} className={"btn-primary"}>
+              Add Supplier
+            </button>
+          </div>
         </div>
-      )}
 
-      {isOpen && (
-        <SupplierModal eventId={event.id} onClose={() => setIsOpen(false)} />
-      )}
+        <div className={styles["right-column"]}>
+          {visibleSuppliers.length === 0 ? (
+            <div className="empty-state">
+              <p>{handleEmptyStates()}</p>
+            </div>
+          ) : (
+            <div style={{ display: "grid", gap: 12 }}>
+              {visibleSuppliers.map((supplier) => (
+                <SupplierCard
+                  key={supplier.id}
+                  supplier={supplier}
+                  eventId={event.id}
+                />
+              ))}
+            </div>
+          )}
+
+          {isOpen && (
+            <SupplierModal
+              eventId={event.id}
+              onClose={() => setIsOpen(false)}
+            />
+          )}
+        </div>
+      </div>
     </div>
   );
 }
