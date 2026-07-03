@@ -13,11 +13,16 @@ function EventsList() {
       <div style={{ maxWidth: 640, margin: "0 auto", padding: "0 16px" }}>
         <h1>Events</h1>
         <button onClick={() => setIsOpen(true)}>Add Event</button>
-        <div style={{ display: "grid", gap: 12 }}>
-          {state.map((event) => (
-            <EventCard key={event.id} event={event} />
-          ))}
-        </div>
+
+        {state.length === 0 ? (
+          <p>No events yet. Add one to get started.</p>
+        ) : (
+          <div style={{ display: "grid", gap: 12 }}>
+            {state.map((event) => (
+              <EventCard key={event.id} event={event} />
+            ))}
+          </div>
+        )}
       </div>
       {isOpen && <EventModal onClose={() => setIsOpen(false)} />}
     </div>

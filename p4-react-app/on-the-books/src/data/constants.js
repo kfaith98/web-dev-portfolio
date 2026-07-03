@@ -14,9 +14,9 @@ export const CATEGORIES = [
 ];
 
 export const STATUSES = [
+    "booked",
     "contacted", 
-    "quoted", 
-    "booked", 
+    "quoted",  
     "declined"
 ];
 
