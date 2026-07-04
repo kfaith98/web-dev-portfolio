@@ -62,7 +62,7 @@ export default function SupplierCard({ supplier, eventId }) {
       </label>
       <br />
       <div className={styles["card-actions"]}>
-        <button type="button" onClick={handleEdit}>
+        <button type="button" onClick={handleEdit} className={"btn-edit"}>
           Edit
         </button>
         <button type="button" onClick={handleDelete} className={"btn-danger"}>

@@ -11,11 +11,16 @@ function EventsList() {
 
   return (
     <div>
-      <div className={styles["event-title"]}>
-        <h1>Events</h1>
-        <button onClick={() => setIsOpen(true)} className={"btn-primary"}>
-          Add Event
-        </button>
+      <div className={styles["event-container"]}>
+        <div className={styles["events-header"]}>
+          <h1>My Events</h1>
+          <button
+            onClick={() => setIsOpen(true)}
+            className={`btn-primary ${styles["add-event"]}`}
+          >
+            Add Event
+          </button>
+        </div>
 
         {state.length === 0 ? (
           <div className="empty-state">

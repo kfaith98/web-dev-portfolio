@@ -68,15 +68,18 @@ function EventDetail() {
             </div>
 
             <div className={styles["event-summary"]}>
-              <p className={styles["total-suppliers"]}>{event.suppliers.length} total suppliers</p>
+              <p className={styles["total-suppliers"]}>
+                {event.suppliers.length} total suppliers
+              </p>
               <p>{supplierStatus.join(" · ")}</p>
             </div>
           </div>
 
           <div className={styles["filter-sort-section"]}>
             <div>
-              <label>Filter by:</label>
+              <label htmlFor="filter">Filter by:</label>
               <select
+                id="filter"
                 name="category"
                 value={categoryFilter}
                 onChange={(e) => setCategoryFilter(e.target.value)}
@@ -90,7 +93,9 @@ function EventDetail() {
               </select>
 
               <select
+                id="filter-status"
                 name="status"
+                aria-label="Filter by status"
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
               >
@@ -103,9 +108,10 @@ function EventDetail() {
               </select>
             </div>
             <div>
-              <label>Sort by:</label>
+              <label htmlFor="sort">Sort by:</label>
 
               <select
+                id="sort"
                 name="sort"
                 value={sortKey}
                 onChange={(e) => setSortKey(e.target.value)}
@@ -115,7 +121,10 @@ function EventDetail() {
                 <option value="status">Status</option>
               </select>
             </div>
-            <button onClick={() => setIsOpen(true)} className={"btn-primary"}>
+            <button
+              onClick={() => setIsOpen(true)}
+              className={`btn-primary ${styles["add-supplier"]}`}
+            >
               Add Supplier
             </button>
           </div>

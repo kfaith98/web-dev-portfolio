@@ -31,8 +31,9 @@ export default function EventModal({ onClose, event, onSaved }) {
         </button>
 
         <div className={styles["event-fields"]}>
-          <label>Name</label>
+          <label htmlFor="event-name">Name</label>
           <input
+            id="event-name"
             type="text"
             placeholder="EPI 40th Anniversary"
             value={name}
@@ -40,8 +41,9 @@ export default function EventModal({ onClose, event, onSaved }) {
           />
         </div>
         <div className={styles["event-fields"]}>
-          <label>Date</label>
+          <label htmlFor="event-date">Date</label>
           <input
+            id="event-date"
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
@@ -49,8 +51,9 @@ export default function EventModal({ onClose, event, onSaved }) {
         </div>
 
         <div className={styles["event-fields"]}>
-          <label>Location</label>
+          <label htmlFor="event-location">Location</label>
           <input
+            id="event-location"
             type="text"
             placeholder="Casa Buenas, Newport"
             value={location}

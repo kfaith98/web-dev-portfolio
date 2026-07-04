@@ -48,8 +48,9 @@ export default function SupplierModal({ eventId, onClose, supplier, onSaved }) {
         </button>
 
         <div className={styles["supplier-fields"]}>
-          <label>Name</label>
+          <label htmlFor="supplier-name">Name</label>
           <input
+            id="supplier-name"
             name="name"
             type="text"
             placeholder="DREAM Production"
@@ -59,8 +60,13 @@ export default function SupplierModal({ eventId, onClose, supplier, onSaved }) {
         </div>
 
         <div className={styles["supplier-fields"]}>
-          <label>Category</label>
-          <select name="category" value={form.category} onChange={handleChange}>
+          <label htmlFor="supplier-category">Category</label>
+          <select
+            id="supplier-category"
+            name="category"
+            value={form.category}
+            onChange={handleChange}
+          >
             <option value="">Select category…</option>
             {CATEGORIES.map((category) => (
               <option key={category} value={category}>
@@ -71,8 +77,9 @@ export default function SupplierModal({ eventId, onClose, supplier, onSaved }) {
         </div>
 
         <div className={styles["supplier-fields"]}>
-          <label>Quote/Budget</label>
+          <label htmlFor="supplier-budget">Quote/Budget</label>
           <input
+            id="supplier-budget"
             name="budget"
             type="text"
             placeholder="₱50,000"
@@ -82,8 +89,9 @@ export default function SupplierModal({ eventId, onClose, supplier, onSaved }) {
         </div>
 
         <div className={styles["supplier-fields"]}>
-          <label>Contact</label>
+          <label htmlFor="supplier-contact">Contact</label>
           <input
+            id="supplier-contact"
             name="contact"
             type="text"
             placeholder="Juan Dela Cruz"
@@ -93,8 +101,13 @@ export default function SupplierModal({ eventId, onClose, supplier, onSaved }) {
         </div>
 
         <div className={styles["supplier-fields"]}>
-          <label>Status</label>
-          <select name="status" value={form.status} onChange={handleChange}>
+          <label htmlFor="supplier-status">Status</label>
+          <select
+            id="supplier-status"
+            name="status"
+            value={form.status}
+            onChange={handleChange}
+          >
             {STATUSES.map((status) => (
               <option key={status} value={status}>
                 {status}
@@ -104,8 +117,9 @@ export default function SupplierModal({ eventId, onClose, supplier, onSaved }) {
         </div>
 
         <div className={styles["supplier-fields"]}>
-          <label>Notes</label>
+          <label htmlFor="supplier-notes">Notes</label>
           <textarea
+            id="supplier-notes"
             name="notes"
             placeholder="Sent menu request, no reply yet."
             value={form.notes}

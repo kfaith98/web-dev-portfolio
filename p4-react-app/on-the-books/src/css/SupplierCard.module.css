@@ -5,10 +5,17 @@
   background: #fff;
   box-shadow: var(--shadow);
   text-align: left;
+  border-left: 3px solid transparent;
+  transition: box-shadow 0.15s, transform 0.15s, border-color 0.15s;
 }
 
 .card-actions {
   display: flex;
   gap: 8px;
   justify-content: flex-end;
+}
+
+.supplier-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-left-color: var(--accent-hover);
 }
