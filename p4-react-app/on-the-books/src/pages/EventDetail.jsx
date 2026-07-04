@@ -77,8 +77,9 @@ function EventDetail() {
 
           <div className={styles["filter-sort-section"]}>
             <div>
-              <label>Filter by:</label>
+              <label htmlFor="filter">Filter by:</label>
               <select
+                id="filter"
                 name="category"
                 value={categoryFilter}
                 onChange={(e) => setCategoryFilter(e.target.value)}
@@ -92,7 +93,9 @@ function EventDetail() {
               </select>
 
               <select
+                id="filter-status"
                 name="status"
+                aria-label="Filter by status"
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
               >
@@ -105,9 +108,10 @@ function EventDetail() {
               </select>
             </div>
             <div>
-              <label>Sort by:</label>
+              <label htmlFor="sort">Sort by:</label>
 
               <select
+                id="sort"
                 name="sort"
                 value={sortKey}
                 onChange={(e) => setSortKey(e.target.value)}
