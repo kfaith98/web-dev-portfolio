@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { EventsContext } from "../context/EventsContext";
 import SupplierModal from "./SupplierModal";
 import StatusBadge from "./StatusBadge";
-import { STATUSES } from "../data/constants";
+import { STATUSES, formatPeso } from "../data/constants";
 import styles from "../css/SupplierCard.module.css";
 
 export default function SupplierCard({ supplier, eventId }) {
@@ -31,15 +31,15 @@ export default function SupplierCard({ supplier, eventId }) {
 
   return (
     <div className={styles["supplier-card"]}>
-      <h3 style={{ margin: "0 0 6px" }}>{supplier.name}</h3>
-      <p style={{ margin: 0, color: "#6B7280", fontSize: "0.9rem" }}>
-        {supplier.category} · {supplier.contact} · {supplier.budget}
+      <h3 className={styles["supplier-name"]}>{supplier.name}</h3>
+      <p className={styles["details"]}>
+        {supplier.category} · {supplier.contact} · {formatPeso(supplier.budget)}
       </p>
-      <p style={{ margin: "8px 0 0", color: "#6B7280", fontSize: "0.85rem" }}>
+      <p className={styles["notes"]}>
         {supplier.notes}
       </p>
       <StatusBadge status={supplier.status} />
-      <label style={{ fontSize: "0.8rem", color: "#6B7280" }}>
+      <label className={styles["badge-change"]}>
         Change:{" "}
         <select
           name="status"

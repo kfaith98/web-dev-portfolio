@@ -3,7 +3,12 @@ import { useParams, Link } from "react-router-dom";
 import { EventsContext } from "../context/EventsContext";
 import SupplierCard from "../components/SupplierCard";
 import SupplierModal from "../components/SupplierModal";
-import { CATEGORIES, STATUSES } from "../data/constants";
+import {
+  CATEGORIES,
+  STATUSES,
+  formatPeso,
+  formatDate,
+} from "../data/constants";
 import styles from "../css/EventDetail.module.css";
 
 // EventDetail.jsx
@@ -50,12 +55,17 @@ function EventDetail() {
     }
   };
 
+  const totalBudget = event.suppliers.reduce(
+    (sum, s) => sum + (s.budget || 0),
+    0,
+  );
+
   return (
     <div>
       <div className={styles["btn-back"]}>
-        <button type="button">
-          <Link to="/">← Back to events</Link>
-        </button>
+        <Link to="/" className={`btn-look ${styles["back-link"]}`}>
+          ← Back to events
+        </Link>
       </div>
 
       <div className={styles["event-body"]}>
@@ -63,13 +73,15 @@ function EventDetail() {
           <div className={styles["event-card"]}>
             <div>
               <h1>{event.name}</h1>
-              <p>Date: {event.date}</p>
+              <p>Date: {formatDate(event.date)}</p>
               <p>Location: {event.location}</p>
+              <p>Total Cost: {formatPeso(totalBudget)}</p>
             </div>
 
             <div className={styles["event-summary"]}>
               <p className={styles["total-suppliers"]}>
-                {event.suppliers.length} total suppliers
+                {event.suppliers.length} total supplier
+                {event.suppliers.length !== 1 && "s"}
               </p>
               <p>{supplierStatus.join(" · ")}</p>
             </div>

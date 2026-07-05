@@ -70,10 +70,16 @@
   padding-left: 30px;
 }
 
-.btn-back button {
+.back-link {
   background-color: var(--accent-bg);
+  border: 1px solid var(--accent);
 }
 
+.back-link:hover {
+  color: white;
+}
+
+.back-link:hover,
 .add-supplier:hover {
   background-color: var(--accent-hover);
   transform: translateY(-1px);

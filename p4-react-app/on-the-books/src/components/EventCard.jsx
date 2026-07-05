@@ -1,10 +1,12 @@
 import { useState, useContext } from "react";
 import EventModal from "./EventModal";
 import { EventsContext } from "../context/EventsContext";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { formatDate } from "../data/constants";
 import styles from "../css/EventCard.module.css";
 
 export default function EventCard({ event }) {
+  const navigate = useNavigate();
   const [isEditing, setIsEditing] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const { dispatch } = useContext(EventsContext);
@@ -15,7 +17,6 @@ export default function EventCard({ event }) {
   };
 
   const handleDelete = (e) => {
-    e.preventDefault();
     e.stopPropagation();
     if (window.confirm("Delete this event?")) {
       dispatch({ type: "DELETE_EVENT", id: event.id });
@@ -23,33 +24,31 @@ export default function EventCard({ event }) {
   };
 
   const handleEdit = (e) => {
-    e.preventDefault();
     e.stopPropagation();
     setIsEditing(true);
   };
 
   return (
     <>
-      <Link
-        to={`/events/${event.id}`}
-        style={{ textDecoration: "none", color: "inherit" }}
+      <div
+        className={styles["event-card"]}
+        onClick={() => navigate(`/events/${event.id}`)}
+        style={{ cursor: "pointer" }}
       >
-        <div className={styles["event-card"]}>
-          <h3>{event.name}</h3>
-          <p>
-            {event.date} · {event.location}
-          </p>
-          <p>{event.suppliers.length} suppliers</p>
-          <div className={styles["card-actions"]}>
-            <button type="button" onClick={handleEdit} className={"btn-edit"}>
-              Edit
-            </button>
-            <button type="button" onClick={handleDelete} className={"btn-danger"}>
-              Delete
-            </button>
-          </div>
+        <h3>{event.name}</h3>
+        <p>
+          {formatDate(event.date)} · {event.location}
+        </p>
+        <p>{event.suppliers.length} supplier{event.suppliers.length !== 1 && "s"}</p>
+        <div className={styles["card-actions"]}>
+          <button type="button" onClick={handleEdit} className={"btn-edit"}>
+            Edit
+          </button>
+          <button type="button" onClick={handleDelete} className={"btn-danger"}>
+            Delete
+          </button>
         </div>
-      </Link>
+      </div>
       {isEditing && (
         <EventModal
           event={event}

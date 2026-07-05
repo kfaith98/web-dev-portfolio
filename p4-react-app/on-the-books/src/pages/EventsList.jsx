@@ -1,6 +1,5 @@
 import { useState, useContext } from "react";
 import { EventsContext } from "../context/EventsContext";
-import { Link } from "react-router-dom";
 import EventCard from "../components/EventCard";
 import EventModal from "../components/EventModal";
 import styles from "../css/EventsList.module.css";
@@ -8,6 +7,7 @@ import styles from "../css/EventsList.module.css";
 function EventsList() {
   const [isOpen, setIsOpen] = useState(false);
   const { state } = useContext(EventsContext);
+  const sortedEvents = [...state].sort((a, b) => a.date.localeCompare(b.date));
 
   return (
     <div>
@@ -28,7 +28,7 @@ function EventsList() {
           </div>
         ) : (
           <div className={styles["event-card"]}>
-            {state.map((event) => (
+            {sortedEvents.map((event) => (
               <EventCard key={event.id} event={event} />
             ))}
           </div>
