@@ -21,19 +21,23 @@ export default function SupplierModal({ eventId, onClose, supplier, onSaved }) {
   };
 
   const handleSave = () => {
+    const cleanBudget =
+      Number(String(form.budget).replace(/[^0-9.]/g, "")) || 0;
+    const supplierData = { ...form, budget: cleanBudget };
+
     if (supplier) {
       dispatch({
         type: "EDIT_SUPPLIER",
         eventId,
         supplierId: supplier.id,
-        supplier: form,
+        supplier: supplierData,
       });
       onSaved?.();
     } else {
       dispatch({
         type: "ADD_SUPPLIER",
         eventId,
-        supplier: form,
+        supplier: supplierData,
       });
     }
     onClose();

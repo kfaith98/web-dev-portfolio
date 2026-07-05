@@ -7,8 +7,12 @@ export const EventsContext = createContext(null);
 // P5 SEAM: localStorage is the stand-in persistence layer.
 // Swap getItem/setItem here for real backend fetch/save calls.
 function init() {
-  const saved = localStorage.getItem("events");
-  return saved ? JSON.parse(saved) : fakeEvents;
+  try {
+    const saved = localStorage.getItem("events");
+    return saved ? JSON.parse(saved) : fakeEvents;
+  } catch {
+    return fakeEvents;
+  }
 }
 
 export function EventsProvider({ children }) {
