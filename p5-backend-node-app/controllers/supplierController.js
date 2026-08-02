@@ -16,7 +16,14 @@ export const createSupplier = async (req, res) => {
 
 export const getSuppliers = async (req, res) => {
   try {
-    const suppliers = await Supplier.find({ isActive: true });
+    const { category } = req.query;
+    const filter = { isActive: true };
+
+    if (category) {
+      filter.category = category;
+    }
+
+    const suppliers = await Supplier.find(filter);
 
     res.status(200).json(suppliers);
   } catch (error) {
