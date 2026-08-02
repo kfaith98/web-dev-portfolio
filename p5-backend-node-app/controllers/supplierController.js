@@ -8,7 +8,7 @@ export const createSupplier = async (req, res) => {
 
     res.status(201).json(supplier);
   } catch (error) {
-    res.status(500).json({
+    res.status(400).json({
       error: error.message,
     });
   }
@@ -21,6 +21,49 @@ export const getSuppliers = async (req, res) => {
     res.status(200).json(suppliers);
   } catch (error) {
     res.status(500).json({
+      error: error.message,
+    });
+  }
+};
+
+export const getSupplierById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const supplier = await Supplier.findOne({ _id: id, isActive: true });
+
+    if (!supplier) {
+      return res.status(404).json({
+        message: 'Supplier not found',
+      });
+    }
+
+    res.status(200).json(supplier);
+  } catch (error) {
+    res.status(400).json({
+      error: error.message,
+    });
+  }
+};
+
+export const updateSupplier = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { name, category, contact, isActive } = req.body;
+    const updates = { name, category, contact, isActive };
+    const updatedSupplier = await Supplier.findByIdAndUpdate(id, updates, {
+      new: true,
+      runValidators: true,
+    });
+
+    if (!updatedSupplier) {
+      return res.status(404).json({
+        message: 'Supplier not found',
+      });
+    }
+
+    res.status(200).json(updatedSupplier);
+  } catch (error) {
+    res.status(400).json({
       error: error.message,
     });
   }

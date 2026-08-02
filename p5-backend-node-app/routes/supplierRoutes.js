@@ -3,11 +3,13 @@ import express from 'express';
 import {
   createSupplier,
   getSuppliers,
+  getSupplierById,
+  updateSupplier,
 } from '../controllers/supplierController.js';
 
 const router = express.Router();
 
-router.post('/', createSupplier);
-router.get('/', getSuppliers);
+router.route('/').post(createSupplier).get(getSuppliers);
+router.route('/:id').get(getSupplierById).put(updateSupplier);
 
 export default router;
