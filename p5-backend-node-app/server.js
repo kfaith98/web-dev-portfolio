@@ -11,6 +11,7 @@ dotenv.config({ path: path.join(__dirname, '.env') });
 import connectDB from './config/db.js';
 import supplierRoutes from './routes/supplierRoutes.js';
 import eventRoutes from './routes/eventRoutes.js';
+import authRoutes from './routes/authRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -30,6 +31,9 @@ app.use(
 app.get('/', (req, res) => {
   res.send('On The Books API is running...');
 });
+
+// Auth Route
+app.use('/api/v1/auth', authRoutes);
 
 // Supplier Route
 app.use('/api/v1/suppliers', supplierRoutes);
