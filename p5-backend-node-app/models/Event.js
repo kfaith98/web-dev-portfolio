@@ -18,7 +18,11 @@ const eventSchema = new mongoose.Schema(
     budget: {
       type: Number,
     },
-    ownerId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    ownerId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+    },
     isActive: {
       type: Boolean,
       default: true,

@@ -1,5 +1,6 @@
 import express from 'express';
 import arrangementRoutes from './arrangementRoutes.js';
+import authUser from '../middleware/authMiddleware.js';
 
 import {
   createEvent,
@@ -9,6 +10,7 @@ import {
 } from '../controllers/eventController.js';
 
 const router = express.Router();
+router.use(authUser);
 
 router.route('/').post(createEvent).get(getEvents);
 router.route('/:id').get(getEventById).put(updateEvent);
