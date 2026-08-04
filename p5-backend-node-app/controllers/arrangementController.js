@@ -1,6 +1,6 @@
 import Arrangement from '../models/Arrangement.js';
 
-export const createArrangement = async (req, res) => {
+export const createArrangement = async (req, res, next) => {
   try {
     const { eventId } = req.params;
     const { supplierId, budget, status, notes } = req.body;
@@ -14,13 +14,11 @@ export const createArrangement = async (req, res) => {
 
     res.status(201).json(arrangement);
   } catch (error) {
-    res.status(400).json({
-      error: error.message,
-    });
+    next(error);
   }
 };
 
-export const getArrangements = async (req, res) => {
+export const getArrangements = async (req, res, next) => {
   try {
     const { eventId } = req.params;
     const arrangements = await Arrangement.find({ eventId: eventId }).populate(
@@ -29,13 +27,11 @@ export const getArrangements = async (req, res) => {
 
     res.status(200).json(arrangements);
   } catch (error) {
-    res.status(500).json({
-      error: error.message,
-    });
+    next(error);
   }
 };
 
-export const getArrangementById = async (req, res) => {
+export const getArrangementById = async (req, res, next) => {
   try {
     const { id } = req.params;
     const arrangement = await Arrangement.findOne({ _id: id }).populate(
@@ -50,13 +46,11 @@ export const getArrangementById = async (req, res) => {
 
     res.status(200).json(arrangement);
   } catch (error) {
-    res.status(400).json({
-      error: error.message,
-    });
+    next(error);
   }
 };
 
-export const updateArrangement = async (req, res) => {
+export const updateArrangement = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { supplierId, budget, status, notes } = req.body;
@@ -78,13 +72,11 @@ export const updateArrangement = async (req, res) => {
 
     res.status(200).json(updatedArrangement);
   } catch (error) {
-    res.status(400).json({
-      error: error.message,
-    });
+    next(error);
   }
 };
 
-export const deleteArrangement = async (req, res) => {
+export const deleteArrangement = async (req, res, next) => {
   try {
     const deletedArrangement = await Arrangement.findByIdAndDelete(
       req.params.id,
@@ -101,8 +93,6 @@ export const deleteArrangement = async (req, res) => {
       arrangement: deletedArrangement,
     });
   } catch (error) {
-    res.status(400).json({
-      error: error.message,
-    });
+    next(error);
   }
 };

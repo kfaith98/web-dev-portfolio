@@ -1,6 +1,6 @@
 import Event from '../models/Event.js';
 
-export const createEvent = async (req, res) => {
+export const createEvent = async (req, res, next) => {
   try {
     const { name, date, venue, budget } = req.body;
     const event = await Event.create({
@@ -13,25 +13,21 @@ export const createEvent = async (req, res) => {
 
     res.status(201).json(event);
   } catch (error) {
-    res.status(400).json({
-      error: error.message,
-    });
+    next(error);
   }
 };
 
-export const getEvents = async (req, res) => {
+export const getEvents = async (req, res, next) => {
   try {
     const events = await Event.find({ ownerId: req.user._id, isActive: true });
 
     res.status(200).json(events);
   } catch (error) {
-    res.status(500).json({
-      error: error.message,
-    });
+    next(error);
   }
 };
 
-export const getEventById = async (req, res) => {
+export const getEventById = async (req, res, next) => {
   try {
     const { id } = req.params;
     const event = await Event.findOne({
@@ -48,13 +44,11 @@ export const getEventById = async (req, res) => {
 
     res.status(200).json(event);
   } catch (error) {
-    res.status(400).json({
-      error: error.message,
-    });
+    next(error);
   }
 };
 
-export const updateEvent = async (req, res) => {
+export const updateEvent = async (req, res, next) => {
   try {
     const { id } = req.params;
     const allowed = ['name', 'date', 'venue', 'budget', 'isActive'];
@@ -78,8 +72,6 @@ export const updateEvent = async (req, res) => {
 
     res.status(200).json(updatedEvent);
   } catch (error) {
-    res.status(400).json({
-      error: error.message,
-    });
+    next(error);
   }
 };

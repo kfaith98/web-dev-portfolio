@@ -5,7 +5,7 @@ import generateToken from '../utilities/generateToken.js';
 
 const INVALID_CREDENTIALS = 'Invalid username or password';
 
-export const registerUser = async (req, res) => {
+export const registerUser = async (req, res, next) => {
   try {
     const { username, password } = req.body;
 
@@ -32,11 +32,11 @@ export const registerUser = async (req, res) => {
       data: userWithoutPassword,
     });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 };
 
-export const loginUser = async (req, res) => {
+export const loginUser = async (req, res, next) => {
   try {
     const { username, password } = req.body;
 
@@ -77,6 +77,6 @@ export const loginUser = async (req, res) => {
       token,
     });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 };

@@ -12,6 +12,7 @@ import connectDB from './config/db.js';
 import supplierRoutes from './routes/supplierRoutes.js';
 import eventRoutes from './routes/eventRoutes.js';
 import authRoutes from './routes/authRoutes.js';
+import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -40,6 +41,10 @@ app.use('/api/v1/suppliers', supplierRoutes);
 
 // Event Route
 app.use('/api/v1/events', eventRoutes);
+
+// Error Handling
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
