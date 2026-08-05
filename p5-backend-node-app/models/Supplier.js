@@ -5,7 +5,7 @@ const supplierSchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
-      trim: true
+      trim: true,
     },
     category: {
       type: String,
@@ -27,7 +27,7 @@ const supplierSchema = new mongoose.Schema(
     },
     contact: {
       type: String,
-      trim: true
+      trim: true,
     },
     isActive: {
       type: Boolean,

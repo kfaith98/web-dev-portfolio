@@ -6,13 +6,17 @@ import {
   getArrangements,
   getArrangementById,
   updateArrangement,
-  deleteArrangement
+  deleteArrangement,
 } from '../controllers/arrangementController.js';
 
 const router = express.Router({ mergeParams: true });
 router.use(authUser);
 
 router.route('/').post(createArrangement).get(getArrangements);
-router.route('/:id').get(getArrangementById).put(updateArrangement).delete(deleteArrangement);
+router
+  .route('/:id')
+  .get(getArrangementById)
+  .put(updateArrangement)
+  .delete(deleteArrangement);
 
 export default router;
