@@ -12,6 +12,7 @@ import connectDB from './config/db.js';
 import supplierRoutes from './routes/supplierRoutes.js';
 import eventRoutes from './routes/eventRoutes.js';
 import authRoutes from './routes/authRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 
 const app = express();
@@ -35,6 +36,9 @@ app.get('/', (req, res) => {
 
 // Auth Route
 app.use('/api/v1/auth', authRoutes);
+
+// User Route
+app.use('/api/v1/users', userRoutes);
 
 // Supplier Route
 app.use('/api/v1/suppliers', supplierRoutes);
