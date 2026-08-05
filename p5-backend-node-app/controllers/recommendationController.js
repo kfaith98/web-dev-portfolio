@@ -43,19 +43,27 @@ export const getRecommendations = async (req, res, next) => {
       _id: { $nin: arrangedSupplierIds },
     });
 
-    const suggestions = await getSuggestions(event, activeArrangements, candidates);
-    const rankedSuggestions = suggestions.map((suggestion) => {
-      const supplier = candidates.find(
-        (c) => c._id.toString() === suggestion.supplierId,
+    let rankedSuggestions = null;
+    try {
+      const suggestions = await getSuggestions(
+        event,
+        activeArrangements,
+        candidates,
       );
-      return {
-        _id: suggestion.supplierId,
-        name: supplier.name,
-        category: supplier.category,
-        reasoning: suggestion.reasoning,
-      };
-    });
-
+      rankedSuggestions = suggestions.map((suggestion) => {
+        const supplier = candidates.find(
+          (c) => c._id.toString() === suggestion.supplierId,
+        );
+        return {
+          _id: suggestion.supplierId,
+          name: supplier.name,
+          category: supplier.category,
+          reasoning: suggestion.reasoning,
+        };
+      });
+    } catch (error) {
+      console.error('AI suggestions failed:', error);
+    }
     res.status(200).json({
       success: true,
       data: {
