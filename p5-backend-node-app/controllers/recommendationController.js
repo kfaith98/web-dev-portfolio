@@ -1,6 +1,7 @@
 import Event from '../models/Event.js';
 import Arrangement from '../models/Arrangement.js';
 import Supplier from '../models/Supplier.js';
+import getSuggestions from '../utilities/getSuggestions.js';
 
 export const getRecommendations = async (req, res, next) => {
   try {
@@ -41,12 +42,26 @@ export const getRecommendations = async (req, res, next) => {
       category: { $in: gapCategories },
       _id: { $nin: arrangedSupplierIds },
     });
-   
+
+    const suggestions = await getSuggestions(event, activeArrangements, candidates);
+    const rankedSuggestions = suggestions.map((suggestion) => {
+      const supplier = candidates.find(
+        (c) => c._id.toString() === suggestion.supplierId,
+      );
+      return {
+        _id: suggestion.supplierId,
+        name: supplier.name,
+        category: supplier.category,
+        reasoning: suggestion.reasoning,
+      };
+    });
+
     res.status(200).json({
       success: true,
       data: {
         gapCategories,
         candidates,
+        suggestions: rankedSuggestions,
       },
     });
   } catch (error) {
