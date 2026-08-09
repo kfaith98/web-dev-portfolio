@@ -38,10 +38,10 @@ export async function login(username, password) {
 
 export async function getEvents() {
   const res = await request('/events');
-  return res.data;
+  return Array.isArray(res) ? res : (res.data ?? []);
 }
 
 export async function getArrangements(eventId) {
   const res = await request(`/events/${eventId}/arrangements`);
-  return res.data;
+  return Array.isArray(res) ? res : (res.data ?? []);
 }

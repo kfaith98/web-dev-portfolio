@@ -1,26 +1,27 @@
-import { createContext, useReducer, useEffect } from "react";
-import { eventsReducer } from "../reducer";
-import { fakeEvents } from "../data/fakeData";
+import { createContext, useReducer, useEffect } from 'react';
+import { eventsReducer } from '../reducer';
+import { getEvents } from '../api';
 
 export const EventsContext = createContext(null);
 
-// P5 SEAM: localStorage is the stand-in persistence layer.
-// Swap getItem/setItem here for real backend fetch/save calls.
 function init() {
-  try {
-    const saved = localStorage.getItem("events");
-    return saved ? JSON.parse(saved) : fakeEvents;
-  } catch {
-    return fakeEvents;
-  }
+  return [];
 }
 
 export function EventsProvider({ children }) {
   const [state, dispatch] = useReducer(eventsReducer, undefined, init);
 
   useEffect(() => {
-    localStorage.setItem("events", JSON.stringify(state));
-  }, [state]);
+    async function loadEvents() {
+      try {
+        const events = await getEvents();
+        dispatch({ type: 'SET_EVENTS', events });
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    loadEvents();
+  }, []);
 
   return (
     <EventsContext.Provider value={{ state, dispatch }}>

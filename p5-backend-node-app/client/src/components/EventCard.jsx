@@ -19,7 +19,7 @@ export default function EventCard({ event }) {
   const handleDelete = (e) => {
     e.stopPropagation();
     if (window.confirm("Delete this event?")) {
-      dispatch({ type: "DELETE_EVENT", id: event.id });
+      dispatch({ type: "DELETE_EVENT", id: event._id });
     }
   };
 
@@ -32,14 +32,15 @@ export default function EventCard({ event }) {
     <>
       <div
         className={styles["event-card"]}
-        onClick={() => navigate(`/events/${event.id}`)}
+        onClick={() => navigate(`/events/${event._id}`)}
         style={{ cursor: "pointer" }}
       >
         <h3>{event.name}</h3>
         <p>
-          {formatDate(event.date)} · {event.location}
+          {formatDate(event.date)} · {event.venue}
         </p>
-        <p>{event.suppliers.length} supplier{event.suppliers.length !== 1 && "s"}</p>
+        <p>{event.suppliers?.length ?? 0} suppliers</p>
+        {/* <p>{event.suppliers.length} supplier{event.suppliers.length !== 1 && "s"}</p> */}
         <div className={styles["card-actions"]}>
           <button type="button" onClick={handleEdit} className={"btn-edit"}>
             Edit

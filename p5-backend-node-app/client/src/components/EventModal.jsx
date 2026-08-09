@@ -12,7 +12,7 @@ export default function EventModal({ onClose, event, onSaved }) {
     if (event) {
       dispatch({
         type: "EDIT_EVENT",
-        id: event.id,
+        id: event._id,
         event: { name, date, location },
       });
       onSaved?.();

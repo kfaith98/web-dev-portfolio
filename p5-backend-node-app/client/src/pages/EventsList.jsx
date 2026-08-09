@@ -29,7 +29,7 @@ function EventsList() {
         ) : (
           <div className={styles["event-card"]}>
             {sortedEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
+              <EventCard key={event._id} event={event} />
             ))}
           </div>
         )}

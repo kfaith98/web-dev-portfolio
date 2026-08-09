@@ -1,6 +1,9 @@
 export function eventsReducer(state, action) {
   switch (action.type) {
-    case "ADD_EVENT": {
+    case 'SET_EVENTS': {
+      return action.events;
+    }
+    case 'ADD_EVENT': {
       const newEvent = {
         id: crypto.randomUUID(),
         ...action.event,
@@ -8,7 +11,7 @@ export function eventsReducer(state, action) {
       };
       return [...state, newEvent];
     }
-    case "EDIT_EVENT": {
+    case 'EDIT_EVENT': {
       return state.map((event) =>
         event.id === action.id
           ? {
@@ -18,10 +21,10 @@ export function eventsReducer(state, action) {
           : event,
       );
     }
-    case "DELETE_EVENT": {
+    case 'DELETE_EVENT': {
       return state.filter((event) => event.id !== action.id);
     }
-    case "ADD_SUPPLIER": {
+    case 'ADD_SUPPLIER': {
       const newEventSupplier = { id: crypto.randomUUID(), ...action.supplier };
       return state.map((event) =>
         event.id === action.eventId
@@ -32,7 +35,7 @@ export function eventsReducer(state, action) {
           : event,
       );
     }
-    case "EDIT_SUPPLIER": {
+    case 'EDIT_SUPPLIER': {
       return state.map((event) =>
         event.id === action.eventId
           ? {
@@ -49,7 +52,7 @@ export function eventsReducer(state, action) {
           : event,
       );
     }
-    case "DELETE_SUPPLIER": {
+    case 'DELETE_SUPPLIER': {
       return state.map((event) =>
         event.id === action.eventId
           ? {
@@ -61,7 +64,7 @@ export function eventsReducer(state, action) {
           : event,
       );
     }
-    case "UPDATE_STATUS": {
+    case 'UPDATE_STATUS': {
       return state.map((event) =>
         event.id === action.eventId
           ? {

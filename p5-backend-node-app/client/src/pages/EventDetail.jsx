@@ -20,7 +20,7 @@ function EventDetail() {
   const [statusFilter, setStatusFilter] = useState("");
   const [sortKey, setSortKey] = useState("");
 
-  const event = state.find((e) => e.id === id);
+  const event = state.find((e) => e._id === id);
 
   if (!event) {
     return "Event not found.";
@@ -151,9 +151,9 @@ function EventDetail() {
             <div style={{ display: "grid", gap: 12 }}>
               {visibleSuppliers.map((supplier) => (
                 <SupplierCard
-                  key={supplier.id}
+                  key={supplier._id}
                   supplier={supplier}
-                  eventId={event.id}
+                  eventId={event._id}
                 />
               ))}
             </div>
@@ -161,7 +161,7 @@ function EventDetail() {
 
           {isOpen && (
             <SupplierModal
-              eventId={event.id}
+              eventId={event._id}
               onClose={() => setIsOpen(false)}
             />
           )}
