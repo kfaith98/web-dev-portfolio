@@ -1,18 +1,25 @@
-import { useState, useContext } from "react";
-import { EventsContext } from "../context/EventsContext";
-import { CATEGORIES, STATUSES } from "../data/constants";
-import styles from "../css/SupplierModal.module.css";
+import { useState, useContext } from 'react';
+import { EventsContext } from '../context/EventsContext';
+import { CATEGORIES, STATUSES } from '../data/constants';
+import { updateArrangement } from '../api';
+import styles from '../css/SupplierModal.module.css';
 
-export default function SupplierModal({ eventId, onClose, supplier, onSaved }) {
+export default function SupplierModal({
+  eventId,
+  onClose,
+  supplier,
+  onSaved,
+  onChanged,
+}) {
   const { dispatch } = useContext(EventsContext);
 
   const [form, setForm] = useState({
-    name: supplier?.name ?? "",
-    category: supplier?.category ?? "",
-    budget: supplier?.budget ?? "",
-    contact: supplier?.contact ?? "",
-    status: supplier?.status ?? "contacted",
-    notes: supplier?.notes ?? "",
+    name: supplier?.supplierId?.name ?? '',
+    category: supplier?.supplierId?.category ?? '',
+    budget: supplier?.budget ?? '',
+    contact: supplier?.supplierId?.contact ?? '',
+    status: supplier?.status ?? 'contacted',
+    notes: supplier?.notes ?? '',
   });
 
   const handleChange = (e) => {
@@ -20,41 +27,46 @@ export default function SupplierModal({ eventId, onClose, supplier, onSaved }) {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     const cleanBudget =
-      Number(String(form.budget).replace(/[^0-9.]/g, "")) || 0;
+      Number(String(form.budget).replace(/[^0-9.]/g, '')) || 0;
     const supplierData = { ...form, budget: cleanBudget };
 
     if (supplier) {
-      dispatch({
-        type: "EDIT_SUPPLIER",
-        eventId,
-        supplierId: supplier._id,
-        supplier: supplierData,
-      });
-      onSaved?.();
+      try {
+        await updateArrangement(eventId, supplier._id, {
+          budget: cleanBudget,
+          status: form.status,
+          notes: form.notes,
+        });
+        await onChanged();
+        onSaved?.();
+        onClose();
+      } catch (err) {
+        alert(err.message);
+      }
     } else {
       dispatch({
-        type: "ADD_SUPPLIER",
+        type: 'ADD_SUPPLIER',
         eventId,
         supplier: supplierData,
       });
     }
-    onClose();
   };
 
   return (
-    <div className={styles["modal-backdrop"]}>
-      <div className={styles["modal-panel"]}>
-        <h2>{supplier ? "Edit Supplier" : "Add Supplier"}</h2>
-        <button type="button" onClick={onClose} className={styles["close-btn"]}>
+    <div className={styles['modal-backdrop']}>
+      <div className={styles['modal-panel']}>
+        <h2>{supplier ? 'Edit Supplier' : 'Add Supplier'}</h2>
+        <button type="button" onClick={onClose} className={styles['close-btn']}>
           ×
         </button>
 
-        <div className={styles["supplier-fields"]}>
+        <div className={styles['supplier-fields']}>
           <label htmlFor="supplier-name">Name</label>
           <input
             id="supplier-name"
+            disabled={!!supplier}
             name="name"
             type="text"
             placeholder="DREAM Production"
@@ -63,10 +75,11 @@ export default function SupplierModal({ eventId, onClose, supplier, onSaved }) {
           />
         </div>
 
-        <div className={styles["supplier-fields"]}>
+        <div className={styles['supplier-fields']}>
           <label htmlFor="supplier-category">Category</label>
           <select
             id="supplier-category"
+            disabled={!!supplier}
             name="category"
             value={form.category}
             onChange={handleChange}
@@ -80,7 +93,7 @@ export default function SupplierModal({ eventId, onClose, supplier, onSaved }) {
           </select>
         </div>
 
-        <div className={styles["supplier-fields"]}>
+        <div className={styles['supplier-fields']}>
           <label htmlFor="supplier-budget">Quote/Budget</label>
           <input
             id="supplier-budget"
@@ -92,10 +105,11 @@ export default function SupplierModal({ eventId, onClose, supplier, onSaved }) {
           />
         </div>
 
-        <div className={styles["supplier-fields"]}>
+        <div className={styles['supplier-fields']}>
           <label htmlFor="supplier-contact">Contact</label>
           <input
             id="supplier-contact"
+            disabled={!!supplier}
             name="contact"
             type="text"
             placeholder="Juan Dela Cruz"
@@ -104,7 +118,7 @@ export default function SupplierModal({ eventId, onClose, supplier, onSaved }) {
           />
         </div>
 
-        <div className={styles["supplier-fields"]}>
+        <div className={styles['supplier-fields']}>
           <label htmlFor="supplier-status">Status</label>
           <select
             id="supplier-status"
@@ -120,7 +134,7 @@ export default function SupplierModal({ eventId, onClose, supplier, onSaved }) {
           </select>
         </div>
 
-        <div className={styles["supplier-fields"]}>
+        <div className={styles['supplier-fields']}>
           <label htmlFor="supplier-notes">Notes</label>
           <textarea
             id="supplier-notes"
@@ -131,12 +145,12 @@ export default function SupplierModal({ eventId, onClose, supplier, onSaved }) {
           ></textarea>
         </div>
 
-        <div className={styles["action-btns"]}>
+        <div className={styles['action-btns']}>
           <button
             type="button"
             onClick={handleSave}
             disabled={!form.name.trim() || !form.category}
-            className={"btn-primary"}
+            className={'btn-primary'}
           >
             Save
           </button>

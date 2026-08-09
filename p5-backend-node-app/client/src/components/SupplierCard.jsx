@@ -29,15 +29,15 @@ export default function SupplierCard({ supplier, eventId, onChanged }) {
   };
 
   const handleDelete = async () => {
-  if (window.confirm('Remove this supplier from the event?')) {
-    try {
-      await deleteArrangement(eventId, supplier._id);
-      await onChanged();
-    } catch (err) {
-      alert(err.message);
+    if (window.confirm('Remove this supplier from the event?')) {
+      try {
+        await deleteArrangement(eventId, supplier._id);
+        await onChanged();
+      } catch (err) {
+        alert(err.message);
+      }
     }
-  }
-};
+  };
 
   const handleEdit = () => {
     setIsEditing(true);
@@ -45,9 +45,7 @@ export default function SupplierCard({ supplier, eventId, onChanged }) {
 
   return (
     <div className={styles['supplier-card']}>
-      <h3 className={styles['supplier-name']}>
-        {supplier.supplierId.name}
-      </h3>
+      <h3 className={styles['supplier-name']}>{supplier.supplierId.name}</h3>
 
       <p className={styles['details']}>
         {supplier.supplierId.category} · {supplier.supplierId.contact} ·{' '}
@@ -76,19 +74,11 @@ export default function SupplierCard({ supplier, eventId, onChanged }) {
       <br />
 
       <div className={styles['card-actions']}>
-        <button
-          type="button"
-          onClick={handleEdit}
-          className="btn-edit"
-        >
+        <button type="button" onClick={handleEdit} className="btn-edit">
           Edit
         </button>
 
-        <button
-          type="button"
-          onClick={handleDelete}
-          className="btn-danger"
-        >
+        <button type="button" onClick={handleDelete} className="btn-danger">
           Delete
         </button>
       </div>
@@ -99,6 +89,7 @@ export default function SupplierCard({ supplier, eventId, onChanged }) {
           supplier={supplier}
           onClose={() => setIsEditing(false)}
           onSaved={handleSaved}
+          onChanged={onChanged}
         />
       )}
 
