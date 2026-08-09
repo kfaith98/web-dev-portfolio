@@ -3,7 +3,7 @@ import { EventsContext } from '../context/EventsContext';
 import SupplierModal from './SupplierModal';
 import StatusBadge from './StatusBadge';
 import { STATUSES, formatPeso } from '../data/constants';
-import { updateArrangement } from '../api';
+import { updateArrangement, deleteArrangement } from '../api';
 import styles from '../css/SupplierCard.module.css';
 
 export default function SupplierCard({ supplier, eventId, onChanged }) {
@@ -28,15 +28,16 @@ export default function SupplierCard({ supplier, eventId, onChanged }) {
     }
   };
 
-  const handleDelete = () => {
-    if (window.confirm('Delete this supplier?')) {
-      dispatch({
-        type: 'DELETE_SUPPLIER',
-        eventId: eventId,
-        supplierId: supplier._id,
-      });
+  const handleDelete = async () => {
+  if (window.confirm('Remove this supplier from the event?')) {
+    try {
+      await deleteArrangement(eventId, supplier._id);
+      await onChanged();
+    } catch (err) {
+      alert(err.message);
     }
-  };
+  }
+};
 
   const handleEdit = () => {
     setIsEditing(true);
