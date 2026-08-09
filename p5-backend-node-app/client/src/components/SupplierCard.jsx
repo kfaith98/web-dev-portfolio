@@ -31,9 +31,9 @@ export default function SupplierCard({ supplier, eventId }) {
 
   return (
     <div className={styles["supplier-card"]}>
-      <h3 className={styles["supplier-name"]}>{supplier.name}</h3>
+      <h3 className={styles["supplier-name"]}>{supplier.supplierId.name}</h3>
       <p className={styles["details"]}>
-        {supplier.category} · {supplier.contact} · {formatPeso(supplier.budget)}
+        {supplier.supplierId.category} · {supplier.supplierId.contact} · {formatPeso(supplier.budget)}
       </p>
       <p className={styles["notes"]}>
         {supplier.notes}

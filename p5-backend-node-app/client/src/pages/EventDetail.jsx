@@ -46,22 +46,22 @@ function EventDetail() {
     return 'Event not found.';
   }
 
-  return <pre>{JSON.stringify(arrangements, null, 2)}</pre>;
+  const suppliers = arrangements;
 
   const supplierStatus = STATUSES.map(
     (status) =>
-      `${event.suppliers.filter((s) => s.status === status).length} ${status}`,
+      `${suppliers.filter((s) => s.status === status).length} ${status}`,
   );
 
-  const visibleSuppliers = event.suppliers
+  const visibleSuppliers = suppliers
     .filter(
       (s) =>
-        (!categoryFilter || s.category === categoryFilter) &&
+        (!categoryFilter || s.supplierId.category === categoryFilter) &&
         (!statusFilter || s.status === statusFilter),
     )
     .sort((a, b) => {
       if (sortKey === 'category') {
-        return a.category.localeCompare(b.category);
+        return a.supplierId.category.localeCompare(b.supplierId.category);
       } else if (sortKey === 'status') {
         return STATUSES.indexOf(a.status) - STATUSES.indexOf(b.status);
       } else {
@@ -70,14 +70,14 @@ function EventDetail() {
     });
 
   const handleEmptyStates = () => {
-    if (visibleSuppliers.length === 0 && event.suppliers.length > 0) {
+    if (visibleSuppliers.length === 0 && suppliers.length > 0) {
       return 'No suppliers match these filters.';
     } else if (visibleSuppliers.length === 0) {
       return 'No suppliers yet for this event.';
     }
   };
 
-  const totalBudget = event.suppliers.reduce(
+  const totalBudget = suppliers.reduce(
     (sum, s) => sum + (s.budget || 0),
     0,
   );
@@ -96,14 +96,14 @@ function EventDetail() {
             <div>
               <h1>{event.name}</h1>
               <p>Date: {formatDate(event.date)}</p>
-              <p>Location: {event.location}</p>
+              <p>Venue: {event.venue}</p>
               <p>Total Cost: {formatPeso(totalBudget)}</p>
             </div>
 
             <div className={styles['event-summary']}>
               <p className={styles['total-suppliers']}>
-                {event.suppliers.length} total supplier
-                {event.suppliers.length !== 1 && 's'}
+                {suppliers.length} total supplier
+                {suppliers.length !== 1 && 's'}
               </p>
               <p>{supplierStatus.join(' · ')}</p>
             </div>
