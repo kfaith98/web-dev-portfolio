@@ -1,30 +1,52 @@
-import { useState, useContext } from "react";
-import { useParams, Link } from "react-router-dom";
-import { EventsContext } from "../context/EventsContext";
-import SupplierCard from "../components/SupplierCard";
-import SupplierModal from "../components/SupplierModal";
+import { useState, useContext, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { EventsContext } from '../context/EventsContext';
+import SupplierCard from '../components/SupplierCard';
+import SupplierModal from '../components/SupplierModal';
 import {
   CATEGORIES,
   STATUSES,
   formatPeso,
   formatDate,
-} from "../data/constants";
-import styles from "../css/EventDetail.module.css";
+} from '../data/constants';
+import { getArrangements } from '../api';
+import styles from '../css/EventDetail.module.css';
 
 // EventDetail.jsx
 function EventDetail() {
   const { id } = useParams();
   const { state } = useContext(EventsContext);
   const [isOpen, setIsOpen] = useState(false);
-  const [categoryFilter, setCategoryFilter] = useState("");
-  const [statusFilter, setStatusFilter] = useState("");
-  const [sortKey, setSortKey] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState('');
+  const [statusFilter, setStatusFilter] = useState('');
+  const [sortKey, setSortKey] = useState('');
+  const [arrangements, setArrangements] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function loadArrangements() {
+      try {
+        const data = await getArrangements(id);
+        setArrangements(data);
+        setError(null);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadArrangements();
+  }, [id]);
 
   const event = state.find((e) => e._id === id);
 
   if (!event) {
-    return "Event not found.";
+    return 'Event not found.';
   }
+
+  return <pre>{JSON.stringify(arrangements, null, 2)}</pre>;
 
   const supplierStatus = STATUSES.map(
     (status) =>
@@ -38,9 +60,9 @@ function EventDetail() {
         (!statusFilter || s.status === statusFilter),
     )
     .sort((a, b) => {
-      if (sortKey === "category") {
+      if (sortKey === 'category') {
         return a.category.localeCompare(b.category);
-      } else if (sortKey === "status") {
+      } else if (sortKey === 'status') {
         return STATUSES.indexOf(a.status) - STATUSES.indexOf(b.status);
       } else {
         return 0;
@@ -49,9 +71,9 @@ function EventDetail() {
 
   const handleEmptyStates = () => {
     if (visibleSuppliers.length === 0 && event.suppliers.length > 0) {
-      return "No suppliers match these filters.";
+      return 'No suppliers match these filters.';
     } else if (visibleSuppliers.length === 0) {
-      return "No suppliers yet for this event.";
+      return 'No suppliers yet for this event.';
     }
   };
 
@@ -62,15 +84,15 @@ function EventDetail() {
 
   return (
     <div>
-      <div className={styles["btn-back"]}>
-        <Link to="/" className={`btn-look ${styles["back-link"]}`}>
+      <div className={styles['btn-back']}>
+        <Link to="/" className={`btn-look ${styles['back-link']}`}>
           ← Back to events
         </Link>
       </div>
 
-      <div className={styles["event-body"]}>
-        <div className={styles["left-column"]}>
-          <div className={styles["event-card"]}>
+      <div className={styles['event-body']}>
+        <div className={styles['left-column']}>
+          <div className={styles['event-card']}>
             <div>
               <h1>{event.name}</h1>
               <p>Date: {formatDate(event.date)}</p>
@@ -78,16 +100,16 @@ function EventDetail() {
               <p>Total Cost: {formatPeso(totalBudget)}</p>
             </div>
 
-            <div className={styles["event-summary"]}>
-              <p className={styles["total-suppliers"]}>
+            <div className={styles['event-summary']}>
+              <p className={styles['total-suppliers']}>
                 {event.suppliers.length} total supplier
-                {event.suppliers.length !== 1 && "s"}
+                {event.suppliers.length !== 1 && 's'}
               </p>
-              <p>{supplierStatus.join(" · ")}</p>
+              <p>{supplierStatus.join(' · ')}</p>
             </div>
           </div>
 
-          <div className={styles["filter-sort-section"]}>
+          <div className={styles['filter-sort-section']}>
             <div>
               <label htmlFor="filter">Filter by:</label>
               <select
@@ -135,20 +157,20 @@ function EventDetail() {
             </div>
             <button
               onClick={() => setIsOpen(true)}
-              className={`btn-primary ${styles["add-supplier"]}`}
+              className={`btn-primary ${styles['add-supplier']}`}
             >
               Add Supplier
             </button>
           </div>
         </div>
 
-        <div className={styles["right-column"]}>
+        <div className={styles['right-column']}>
           {visibleSuppliers.length === 0 ? (
             <div className="empty-state">
               <p>{handleEmptyStates()}</p>
             </div>
           ) : (
-            <div style={{ display: "grid", gap: 12 }}>
+            <div style={{ display: 'grid', gap: 12 }}>
               {visibleSuppliers.map((supplier) => (
                 <SupplierCard
                   key={supplier._id}

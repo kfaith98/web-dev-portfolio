@@ -29,7 +29,7 @@ export default function SupplierModal({ eventId, onClose, supplier, onSaved }) {
       dispatch({
         type: "EDIT_SUPPLIER",
         eventId,
-        supplierId: supplier.id,
+        supplierId: supplier._id,
         supplier: supplierData,
       });
       onSaved?.();

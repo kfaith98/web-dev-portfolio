@@ -20,7 +20,7 @@ export default function SupplierCard({ supplier, eventId }) {
       dispatch({
         type: "DELETE_SUPPLIER",
         eventId: eventId,
-        supplierId: supplier.id,
+        supplierId: supplier._id,
       });
     }
   };
@@ -48,7 +48,7 @@ export default function SupplierCard({ supplier, eventId }) {
             dispatch({
               type: "UPDATE_STATUS",
               eventId,
-              supplierId: supplier.id,
+              supplierId: supplier._id,
               status: e.target.value,
             })
           }
