@@ -1,6 +1,6 @@
 import { createContext, useReducer, useEffect } from 'react';
 import { eventsReducer } from '../reducer';
-import { getEvents } from '../api';
+import { getEvents, getArrangements } from '../api';
 
 export const EventsContext = createContext(null);
 
@@ -15,7 +15,17 @@ export function EventsProvider({ children }) {
     async function loadEvents() {
       try {
         const events = await getEvents();
-        dispatch({ type: 'SET_EVENTS', events });
+
+        const arrangementLists = await Promise.all(
+          events.map((e) => getArrangements(e._id)),
+        );
+
+        const withCounts = events.map((event, i) => ({
+          ...event,
+          suppliers: arrangementLists[i],
+        }));
+
+        dispatch({ type: 'SET_EVENTS', events: withCounts });
       } catch (err) {
         console.error(err);
       }
