@@ -36,22 +36,38 @@ export async function login(username, password) {
   });
 }
 
-export async function getEvents() {
-  const res = await request('/events');
-  return Array.isArray(res) ? res : (res.data ?? []);
-}
-
-export async function getArrangements(eventId) {
-  const res = await request(`/events/${eventId}/arrangements`);
-  return Array.isArray(res) ? res : (res.data ?? []);
-}
-
 export async function createEvent(eventData) {
   const res = await request('/events', {
     method: 'POST',
     body: JSON.stringify(eventData),
   });
   return res.data ?? res;
+}
+
+export async function getEvents() {
+  const res = await request('/events');
+  return Array.isArray(res) ? res : (res.data ?? []);
+}
+
+export async function updateEvent(eventId, updates) {
+  const res = await request(`/events/${eventId}`, {
+    method: 'PUT',
+    body: JSON.stringify(updates),
+  });
+  return res.data ?? res;
+}
+
+export async function deleteEvent(eventId) {
+  const res = await request(`/events/${eventId}`, {
+    method: 'PUT',
+    body: JSON.stringify({ isActive: false }),
+  });
+  return res.data ?? res;
+}
+
+export async function getArrangements(eventId) {
+  const res = await request(`/events/${eventId}/arrangements`);
+  return Array.isArray(res) ? res : (res.data ?? []);
 }
 
 export async function updateArrangement(eventId, arrangementId, updates) {

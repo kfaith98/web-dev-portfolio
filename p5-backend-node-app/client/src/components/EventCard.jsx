@@ -1,9 +1,10 @@
-import { useState, useContext } from "react";
-import EventModal from "./EventModal";
-import { EventsContext } from "../context/EventsContext";
-import { useNavigate } from "react-router-dom";
-import { formatDate } from "../data/constants";
-import styles from "../css/EventCard.module.css";
+import { useState, useContext } from 'react';
+import EventModal from './EventModal';
+import { EventsContext } from '../context/EventsContext';
+import { useNavigate } from 'react-router-dom';
+import { formatDate } from '../data/constants';
+import { deleteEvent } from '../api';
+import styles from '../css/EventCard.module.css';
 
 export default function EventCard({ event }) {
   const navigate = useNavigate();
@@ -16,10 +17,15 @@ export default function EventCard({ event }) {
     setTimeout(() => setShowToast(false), 2000);
   };
 
-  const handleDelete = (e) => {
+  const handleDelete = async (e) => {
     e.stopPropagation();
-    if (window.confirm("Delete this event?")) {
-      dispatch({ type: "DELETE_EVENT", id: event._id });
+    if (window.confirm('Delete this event?')) {
+      try {
+        await deleteEvent(event._id);
+        dispatch({ type: 'DELETE_EVENT', id: event._id });
+      } catch (err) {
+        alert(err.message);
+      }
     }
   };
 
@@ -31,9 +37,9 @@ export default function EventCard({ event }) {
   return (
     <>
       <div
-        className={styles["event-card"]}
+        className={styles['event-card']}
         onClick={() => navigate(`/events/${event._id}`)}
-        style={{ cursor: "pointer" }}
+        style={{ cursor: 'pointer' }}
       >
         <h3>{event.name}</h3>
         <p>
@@ -41,11 +47,11 @@ export default function EventCard({ event }) {
         </p>
         <p>{event.suppliers?.length ?? 0} suppliers</p>
         {/* <p>{event.suppliers.length} supplier{event.suppliers.length !== 1 && "s"}</p> */}
-        <div className={styles["card-actions"]}>
-          <button type="button" onClick={handleEdit} className={"btn-edit"}>
+        <div className={styles['card-actions']}>
+          <button type="button" onClick={handleEdit} className={'btn-edit'}>
             Edit
           </button>
-          <button type="button" onClick={handleDelete} className={"btn-danger"}>
+          <button type="button" onClick={handleDelete} className={'btn-danger'}>
             Delete
           </button>
         </div>
@@ -57,7 +63,7 @@ export default function EventCard({ event }) {
           onSaved={handleSaved}
         />
       )}
-      {showToast && <div className={"toast"}>Saved ✓</div>}
+      {showToast && <div className={'toast'}>Saved ✓</div>}
     </>
   );
 }
