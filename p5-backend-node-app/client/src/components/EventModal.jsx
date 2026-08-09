@@ -1,24 +1,29 @@
 import { useState, useContext } from 'react';
 import { EventsContext } from '../context/EventsContext';
-import { createEvent } from '../api';
+import { createEvent, updateEvent } from '../api';
 import styles from '../css/EventModal.module.css';
 
 export default function EventModal({ onClose, event, onSaved }) {
   const [name, setName] = useState(event?.name ?? '');
-  const [date, setDate] = useState(event?.date ?? '');
+  const [date, setDate] = useState(event?.date?.slice(0, 10) ?? '');
   const [venue, setVenue] = useState(event?.venue ?? '');
   const [error, setError] = useState('');
   const { dispatch } = useContext(EventsContext);
 
   const handleSave = async () => {
     if (event) {
-      dispatch({
-        type: 'EDIT_EVENT',
-        id: event._id,
-        event: { name, date, venue },
-      });
-      onSaved?.();
-      onClose();
+      try {
+        await updateEvent(event._id, { name, date, venue });
+        dispatch({
+          type: 'EDIT_EVENT',
+          id: event._id,
+          event: { name, date, venue },
+        });
+        onSaved?.();
+        onClose();
+      } catch (err) {
+        setError(err.message);
+      }
     } else {
       try {
         const saved = await createEvent({ name, date, venue });
