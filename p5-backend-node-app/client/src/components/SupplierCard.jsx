@@ -1,11 +1,12 @@
-import { useState, useContext } from "react";
-import { EventsContext } from "../context/EventsContext";
-import SupplierModal from "./SupplierModal";
-import StatusBadge from "./StatusBadge";
-import { STATUSES, formatPeso } from "../data/constants";
-import styles from "../css/SupplierCard.module.css";
+import { useState, useContext } from 'react';
+import { EventsContext } from '../context/EventsContext';
+import SupplierModal from './SupplierModal';
+import StatusBadge from './StatusBadge';
+import { STATUSES, formatPeso } from '../data/constants';
+import { updateArrangement } from '../api';
+import styles from '../css/SupplierCard.module.css';
 
-export default function SupplierCard({ supplier, eventId }) {
+export default function SupplierCard({ supplier, eventId, onChanged }) {
   const [isEditing, setIsEditing] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const { dispatch } = useContext(EventsContext);
@@ -15,10 +16,22 @@ export default function SupplierCard({ supplier, eventId }) {
     setTimeout(() => setShowToast(false), 2000);
   };
 
+  const handleStatusChange = async (e) => {
+    try {
+      await updateArrangement(eventId, supplier._id, {
+        status: e.target.value,
+      });
+
+      await onChanged();
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+
   const handleDelete = () => {
-    if (window.confirm("Delete this supplier?")) {
+    if (window.confirm('Delete this supplier?')) {
       dispatch({
-        type: "DELETE_SUPPLIER",
+        type: 'DELETE_SUPPLIER',
         eventId: eventId,
         supplierId: supplier._id,
       });
@@ -30,28 +43,26 @@ export default function SupplierCard({ supplier, eventId }) {
   };
 
   return (
-    <div className={styles["supplier-card"]}>
-      <h3 className={styles["supplier-name"]}>{supplier.supplierId.name}</h3>
-      <p className={styles["details"]}>
-        {supplier.supplierId.category} · {supplier.supplierId.contact} · {formatPeso(supplier.budget)}
+    <div className={styles['supplier-card']}>
+      <h3 className={styles['supplier-name']}>
+        {supplier.supplierId.name}
+      </h3>
+
+      <p className={styles['details']}>
+        {supplier.supplierId.category} · {supplier.supplierId.contact} ·{' '}
+        {formatPeso(supplier.budget)}
       </p>
-      <p className={styles["notes"]}>
-        {supplier.notes}
-      </p>
+
+      <p className={styles['notes']}>{supplier.notes}</p>
+
       <StatusBadge status={supplier.status} />
-      <label className={styles["badge-change"]}>
-        Change:{" "}
+
+      <label className={styles['badge-change']}>
+        Change:{' '}
         <select
           name="status"
           value={supplier.status}
-          onChange={(e) =>
-            dispatch({
-              type: "UPDATE_STATUS",
-              eventId,
-              supplierId: supplier._id,
-              status: e.target.value,
-            })
-          }
+          onChange={handleStatusChange}
         >
           {STATUSES.map((status) => (
             <option key={status} value={status}>
@@ -60,15 +71,27 @@ export default function SupplierCard({ supplier, eventId }) {
           ))}
         </select>
       </label>
+
       <br />
-      <div className={styles["card-actions"]}>
-        <button type="button" onClick={handleEdit} className={"btn-edit"}>
+
+      <div className={styles['card-actions']}>
+        <button
+          type="button"
+          onClick={handleEdit}
+          className="btn-edit"
+        >
           Edit
         </button>
-        <button type="button" onClick={handleDelete} className={"btn-danger"}>
+
+        <button
+          type="button"
+          onClick={handleDelete}
+          className="btn-danger"
+        >
           Delete
         </button>
       </div>
+
       {isEditing && (
         <SupplierModal
           eventId={eventId}
@@ -77,7 +100,8 @@ export default function SupplierCard({ supplier, eventId }) {
           onSaved={handleSaved}
         />
       )}
-      {showToast && <div className={"toast"}>Saved ✓</div>}
+
+      {showToast && <div className="toast">Saved ✓</div>}
     </div>
   );
 }

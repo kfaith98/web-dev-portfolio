@@ -53,3 +53,18 @@ export async function createEvent(eventData) {
   });
   return res.data ?? res;
 }
+
+export async function updateArrangement(eventId, arrangementId, updates) {
+  const res = await request(`/events/${eventId}/arrangements/${arrangementId}`, {
+    method: 'PUT',
+    body: JSON.stringify(updates),
+  });
+  return res.data ?? res;
+}
+
+export async function deleteArrangement(eventId, arrangementId) {
+  const res = await request(`/events/${eventId}/arrangements/${arrangementId}`, {
+    method: 'DELETE',
+  });
+  return res.data ?? res;
+}

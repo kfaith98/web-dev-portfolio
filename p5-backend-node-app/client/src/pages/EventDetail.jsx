@@ -24,19 +24,19 @@ function EventDetail() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    async function loadArrangements() {
-      try {
-        const data = await getArrangements(id);
-        setArrangements(data);
-        setError(null);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
+  async function loadArrangements() {
+    try {
+      const data = await getArrangements(id);
+      setArrangements(data);
+      setError(null);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
     }
+  }
 
+  useEffect(() => {
     loadArrangements();
   }, [id]);
 
@@ -77,10 +77,7 @@ function EventDetail() {
     }
   };
 
-  const totalBudget = suppliers.reduce(
-    (sum, s) => sum + (s.budget || 0),
-    0,
-  );
+  const totalBudget = suppliers.reduce((sum, s) => sum + (s.budget || 0), 0);
 
   return (
     <div>
@@ -176,6 +173,7 @@ function EventDetail() {
                   key={supplier._id}
                   supplier={supplier}
                   eventId={event._id}
+                  onChanged={loadArrangements}
                 />
               ))}
             </div>
