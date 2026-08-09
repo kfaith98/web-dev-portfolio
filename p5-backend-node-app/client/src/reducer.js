@@ -4,16 +4,11 @@ export function eventsReducer(state, action) {
       return action.events;
     }
     case 'ADD_EVENT': {
-      const newEvent = {
-        id: crypto.randomUUID(),
-        ...action.event,
-        suppliers: [],
-      };
-      return [...state, newEvent];
+      return [...state, action.event];
     }
     case 'EDIT_EVENT': {
       return state.map((event) =>
-        event.id === action.id
+        event._id === action.id
           ? {
               ...event,
               ...action.event,
@@ -22,7 +17,7 @@ export function eventsReducer(state, action) {
       );
     }
     case 'DELETE_EVENT': {
-      return state.filter((event) => event.id !== action.id);
+      return state.filter((event) => event._id !== action.id);
     }
     case 'ADD_SUPPLIER': {
       const newEventSupplier = { id: crypto.randomUUID(), ...action.supplier };

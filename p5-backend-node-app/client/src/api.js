@@ -45,3 +45,11 @@ export async function getArrangements(eventId) {
   const res = await request(`/events/${eventId}/arrangements`);
   return Array.isArray(res) ? res : (res.data ?? []);
 }
+
+export async function createEvent(eventData) {
+  const res = await request('/events', {
+    method: 'POST',
+    body: JSON.stringify(eventData),
+  });
+  return res.data ?? res;
+}
