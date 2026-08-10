@@ -125,7 +125,7 @@ requires a valid JWT sent as `Authorization: Bearer <token>`.
 
 | #   | Method | Endpoint                            | Description                                                                                                         | Status codes          |
 | --- | ------ | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------- | --------------------- |
-| 10  | GET    | `/events/:eventId/arrangements`     | Returns the event's arrangements with supplier details populated. Excludes arrangements whose supplier is inactive. | 200 · 401 · 404       |
+| 10  | GET    | `/events/:eventId/arrangements`     | Returns the event's arrangements with supplier details populated.  | 200 · 401 · 404       |
 | 11  | POST   | `/events/:eventId/arrangements`     | Creates an arrangement linking a supplier to the event.                                                             | 201 · 400 · 401 · 404 |
 | 12  | PUT    | `/events/:eventId/arrangements/:id` | Edits the budget, status, or notes for that supplier at that event.                                                 | 200 · 400 · 401 · 404 |
 | 13  | DELETE | `/events/:eventId/arrangements/:id` | Permanently removes the arrangement and returns the deleted document. The supplier record itself is untouched.      | 200 · 401 · 404       |
@@ -160,6 +160,31 @@ requires a valid JWT sent as `Authorization: Bearer <token>`.
   those sets is rejected with 400.
 
 ---
+## Known limitations and design tradeoffs
+
+The current implementation has several known limitations. These are deliberate
+tradeoffs in the current scope and data model, rather than unknown gaps.
+
+- **Shared supplier pool, no per-user ownership.** Suppliers do not have an
+ownerId, so any authenticated user can create or edit any supplier in the
+shared pool. This is intentional: suppliers are treated as organization-wide
+resources rather than user-owned records. The tradeoff is that there is no
+per-user isolation on the supplier collection, and a supplier update is
+visible to all users and any events using that supplier.
+
+- **Add Supplier is not transactional.** Adding a supplier and creating its
+initial arrangement are currently two sequential requests: the supplier is
+created first, followed by the arrangement. If the second request fails, the
+supplier remains in the shared pool without a booking attached. The
+appropriate fix would be to wrap both operations in a MongoDB transaction so
+they either both succeed or both roll back.
+
+- **Create-new supplier flow, no pool picker.** The Add Supplier form currently
+always creates a new supplier rather than allowing the user to select an
+existing supplier from the shared pool. There is also no UI for soft-deleting
+suppliers. As a result, duplicate supplier records can accumulate. This
+keeps the current flow simple, but a future iteration could add supplier
+selection and a management interface for maintaining the shared pool.
 
 ## Project structure
 
