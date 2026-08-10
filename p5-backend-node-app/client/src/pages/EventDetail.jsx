@@ -183,6 +183,7 @@ function EventDetail() {
             <SupplierModal
               eventId={event._id}
               onClose={() => setIsOpen(false)}
+              onChanged={loadArrangements}
             />
           )}
         </div>

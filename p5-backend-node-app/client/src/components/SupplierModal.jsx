@@ -1,7 +1,6 @@
-import { useState, useContext } from 'react';
-import { EventsContext } from '../context/EventsContext';
+import { useState } from 'react';
 import { CATEGORIES, STATUSES } from '../data/constants';
-import { updateArrangement } from '../api';
+import { createSupplier, createArrangement, updateArrangement } from '../api';
 import styles from '../css/SupplierModal.module.css';
 
 export default function SupplierModal({
@@ -11,8 +10,6 @@ export default function SupplierModal({
   onSaved,
   onChanged,
 }) {
-  const { dispatch } = useContext(EventsContext);
-
   const [form, setForm] = useState({
     name: supplier?.supplierId?.name ?? '',
     category: supplier?.supplierId?.category ?? '',
@@ -30,7 +27,6 @@ export default function SupplierModal({
   const handleSave = async () => {
     const cleanBudget =
       Number(String(form.budget).replace(/[^0-9.]/g, '')) || 0;
-    const supplierData = { ...form, budget: cleanBudget };
 
     if (supplier) {
       try {
@@ -46,11 +42,23 @@ export default function SupplierModal({
         alert(err.message);
       }
     } else {
-      dispatch({
-        type: 'ADD_SUPPLIER',
-        eventId,
-        supplier: supplierData,
-      });
+      try {
+        const newSupplier = await createSupplier({
+          name: form.name,
+          category: form.category,
+          contact: form.contact,
+        });
+        await createArrangement(eventId, {
+          supplierId: newSupplier._id,
+          budget: cleanBudget,
+          status: form.status,
+          notes: form.notes,
+        });
+        await onChanged();
+        onClose();
+      } catch (err) {
+        alert(err.message);
+      }
     }
   };
 

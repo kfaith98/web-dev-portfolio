@@ -65,6 +65,22 @@ export async function deleteEvent(eventId) {
   return res.data ?? res;
 }
 
+export async function createSupplier(supplierData) {
+  const res = await request('/suppliers', {
+    method: 'POST',
+    body: JSON.stringify(supplierData),
+  });
+  return res.data ?? res;
+}
+
+export async function createArrangement(eventId, arrangementData) {
+  const res = await request(`/events/${eventId}/arrangements`, {
+    method: 'POST',
+    body: JSON.stringify(arrangementData),
+  });
+  return res.data ?? res;
+}
+
 export async function getArrangements(eventId) {
   const res = await request(`/events/${eventId}/arrangements`);
   return Array.isArray(res) ? res : (res.data ?? []);
