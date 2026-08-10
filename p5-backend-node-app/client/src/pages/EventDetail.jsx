@@ -42,6 +42,10 @@ function EventDetail() {
 
   const event = state.find((e) => e._id === id);
 
+  if (loading) {
+    return 'Loading…';
+  }
+
   if (!event) {
     return 'Event not found.';
   }
