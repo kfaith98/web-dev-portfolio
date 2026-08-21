@@ -1,0 +1,22 @@
+.event-card {
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+
+.event-container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-event:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
