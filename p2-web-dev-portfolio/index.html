@@ -82,14 +82,21 @@
       <div class="about-text-and-photo">
         <div class="about-name-and-title">
           <h1>Faith Puton</h1>
-          <h2>Web developer in training</h2>
+          <h2
+            class="typing-title"
+            data-text="Full-Stack Developer · Events Producer"
+          >
+            <span class="typed"></span>
+          </h2>
 
           <div class="about-description">
             <p>
-              I’m a full-stack web developer in training, currently working as
-              an events producer and enrolled in a local web development
-              bootcamp. I’m pursuing holistic growth (professionally,
-              intellectually, personally, etc.) by reskilling in technology.
+              I'm a full-stack web developer with a background in events
+              production. After three years planning and producing events for
+              brands and corporate clients, I started building the tools I
+              wished existed - supplier matching, booking systems, and client
+              automation - and now work across JavaScript, React, Node.js, and
+              MongoDB.
               <br />
               <br />
               Want to know more about my journey? Check out my
@@ -117,7 +124,7 @@
     <section id="skills" class="container">
       <div id="skills-header">
         <h2>Skills</h2>
-        <h3>Front-End</h3>
+        <h3>Languages &amp; Frameworks</h3>
       </div>
 
       <div class="skills-layout">
@@ -151,10 +158,41 @@
             alt="JavaScript logo"
           />
         </div>
+
+        <div class="front-end-skills">
+          <p>React</p>
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+            width="63"
+            height="64"
+            alt="React logo"
+          />
+        </div>
+
+        <div class="front-end-skills">
+          <p>Node.js</p>
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+            width="63"
+            height="64"
+            alt="Node.js logo"
+          />
+        </div>
+
+        <div class="front-end-skills">
+          <p>Express</p>
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+            width="63"
+            height="64"
+            alt="Express logo"
+          />
+        </div>
+
         <div class="additional-skills">
           <p>
-            Also worked with: Gemini API, Netlify Functions, Node.js, and basic
-            prompt engineering
+            Also worked with: Gemini API, Netlify Functions, and basic prompt
+            engineering
           </p>
         </div>
       </div>
@@ -167,7 +205,7 @@
 
       <div class="projects-layout">
         <div class="project-item-container">
-            <h3>Instant Inquiry Reply</h3>
+          <h3>Instant Inquiry Reply</h3>
           <h4>First Reply · Embeddable Widget</h4>
           <p class="project-description">
             A config-driven widget that drops into a wedding photographer's
@@ -257,55 +295,77 @@
         </div>
 
         <div class="project-item-container">
-          <h3>Project 3</h3>
-          <h4>Backend API (Node)</h4>
-          <p class="project-description">Coming soon!</p>
-          <div class="project-buttons">
-            <span
-              class="live-demo-button disabled"
-              aria-disabled="true"
-              tabindex="-1"
-              >Live Demo</span
-            >
-
-            <span class="git-button disabled" aria-disabled="true" tabindex="-1"
-              >GitHub</span
-            >
-          </div>
-        </div>
-
-        <div class="project-item-container">
-          <h3>Project 4</h3>
+          <h3>On the Books</h3>
           <h4>Web App (React)</h4>
-          <p class="project-description">Coming soon!</p>
+          <p class="project-description">
+            An event organizer's command center for managing supplier bookings
+            across multiple events, built with React - browse and filter events,
+            manage bookings, and handle user sessions through a component-driven
+            UI backed by the On the Books API. Hosted on a free tier, so the
+            first request may take up to 30 seconds to wake.
+          </p>
           <div class="project-buttons">
-            <span
-              class="live-demo-button disabled"
-              aria-disabled="true"
-              tabindex="-1"
-              >Live Demo</span
+            <a
+              href="https://onthebooks-fullstack.onrender.com/"
+              target="_blank"
+              class="live-demo-button"
+              >Live Demo</a
             >
 
-            <span class="git-button disabled" aria-disabled="true" tabindex="-1"
-              >GitHub</span
+            <a
+              href="https://github.com/kfaith98/web-dev-portfolio/tree/p4-react-app"
+              target="_blank"
+              class="git-button"
+              >GitHub</a
             >
           </div>
         </div>
 
         <div class="project-item-container">
-          <h3>Project 5</h3>
-          <h4>Full-Stack MERN Team Project</h4>
-          <p class="project-description">Coming soon!</p>
+          <h3>On the Books API</h3>
+          <h4>Backend API (Node)</h4>
+          <p class="project-description">
+            The REST API behind On the Books - JWT-based authentication, MongoDB
+            persistence, and an AI-assisted layer built on the Google Gemini
+            API. Built with Node.js, Express, and MongoDB. Hosted on a free
+            tier, so the first request may take up to 30 seconds to wake.
+          </p>
           <div class="project-buttons">
-            <span
-              class="live-demo-button disabled"
-              aria-disabled="true"
-              tabindex="-1"
-              >Live Demo</span
+            <a
+              href="https://onthebooks-backend.onrender.com/"
+              target="_blank"
+              class="live-demo-button"
+              >Live API</a
+            >
+
+            <a
+              href="https://github.com/kfaith98/web-dev-portfolio/tree/p5-backend-node-app"
+              target="_blank"
+              class="git-button"
+              >GitHub</a
+            >
+          </div>
+        </div>
+
+        <div class="project-item-container">
+          <h3>Logix WMS</h3>
+          <h4>Full-Stack MERN Team Project</h4>
+          <p class="project-description">
+            A warehouse management system built with a team for the final
+            bootcamp project — inventory tracking, stock movement, and
+            role-based access. I worked as the team QA and front-end developer.
+            Hosted on a free tier, so the first load may take up to 30 seconds.
+          </p>
+          <div class="project-buttons">
+            <a
+              href="https://logix-wms-frontend.onrender.com/"
+              target="_blank"
+              class="live-demo-button"
+              >Live Demo</a
             >
 
             <span class="git-button disabled" aria-disabled="true" tabindex="-1"
-              >GitHub</span
+              >Private (team repo)</span
             >
           </div>
         </div>
@@ -371,10 +431,21 @@
         <h2>Contact</h2>
         <p>Please don’t hesitate to reach out and get in touch!</p>
         <a href="mailto:kfaith.puton@gmail.com">kfaith.puton@gmail.com</a>
+
+        <div class="contact-socials">
+          <a href="https://www.linkedin.com/in/faithputon" target="_blank"
+            >LinkedIn</a
+          >
+          <a href="https://github.com/kfaith98" target="_blank">GitHub</a>
+          <a href="https://www.facebook.com/faithgputon" target="_blank"
+            >Facebook</a
+          >
+        </div>
       </div>
 
       <div class="form-container">
-        <form>
+        <form name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
           <div class="form-input">
             <label for="fullName">Name</label>
             <input

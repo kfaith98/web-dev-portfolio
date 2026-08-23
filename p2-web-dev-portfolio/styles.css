@@ -243,6 +243,20 @@ ul#nav-links {
   align-items: center;
 }
 
+.typing-title {
+  position: relative;
+}
+
+.typing-title::before {
+  content: attr(data-text);
+  visibility: hidden;
+}
+
+.typing-title .typed {
+  position: absolute;
+  inset: 0;
+}
+
 .about-text-and-photo {
   display: flex;
   flex-direction: row;
@@ -325,6 +339,10 @@ ul#nav-links {
   align-items: center;
   gap: 8px;
   transition: transform 0.2s ease;
+}
+
+.front-end-skills img[alt="Express logo"] {
+  filter: invert(1);
 }
 
 .front-end-skills:hover {
@@ -612,6 +630,13 @@ ul#nav-links {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.contact-socials {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 12px;
 }
 
 .form-container {
