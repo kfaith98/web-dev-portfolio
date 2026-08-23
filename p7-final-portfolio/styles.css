@@ -150,6 +150,11 @@ section {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+section,
+footer {
+  scroll-margin-top: 110px;
+}
+
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -243,6 +248,20 @@ ul#nav-links {
   align-items: center;
 }
 
+.typing-title {
+  position: relative;
+}
+
+.typing-title::before {
+  content: attr(data-text);
+  visibility: hidden;
+}
+
+.typing-title .typed {
+  position: absolute;
+  inset: 0;
+}
+
 .about-text-and-photo {
   display: flex;
   flex-direction: row;
@@ -308,10 +327,11 @@ ul#nav-links {
 
 .skills-layout {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   border: 1px solid #e2e8f0;
   border-radius: 20px;
   padding: 28px;
+  gap: 28px 12px;
   background: #fff;
   width: 100%;
   max-width: 500px;
@@ -325,6 +345,10 @@ ul#nav-links {
   align-items: center;
   gap: 8px;
   transition: transform 0.2s ease;
+}
+
+.front-end-skills img[alt="Express logo"] {
+  filter: invert(1);
 }
 
 .front-end-skills:hover {
@@ -614,6 +638,13 @@ ul#nav-links {
   align-items: center;
 }
 
+.contact-socials {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -769,7 +800,8 @@ textarea {
   }
 
   .skills-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 12px;
   }
 
   .work-item-1,
