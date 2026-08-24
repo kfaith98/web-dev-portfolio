@@ -15,7 +15,9 @@ const errorHandler = (err, req, res, next) => {
 
   if (err.name === 'ValidationError') {
     statusCode = 400;
-    err.message;
+    err.message = Object.values(err.errors)
+      .map((e) => e.message)
+      .join(', ');
   }
 
   res.status(statusCode);
