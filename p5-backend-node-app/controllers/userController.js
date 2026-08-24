@@ -13,7 +13,7 @@ export const getMe = async (req, res, next) => {
 
 export const updateMe = async (req, res, next) => {
   try {
-    const { username, password } = req.body;
+    const { username, password, isActive } = req.body;
 
     const user = await User.findById(req.user._id);
 
@@ -30,6 +30,10 @@ export const updateMe = async (req, res, next) => {
 
     if (password) {
       user.password = password;
+    }
+
+    if (isActive !== undefined) {
+      user.isActive = isActive;
     }
 
     await user.save();
