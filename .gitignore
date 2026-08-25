@@ -1,5 +1,5 @@
 node_modules/
 .env
 logix-wms/
-.netlify
+.netlify/
 .DS_Store
