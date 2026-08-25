@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faith Puton | Home</title>
+    <link
+      rel="icon"
+      type="image/webp"
+      href="./files/favicon_io/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./posts.js"></script>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="nav-container">
+      <nav id="nav">
+        <div class="header-container">
+          <h2 class="header-logo">
+            <a href="index.html">FP</a>
+          </h2>
+
+          <button
+            class="burger-btn"
+            id="burger-btn"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <ul id="nav-links">
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#skills">Skills</a>
+            </li>
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#experience">Experience</a>
+            </li>
+            <li>
+              <a href="#blog-preview">Blog</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <aside>
+      <div class="back-to-top">
+        <a href="#about">
+          <p>← back to top</p>
+        </a>
+      </div>
+
+      <div class="socials">
+        <a href="https://www.facebook.com/faithgputon" target="_blank">
+          <img src="./files/Facebook_Logo_Secondary.png" alt="Facebook logo" />
+        </a>
+
+        <a href="https://www.linkedin.com/in/faithputon" target="_blank">
+          <img src="./files/InBug-White.png" alt="LinkedIn logo" />
+        </a>
+
+        <a href="https://github.com/kfaith98" target="_blank">
+          <img src="./files/GitHub_Invertocat_White.svg" alt="GitHub logo" />
+        </a>
+      </div>
+    </aside>
+
+    <section id="about" class="container">
+      <div class="about-text-and-photo">
+        <div class="about-name-and-title">
+          <h1>Faith Puton</h1>
+          <h2
+            class="typing-title"
+            data-text="Full-Stack Developer · Events Producer"
+          >
+            <span class="typed"></span>
+          </h2>
+
+          <div class="about-description">
+            <p>
+              I'm a full-stack web developer with a background in events
+              production. After three years planning and producing events for
+              brands and corporate clients, I started building the tools I
+              wished existed - supplier matching, booking systems, and client
+              automation - and now work across JavaScript, React, Node.js, and
+              MongoDB.
+              <br />
+              <br />
+              Want to know more about my journey? Check out my
+              <a href="./blog.html">blog</a> here!
+            </p>
+          </div>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="primary-btn">View Projects</a>
+            <a href="#contact" class="secondary-btn">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="profile-icon">
+          <img
+            src="./files/fp-profile-icon-compressed.webp"
+            width="300"
+            height="300"
+            alt="Faith Puton's animated profile icon"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="container">
+      <div id="skills-header">
+        <h2>Skills</h2>
+        <h3>Languages &amp; Frameworks</h3>
+      </div>
+
+      <div class="skills-layout">
+        <div class="front-end-skills">
+          <p>HTML</p>
+
+          <img
+            src="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png"
+            width="63"
+            height="64"
+            alt="HTML5 logo"
+          />
+        </div>
+
+        <div class="front-end-skills">
+          <p>CSS</p>
+          <img
+            src="https://raw.githubusercontent.com/CSS-Next/logo.css/main/css.svg"
+            width="63"
+            height="64"
+            alt="CSS logo"
+          />
+        </div>
+
+        <div class="front-end-skills">
+          <p>JavaScript</p>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
+            width="63"
+            height="64"
+            alt="JavaScript logo"
+          />
+        </div>
+
+        <div class="front-end-skills">
+          <p>React</p>
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+            width="63"
+            height="64"
+            alt="React logo"
+          />
+        </div>
+
+        <div class="front-end-skills">
+          <p>Node.js</p>
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+            width="63"
+            height="64"
+            alt="Node.js logo"
+          />
+        </div>
+
+        <div class="front-end-skills">
+          <p>Express</p>
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+            width="63"
+            height="64"
+            alt="Express logo"
+          />
+        </div>
+
+        <div class="additional-skills">
+          <p>
+            Also worked with: Gemini API, Netlify Functions, and basic prompt
+            engineering
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container">
+      <div class="projects-header">
+        <h2>Projects</h2>
+      </div>
+
+      <div class="projects-layout">
+        <div class="project-item-container">
+          <h3>Instant Inquiry Reply</h3>
+          <h4>First Reply · Embeddable Widget</h4>
+          <p class="project-description">
+            A config-driven widget that drops into a wedding photographer's
+            inquiry form and sends a warm, branded reply the moment a couple
+            submits — plus a separate heads-up to the photographer with the
+            details. Built with vanilla JavaScript and EmailJS. Sold self-serve.
+          </p>
+          <div class="project-buttons">
+            <a
+              href="https://evangeline-and-co.netlify.app/"
+              target="_blank"
+              class="live-demo-button"
+              >Live Demo</a
+            >
+
+            <a
+              href="https://faithputon.gumroad.com/l/instant-inquiry-reply"
+              target="_blank"
+              class="git-button"
+              >Get It</a
+            >
+          </div>
+        </div>
+
+        <div class="project-item-container">
+          <h3>DM-Exit</h3>
+          <h4>First Reply · Done-For-You Install</h4>
+          <p class="project-description">
+            The done-for-you tier: I install and configure Instant Inquiry Reply
+            on the photographer's own site, match the reply copy to their brand
+            voice, and hand it over working. Seven-day delivery, no setup on
+            their end.
+          </p>
+          <div class="project-buttons">
+            <a
+              href="https://www.upwork.com/services/product/development-it-a-branded-instant-auto-reply-installed-on-your-wedding-inquiry-form-2069385796874036143?ref=project_share"
+              target="_blank"
+              class="git-button"
+              >View on Upwork</a
+            >
+          </div>
+        </div>
+
+        <div class="project-item-container">
+          <h3>Event Suppliers Database Management System</h3>
+          <h4>JavaScript Console App</h4>
+          <p class="project-description">
+            A console-based tool that helps event organizers manage their
+            supplier database — adding, editing, removing, and searching through
+            suppliers by name, contact, or category. Built with JavaScript and
+            Node.js.
+          </p>
+          <div class="project-buttons">
+            <a
+              href="https://github.com/kfaith98/web-dev-portfolio/tree/p1-js-console-app"
+              target="_blank"
+              class="git-button"
+              >GitHub</a
+            >
+          </div>
+        </div>
+
+        <div class="project-item-container">
+          <h3>EventMatch AI</h3>
+          <h4>Vanilla JavaScript App</h4>
+          <p class="project-description">
+            An AI-powered web app that helps event organizers in the Philippines
+            describe their event in plain language and get matched with relevant
+            suppliers — each with reasoning for why it's a fit. Built with
+            vanilla JS, Google Gemini API, and Netlify Functions.
+          </p>
+          <div class="project-buttons">
+            <a
+              href="https://eventmatch-ai.netlify.app/"
+              target="_blank"
+              class="live-demo-button"
+              >Live Demo</a
+            >
+
+            <a
+              href="https://github.com/kfaith98/web-dev-portfolio/tree/p3-js-api-app"
+              target="_blank"
+              class="git-button"
+              >GitHub</a
+            >
+          </div>
+        </div>
+
+        <div class="project-item-container">
+          <h3>On the Books</h3>
+          <h4>Web App (React)</h4>
+          <p class="project-description">
+            An event organizer's command center for managing supplier bookings
+            across multiple events, built with React - browse and filter events,
+            manage bookings, and handle user sessions through a component-driven
+            UI backed by the On the Books API. Hosted on a free tier, so the
+            first request may take up to 30 seconds to wake.
+          </p>
+          <div class="project-buttons">
+            <a
+              href="https://onthebooks-fullstack.onrender.com/"
+              target="_blank"
+              class="live-demo-button"
+              >Live Demo</a
+            >
+
+            <a
+              href="https://github.com/kfaith98/web-dev-portfolio/tree/p4-react-app"
+              target="_blank"
+              class="git-button"
+              >GitHub</a
+            >
+          </div>
+        </div>
+
+        <div class="project-item-container">
+          <h3>On the Books API</h3>
+          <h4>Backend API (Node)</h4>
+          <p class="project-description">
+            The REST API behind On the Books - JWT-based authentication, MongoDB
+            persistence, and an AI-assisted layer built on the Google Gemini
+            API. Built with Node.js, Express, and MongoDB. Hosted on a free
+            tier, so the first request may take up to 30 seconds to wake.
+          </p>
+          <div class="project-buttons">
+            <a
+              href="https://onthebooks-backend.onrender.com/"
+              target="_blank"
+              class="live-demo-button"
+              >Live API</a
+            >
+
+            <a
+              href="https://github.com/kfaith98/web-dev-portfolio/tree/p5-backend-node-app"
+              target="_blank"
+              class="git-button"
+              >GitHub</a
+            >
+          </div>
+        </div>
+
+        <div class="project-item-container">
+          <h3>Logix WMS</h3>
+          <h4>Full-Stack MERN Team Project</h4>
+          <p class="project-description">
+            A warehouse management system built with a team for the final
+            bootcamp project — inventory tracking, stock movement, and
+            role-based access. I worked as the team QA and front-end developer.
+            Hosted on a free tier, so the first load may take up to 30 seconds.
+          </p>
+          <div class="project-buttons">
+            <a
+              href="https://logix-wms-frontend.onrender.com/"
+              target="_blank"
+              class="live-demo-button"
+              >Live Demo</a
+            >
+
+            <span class="git-button disabled" aria-disabled="true" tabindex="-1"
+              >Private (team repo)</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="container">
+      <div class="experience-header">
+        <h2>Experience</h2>
+      </div>
+
+      <div class="work-item-container">
+        <div class="work-item-1">
+          <h3 class="work-period">2023 - Present</h3>
+          <div class="work-details">
+            <h4>Digicon Events Corporation</h4>
+            <h5>Events Producer</h5>
+            <p class="work-description">
+              Event planning and production for brands/corporate clients
+            </p>
+          </div>
+        </div>
+
+        <div class="work-item-2">
+          <h3 class="work-period">2020 - 2023</h3>
+          <div class="work-details">
+            <h4>MME Connections</h4>
+            <h5>Account Executive</h5>
+            <p class="work-description">
+              Marketing strategy development and project implementation (such
+              as, but not limited to events, brand activations, promotions,
+              trial generation activities, audio-visual productions, etc.)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-button">
+        <a
+          href="./files/faith-puton-cv.pdf"
+          download="faith-puton-cv.pdf"
+          class="download-btn"
+        >
+          View Full Resume
+        </a>
+      </div>
+    </section>
+
+    <section id="blog-preview" class="container">
+      <div class="projects-header">
+        <h2>Latest Blog Posts</h2>
+      </div>
+
+      <div id="blog-preview-container" class="blog-posts"></div>
+
+      <div class="blog-preview-footer">
+        <a href="./blog.html" class="primary-btn">View All Posts</a>
+      </div>
+    </section>
+
+    <footer id="contact" class="container">
+      <div class="contact-header">
+        <h2>Contact</h2>
+        <p>Please don’t hesitate to reach out and get in touch!</p>
+        <a href="mailto:kfaith.puton@gmail.com">kfaith.puton@gmail.com</a>
+
+        <div class="contact-socials">
+          <a href="https://www.linkedin.com/in/faithputon" target="_blank"
+            >LinkedIn</a
+          >
+          <a href="https://github.com/kfaith98" target="_blank">GitHub</a>
+          <a href="https://www.facebook.com/faithgputon" target="_blank"
+            >Facebook</a
+          >
+        </div>
+      </div>
+
+      <div class="form-container">
+        <form name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+          <div class="form-input">
+            <label for="fullName">Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+          <div class="form-input">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="form-input">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" autocomplete="off"></textarea>
+          </div>
+
+          <div id="submit-container">
+            <input type="submit" value="Submit" class="submit" />
+          </div>
+        </form>
+      </div>
+    </footer>
+  </body>
+</html>

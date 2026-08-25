@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faith Puton | Blog</title>
+    <link rel="icon" type="image/webp" href="./files/favicon_io/favicon-32x32.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./posts.js"></script>
+    <script src="./blog.js" defer></script>
+  </head>
+  <body>
+    <div class="nav-container">
+      <nav id="nav">
+        <div class="header-container">
+          <h2 class="header-logo"><a href="index.html">FP</a></h2>
+
+          <button
+            class="burger-btn"
+            id="burger-btn"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <ul id="nav-links">
+            <li><a href="./index.html#about">About</a></li>
+            <li><a href="./index.html#skills">Skills</a></li>
+            <li><a href="./index.html#projects">Projects</a></li>
+            <li><a href="./index.html#experience">Experience</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="./index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <aside>
+      <div class="back-to-top">
+        <a href="#blog"><p>← back to top</p></a>
+      </div>
+      <div class="socials">
+        <a href="https://www.facebook.com/faithgputon" target="_blank">
+          <img src="./files/Facebook_Logo_Secondary.png" alt="Facebook logo" />
+        </a>
+        <a href="https://www.linkedin.com/in/faithputon" target="_blank">
+          <img src="./files/InBug-White.png" alt="LinkedIn logo" />
+        </a>
+        <a href="https://github.com/kfaith98" target="_blank">
+          <img src="./files/GitHub_Invertocat_White.svg" alt="GitHub logo" />
+        </a>
+      </div>
+    </aside>
+
+    <section id="blog" class="container">
+      <div class="back-btn-container">
+        <a href="./index.html" class="back-btn">← Go Back</a>
+      </div>
+      <header class="blog-header">
+        <h1>Blog</h1>
+        <p>Thoughts, learnings, and project updates</p>
+      </header>
+
+      <div id="blog-posts" class="blog-posts"></div>
+    </section>
+  </body>
+</html>
