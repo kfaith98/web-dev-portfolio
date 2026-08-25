@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EventMatch AI — Smart Event Supplier Recommender</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="files/favicon_io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="files/favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="files/favicon_io/favicon-16x16.png" />
+    <link rel="manifest" href="files/favicon_io/site.webmanifest" />
+  </head>
+  <body>
+    <header>
+      <h1>EventMatch AI</h1>
+      <p>Describe your event. Get matched in seconds.</p>
+    </header>
+
+    <main>
+      <section id="input-section">
+        <p class="prompts-hint">Try one of these:</p>
+        <div id="sample-prompts"></div>
+        <label for="event-description">Tell us about your event:</label>
+        <textarea
+          id="event-description"
+          placeholder="e.g., 50-person outdoor wedding next month, budget around 100k, somewhere in Tagaytay..."
+          rows="6"
+        ></textarea>
+        <button id="match-button" type="button">Find Suppliers</button>
+      </section>
+
+      <div id="summary"></div>
+
+      <div id="error"></div>
+
+      <section id="results-section"></section>
+    </main>
+
+    <footer>
+      <p>Built for Project 3 · Web Dev Bootcamp</p>
+    </footer>
+
+    <script type="module" src="js/suppliers.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

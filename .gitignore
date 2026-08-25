@@ -1,2 +1,5 @@
+node_modules/
 .env
-.netlifylogix-wms/
+logix-wms/
+.netlify
+.DS_Store
