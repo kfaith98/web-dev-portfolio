@@ -1,93 +1,26 @@
-# Projects
+# Web Development Portfolio
 
-Repository for compiling personal projects
+I'm **Faith Puton**, a full-stack web developer with a background in events production. After three years planning and producing events for brands and corporate clients, I started building the tools I wished existed — supplier matching, booking systems, and client automation. Most of what's here is that: the same supplier-tracking problem rebuilt four times as my skills grew, from a console script to an AI matcher to a React app to a fullstack API with authentication and a database.
 
-## Getting started
+🔗 **Portfolio site:** https://faith-puton.netlify.app
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+Projects built during the Uplift Code Camp Fullstack Web Development program, Batch 29.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## Projects
 
-## Add your files
+| # | Project | What it is | Stack | Live |
+|---|---|---|---|---|
+| **P7** | [Portfolio site](./p7-final-portfolio) | This portfolio, rebuilt from the ground up with everything learned since P2 | HTML, CSS, JavaScript | [Live](https://faith-puton.netlify.app) |
+| **P5** | [On The Books](./p5-backend-node-app) | Fullstack event supplier management — user accounts, per-event budgets and booking statuses, AI supplier recommendations | Node, Express, MongoDB, React, Gemini | [App](https://onthebooks-fullstack.onrender.com) · [API](https://onthebooks-backend.onrender.com) |
+| **P4** | [On The Books (frontend)](./p4-react-app/on-the-books) | The same app as a React SPA, persisting to `localStorage` — the interface P5 later connected to a real backend | React, Vite, React Router | [Live](https://on-the-books-events.netlify.app) |
+| **P3** | [EventMatch AI](./p3-js-api-app) | Describe an event in plain language, get matched suppliers with AI-generated reasoning for each match | Vanilla JS, Gemini, Netlify Functions | [Live](https://eventmatch-ai.netlify.app) |
+| **P1** | [Supplier Console App](./p1-js-console-app) | Where it started — supplier CRUD with input validation, running in the terminal | JavaScript, Node | — |
+| **P2** | [First portfolio](./p2-web-dev-portfolio) | The original portfolio build, kept as the "before" to P7 | HTML, CSS, JavaScript | — |
 
-* [Create](https://docs.gitlab.com/user/project/repository/web_editor/#create-a-file) or [upload](https://docs.gitlab.com/user/project/repository/web_editor/#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+**P6 — Logix WMS** is the group capstone: a pharmaceutical warehouse management system covering receiving, QA release, FEFO allocation, and stock movement. I worked as frontend developer and QA, and held merge authority for the team — every branch went through my review before reaching `dev`. It lives in the team's own repository rather than this one.
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/uplift-code-camp/students/batch-29/faith-puton/projects.git
-git branch -M main
-git push -uf origin main
-```
+## Repository layout
 
-## Integrate with your tools
+Each project sits in its own folder here on `main`, and also has its own branch carrying that project's full commit history. Start with the README inside any project folder — they cover setup, environment variables, and the design decisions behind each build.
 
-* [Set up project integrations](https://gitlab.com/uplift-code-camp/students/batch-29/faith-puton/projects/-/settings/integrations)
-
-## Collaborate with your team
-
-* [Invite team members and collaborators](https://docs.gitlab.com/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/user/project/merge_requests/creating_merge_requests/)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/user/project/issues/managing_issues/#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-* [Get started with GitLab CI/CD](https://docs.gitlab.com/ci/quick_start/)
-* [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/user/application_security/sast/)
-* [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/topics/autodevops/requirements/)
-* [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/user/clusters/agent/)
-* [Set up protected environments](https://docs.gitlab.com/ci/environments/protected_environments/)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Most projects are deployed on free tiers. Anything on Render sleeps when idle, so the first request after a quiet period can take up to a minute.
