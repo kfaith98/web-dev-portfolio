@@ -317,6 +317,15 @@ genuine defect with a fix already written.
   the current flow simple, but a future iteration could add supplier selection
   and a management interface for maintaining the shared pool.
 
+- **AI recommendations are API-only, with no UI entry point.** The
+  recommendations endpoint is fully implemented, verified in Postman, and
+  degrades gracefully when the AI provider fails — but the React client has no
+  button or view that calls it. User story 7 is satisfied at the API layer
+  only. The frontend was migrated from Project 4, whose scope predates the
+  recommendations feature, and the UI for it was not built within the project
+  timeline. The endpoint is exercisable directly at
+  `POST /api/v1/events/:eventId/recommendations`.
+
 - **Tokens are stored in `localStorage` with no refresh flow.** A token stays
   valid for its full lifetime and cannot be revoked server-side before it
   expires.
