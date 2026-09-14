@@ -718,6 +718,18 @@ textarea {
   background-color: var(--text-main);
 }
 
+#thanks {
+  min-height: 100vh;
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  border-bottom: none;
+}
+
 .about-name-and-title h2,
 #skills-header h3,
 .projects-layout h3,
