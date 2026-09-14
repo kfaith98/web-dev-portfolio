@@ -415,6 +415,17 @@ ul#nav-links {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
+.project-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 4px;
+  margin-top: 12px;
+  display: block;
+}
+
 .project-description {
   padding-top: 10px;
   padding-bottom: 10px;
