@@ -1,0 +1,101 @@
+/* EventDetail.module.css */
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.event-body {
+  display: grid;
+  grid-template-columns: 450px minmax(0, 900px);
+  gap: 24px;
+}
+
+.left-column {
+  padding-left: 30px;
+  padding-right: 30px;
+  animation: fade-slide-in 0.4s ease-out;
+}
+@keyframes fade-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.left-column h1 {
+  font-size: 50px;
+  line-height: 1.2;
+}
+
+.event-summary {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e5e5;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.total-suppliers {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.event-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 20px;
+  background: white;
+}
+
+.filter-sort-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-sort-section select {
+  width: 100%;
+}
+
+.btn-back {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+  padding-left: 30px;
+}
+
+.back-link {
+  background-color: var(--accent-bg);
+  border: 1px solid var(--accent);
+}
+
+.back-link:hover {
+  color: white;
+}
+
+.back-link:hover,
+.add-supplier:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .event-body {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .left-column {
+    padding: 0 20px;
+  }
+
+  .btn-back {
+    padding-left: 20px;
+  }
+}

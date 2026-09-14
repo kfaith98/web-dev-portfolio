@@ -1,0 +1,52 @@
+.modal-backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.modal-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: white;
+  padding: 32px;
+  position: relative;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: xx-large;
+  cursor: pointer;
+}
+
+.supplier-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.supplier-fields label {
+  text-align: left;
+}
+
+textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+.action-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}

@@ -1,5 +1,6 @@
 import express from 'express';
 import authUser from '../middleware/authMiddleware.js';
+import verifyEventOwnership from '../middleware/eventOwnershipMiddleware.js';
 
 import {
   createArrangement,
@@ -11,6 +12,7 @@ import {
 
 const router = express.Router({ mergeParams: true });
 router.use(authUser);
+router.use(verifyEventOwnership);
 
 router.route('/').post(createArrangement).get(getArrangements);
 router
