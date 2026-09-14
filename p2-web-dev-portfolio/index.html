@@ -91,9 +91,8 @@
 
           <div class="about-description">
             <p>
-              I'm a full-stack web developer with a background in events
-              production. After three years planning and producing events for
-              brands and corporate clients, I started building the tools I
+              I'm a full-stack web developer with a background in events and
+              marketing. After six years in the industry, I started building the tools I
               wished existed - supplier matching, booking systems, and client
               automation - and now work across JavaScript, React, Node.js, and
               MongoDB.
@@ -124,7 +123,7 @@
     <section id="skills" class="container">
       <div id="skills-header">
         <h2>Skills</h2>
-        <h3>Languages &amp; Frameworks</h3>
+        <h3>Languages, Frameworks &amp; Tools</h3>
       </div>
 
       <div class="skills-layout">
@@ -189,6 +188,26 @@
           />
         </div>
 
+        <div class="front-end-skills">
+          <p>MongoDB</p>
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+            width="63"
+            height="64"
+            alt="MongoDB logo"
+          />
+        </div>
+
+        <div class="front-end-skills">
+          <p>Git</p>
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+            width="63"
+            height="64"
+            alt="Git logo"
+          />
+        </div>
+
         <div class="additional-skills">
           <p>
             Also worked with: Gemini API, Netlify Functions, and basic prompt
@@ -205,65 +224,59 @@
 
       <div class="projects-layout">
         <div class="project-item-container">
-          <h3>Instant Inquiry Reply</h3>
-          <h4>First Reply · Embeddable Widget</h4>
+          <h3>On the Books</h3>
+          <h4>Full-Stack Web App · React, Node, MongoDB</h4>
           <p class="project-description">
-            A config-driven widget that drops into a wedding photographer's
-            inquiry form and sends a warm, branded reply the moment a couple
-            submits — plus a separate heads-up to the photographer with the
-            details. Built with vanilla JavaScript and EmailJS. Sold self-serve.
+            An event organizer's command center for managing supplier bookings
+            across multiple events. The React front end handles browsing,
+            filtering, and session-aware bookings through a component-driven UI;
+            the REST API behind it runs JWT authentication, MongoDB persistence,
+            and an AI-assisted layer built on the Google Gemini API. Hosted on a
+            free tier, so the first request may take up to 30 seconds to wake.
           </p>
           <div class="project-buttons">
             <a
-              href="https://evangeline-and-co.netlify.app/"
+              href="https://onthebooks-fullstack.onrender.com/"
               target="_blank"
               class="live-demo-button"
               >Live Demo</a
             >
 
             <a
-              href="https://faithputon.gumroad.com/l/instant-inquiry-reply"
+              href="https://github.com/kfaith98/web-dev-portfolio/tree/p4-react-app"
               target="_blank"
               class="git-button"
-              >Get It</a
+              >Front-End Code</a
+            >
+
+            <a
+              href="https://github.com/kfaith98/web-dev-portfolio/tree/p5-backend-node-app"
+              target="_blank"
+              class="git-button"
+              >API Code</a
             >
           </div>
         </div>
 
         <div class="project-item-container">
-          <h3>DM-Exit</h3>
-          <h4>First Reply · Done-For-You Install</h4>
+          <h3>Logix WMS</h3>
+          <h4>Full-Stack MERN Team Project</h4>
           <p class="project-description">
-            The done-for-you tier: I install and configure Instant Inquiry Reply
-            on the photographer's own site, match the reply copy to their brand
-            voice, and hand it over working. Seven-day delivery, no setup on
-            their end.
+            A warehouse management system built with a team for the final
+            bootcamp project — inventory tracking, stock movement, and
+            role-based access. I worked as the team QA and front-end developer.
+            Hosted on a free tier, so the first load may take up to 30 seconds.
           </p>
           <div class="project-buttons">
             <a
-              href="https://www.upwork.com/services/product/development-it-a-branded-instant-auto-reply-installed-on-your-wedding-inquiry-form-2069385796874036143?ref=project_share"
+              href="https://logix-wms-frontend.onrender.com/"
               target="_blank"
-              class="git-button"
-              >View on Upwork</a
+              class="live-demo-button"
+              >Live Demo</a
             >
-          </div>
-        </div>
 
-        <div class="project-item-container">
-          <h3>Event Suppliers Database Management System</h3>
-          <h4>JavaScript Console App</h4>
-          <p class="project-description">
-            A console-based tool that helps event organizers manage their
-            supplier database — adding, editing, removing, and searching through
-            suppliers by name, contact, or category. Built with JavaScript and
-            Node.js.
-          </p>
-          <div class="project-buttons">
-            <a
-              href="https://github.com/kfaith98/web-dev-portfolio/tree/p1-js-console-app"
-              target="_blank"
-              class="git-button"
-              >GitHub</a
+            <span class="git-button disabled" aria-disabled="true" tabindex="-1"
+              >Private (team repo)</span
             >
           </div>
         </div>
@@ -295,77 +308,55 @@
         </div>
 
         <div class="project-item-container">
-          <h3>On the Books</h3>
-          <h4>Web App (React)</h4>
+          <h3>Instant Inquiry Reply</h3>
+          <h4>First Reply · Embeddable Widget</h4>
           <p class="project-description">
-            An event organizer's command center for managing supplier bookings
-            across multiple events, built with React - browse and filter events,
-            manage bookings, and handle user sessions through a component-driven
-            UI backed by the On the Books API. Hosted on a free tier, so the
-            first request may take up to 30 seconds to wake.
+            A config-driven widget that drops into a wedding photographer's
+            inquiry form and sends a warm, branded reply the moment a couple
+            submits — plus a separate heads-up to the photographer with the
+            details. Built with vanilla JavaScript and EmailJS. Sold self-serve,
+            or as a done-for-you install where I configure it on the
+            photographer's own site and match the copy to their brand voice.
           </p>
           <div class="project-buttons">
             <a
-              href="https://onthebooks-fullstack.onrender.com/"
+              href="https://evangeline-and-co.netlify.app/"
               target="_blank"
               class="live-demo-button"
               >Live Demo</a
             >
 
             <a
-              href="https://github.com/kfaith98/web-dev-portfolio/tree/p4-react-app"
+              href="https://faithputon.gumroad.com/l/instant-inquiry-reply"
               target="_blank"
               class="git-button"
-              >GitHub</a
+              >Get It</a
+            >
+
+            <a
+              href="https://www.upwork.com/services/product/development-it-a-branded-instant-auto-reply-installed-on-your-wedding-inquiry-form-2069385796874036143?ref=project_share"
+              target="_blank"
+              class="git-button"
+              >Done-For-You</a
             >
           </div>
         </div>
 
         <div class="project-item-container">
-          <h3>On the Books API</h3>
-          <h4>Backend API (Node)</h4>
+          <h3>Event Suppliers Database Management System</h3>
+          <h4>JavaScript Console App</h4>
           <p class="project-description">
-            The REST API behind On the Books - JWT-based authentication, MongoDB
-            persistence, and an AI-assisted layer built on the Google Gemini
-            API. Built with Node.js, Express, and MongoDB. Hosted on a free
-            tier, so the first request may take up to 30 seconds to wake.
+            A console-based tool that helps event organizers manage their
+            supplier database — adding, editing, removing, and searching through
+            suppliers by name, contact, or category. Built with JavaScript and
+            Node.js.
           </p>
           <div class="project-buttons">
             <a
-              href="https://onthebooks-backend.onrender.com/"
-              target="_blank"
-              class="live-demo-button"
-              >Live API</a
-            >
-
-            <a
-              href="https://github.com/kfaith98/web-dev-portfolio/tree/p5-backend-node-app"
+              href="https://github.com/kfaith98/web-dev-portfolio/tree/p1-js-console-app"
               target="_blank"
               class="git-button"
               >GitHub</a
-            >
-          </div>
-        </div>
-
-        <div class="project-item-container">
-          <h3>Logix WMS</h3>
-          <h4>Full-Stack MERN Team Project</h4>
-          <p class="project-description">
-            A warehouse management system built with a team for the final
-            bootcamp project — inventory tracking, stock movement, and
-            role-based access. I worked as the team QA and front-end developer.
-            Hosted on a free tier, so the first load may take up to 30 seconds.
-          </p>
-          <div class="project-buttons">
-            <a
-              href="https://logix-wms-frontend.onrender.com/"
-              target="_blank"
-              class="live-demo-button"
-              >Live Demo</a
-            >
-
-            <span class="git-button disabled" aria-disabled="true" tabindex="-1"
-              >Private (team repo)</span
             >
           </div>
         </div>
@@ -406,7 +397,7 @@
       <div class="resume-button">
         <a
           href="./files/faith-puton-cv.pdf"
-          download="faith-puton-cv.pdf"
+          target="_blank"
           class="download-btn"
         >
           View Full Resume
