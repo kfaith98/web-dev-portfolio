@@ -4,6 +4,7 @@ import { EventsContext } from '../context/EventsContext';
 import SupplierCard from '../components/SupplierCard';
 import SupplierModal from '../components/SupplierModal';
 import StatusMessage from '../components/StatusMessage';
+import RecommendationsPanel from '../components/RecommendationsPanel';
 import {
   CATEGORIES,
   STATUSES,
@@ -19,6 +20,7 @@ function EventDetail() {
   const { state, eventsLoading, eventsError, reloadEvents } =
     useContext(EventsContext);
   const [isOpen, setIsOpen] = useState(false);
+  const [changeCount, setChangeCount] = useState(0);
   const [categoryFilter, setCategoryFilter] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
   const [sortKey, setSortKey] = useState('');
@@ -41,6 +43,7 @@ function EventDetail() {
   async function handleChanged() {
     await loadArrangements();
     reloadEvents();
+    setChangeCount((count) => count + 1);
   }
 
   useEffect(() => {
@@ -179,6 +182,8 @@ function EventDetail() {
             >
               Add Supplier
             </button>
+
+            <RecommendationsPanel key={changeCount} eventId={event._id} />
           </div>
         </div>
 

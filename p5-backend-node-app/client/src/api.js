@@ -124,3 +124,10 @@ export async function deleteArrangement(eventId, arrangementId) {
   );
   return res.data ?? res;
 }
+
+export async function getRecommendations(eventId) {
+  const res = await request(`/events/${eventId}/recommendations`, {
+    method: 'POST',
+  });
+  return res.data ?? res;
+}
