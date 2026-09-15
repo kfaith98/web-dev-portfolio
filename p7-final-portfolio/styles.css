@@ -326,17 +326,17 @@ ul#nav-links {
 }
 
 .skills-layout {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 28px 12px;
   border: 1px solid #e2e8f0;
   border-radius: 20px;
   padding: 28px;
-  gap: 28px 12px;
-  background: #fff;
+  background-color: var(--bg-secondary);
   width: 100%;
   max-width: 500px;
-  place-items: center;
-  background-color: var(--bg-secondary);
 }
 
 .front-end-skills {
@@ -345,6 +345,7 @@ ul#nav-links {
   align-items: center;
   gap: 8px;
   transition: transform 0.2s ease;
+  flex: 0 0 calc(33.333% - 8px);
 }
 
 .front-end-skills img[alt="Express logo"] {
@@ -361,12 +362,11 @@ ul#nav-links {
 }
 
 .additional-skills {
-  grid-column: 1 / -1;
   margin-top: 20px;
   text-align: center;
-  justify-self: stretch;
   padding-top: 16px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex: 0 0 100%;
 }
 
 .additional-skills p {
@@ -389,8 +389,10 @@ ul#nav-links {
 }
 
 .projects-layout {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
   padding: 30px;
   gap: 10px;
 }
@@ -404,6 +406,8 @@ ul#nav-links {
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
+  flex: 1 1 340px;
+  max-width: 440px;
 }
 
 .project-item-container:hover {
@@ -411,9 +415,28 @@ ul#nav-links {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
+.project-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 4px;
+  margin-top: 12px;
+  display: block;
+}
+
 .project-description {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.project-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 10px;
 }
 
 .git-button {
@@ -706,6 +729,18 @@ textarea {
   background-color: var(--text-main);
 }
 
+#thanks {
+  min-height: 100vh;
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  border-bottom: none;
+}
+
 .about-name-and-title h2,
 #skills-header h3,
 .projects-layout h3,
@@ -797,11 +832,6 @@ textarea {
 
   .about-description p {
     max-width: 100%;
-  }
-
-  .skills-layout {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px 12px;
   }
 
   .work-item-1,

@@ -1,6 +1,6 @@
 # Web Development Portfolio
 
-I'm **Faith Puton**, a full-stack web developer with a background in events production. After three years planning and producing events for brands and corporate clients, I started building the tools I wished existed — supplier matching, booking systems, and client automation. Most of what's here is that: the same supplier-tracking problem rebuilt four times as my skills grew, from a console script to an AI matcher to a React app to a fullstack API with authentication and a database.
+I'm **Faith Puton**, a full-stack web developer with a background in events production. After six years planning and producing events for brands and corporate clients, I started building the tools I wished existed — supplier matching, booking systems, and client automation. Most of what's here is that: the same supplier-tracking problem rebuilt four times as my skills grew, from a console script to an AI matcher to a React app to a fullstack API with authentication and a database.
 
 🔗 **Portfolio site:** https://faith-puton.netlify.app
 
@@ -17,7 +17,7 @@ Projects built during the Uplift Code Camp Fullstack Web Development program, Ba
 | **P1** | [Supplier Console App](./p1-js-console-app) | Where it started — supplier CRUD with input validation, running in the terminal | JavaScript, Node | — |
 | **P2** | [First portfolio](./p2-web-dev-portfolio) | The original portfolio build, kept as the "before" to P7 | HTML, CSS, JavaScript | — |
 
-**P6 — Logix WMS** is the group capstone: a pharmaceutical warehouse management system covering receiving, QA release, FEFO allocation, and stock movement. I worked as frontend developer and QA, and held merge authority for the team — every branch went through my review before reaching `dev`. It lives in the team's own repository rather than this one.
+**P6 — Logix WMS** is the group capstone: a pharmaceutical warehouse management system covering receiving, QA release, inventory tracking, and stock movement. I worked as frontend developer and QA, and held merge authority for the team — every branch went through my review before reaching `dev`. Since graduating I've continued it independently as a single-service deployment: [live demo](https://fp-wms-project.onrender.com).
 
 ## Repository layout
 
