@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { EventsContext } from '../context/EventsContext';
 import SupplierCard from '../components/SupplierCard';
 import SupplierModal from '../components/SupplierModal';
+import StatusMessage from '../components/StatusMessage';
 import {
   CATEGORIES,
   STATUSES,
@@ -15,7 +16,8 @@ import styles from '../css/EventDetail.module.css';
 // EventDetail.jsx
 function EventDetail() {
   const { id } = useParams();
-  const { state, eventsLoading, eventsError } = useContext(EventsContext);
+  const { state, eventsLoading, eventsError, reloadEvents } =
+    useContext(EventsContext);
   const [isOpen, setIsOpen] = useState(false);
   const [categoryFilter, setCategoryFilter] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
@@ -36,6 +38,11 @@ function EventDetail() {
     }
   }
 
+  async function handleChanged() {
+    await loadArrangements();
+    reloadEvents();
+  }
+
   useEffect(() => {
     loadArrangements();
   }, [id]);
@@ -43,15 +50,17 @@ function EventDetail() {
   const event = state.find((e) => e._id === id);
 
   if (loading || eventsLoading) {
-    return 'Loading…';
+    return <StatusMessage loading>Loading event…</StatusMessage>;
   }
 
   if (eventsError) {
-    return `Couldn't load your events: ${eventsError}`;
+    return (
+      <StatusMessage>{`Couldn't load your events: ${eventsError}`}</StatusMessage>
+    );
   }
 
   if (!event) {
-    return 'Event not found.';
+    return <StatusMessage>Event not found.</StatusMessage>;
   }
 
   const suppliers = arrangements;
@@ -185,7 +194,7 @@ function EventDetail() {
                   key={supplier._id}
                   supplier={supplier}
                   eventId={event._id}
-                  onChanged={loadArrangements}
+                  onChanged={handleChanged}
                 />
               ))}
             </div>
@@ -195,7 +204,7 @@ function EventDetail() {
             <SupplierModal
               eventId={event._id}
               onClose={() => setIsOpen(false)}
-              onChanged={loadArrangements}
+              onChanged={handleChanged}
             />
           )}
         </div>

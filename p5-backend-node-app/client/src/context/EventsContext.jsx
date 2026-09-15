@@ -13,34 +13,42 @@ export function EventsProvider({ children }) {
   const [eventsLoading, setEventsLoading] = useState(true);
   const [eventsError, setEventsError] = useState(null);
 
-  useEffect(() => {
-    async function loadEvents() {
-      try {
-        const events = await getEvents();
+  async function loadEvents() {
+    try {
+      const events = await getEvents();
 
-        const arrangementLists = await Promise.all(
-          events.map((e) => getArrangements(e._id)),
-        );
+      const arrangementLists = await Promise.all(
+        events.map((e) => getArrangements(e._id)),
+      );
 
-        const withCounts = events.map((event, i) => ({
-          ...event,
-          suppliers: arrangementLists[i],
-        }));
+      const withCounts = events.map((event, i) => ({
+        ...event,
+        suppliers: arrangementLists[i],
+      }));
 
-        dispatch({ type: 'SET_EVENTS', events: withCounts });
-      } catch (err) {
-        console.error(err);
-        setEventsError(err.message);
-      } finally {
-        setEventsLoading(false);
-      }
+      dispatch({ type: 'SET_EVENTS', events: withCounts });
+      setEventsError(null);
+    } catch (err) {
+      console.error(err);
+      setEventsError(err.message);
+    } finally {
+      setEventsLoading(false);
     }
+  }
+
+  useEffect(() => {
     loadEvents();
   }, []);
 
   return (
     <EventsContext.Provider
-      value={{ state, dispatch, eventsLoading, eventsError }}
+      value={{
+        state,
+        dispatch,
+        eventsLoading,
+        eventsError,
+        reloadEvents: loadEvents,
+      }}
     >
       {children}
     </EventsContext.Provider>

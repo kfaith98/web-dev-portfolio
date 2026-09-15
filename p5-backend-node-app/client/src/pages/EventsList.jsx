@@ -3,6 +3,7 @@ import { EventsContext } from '../context/EventsContext';
 import EventCard from '../components/EventCard';
 import EventModal from '../components/EventModal';
 import styles from '../css/EventsList.module.css';
+import StatusMessage from '../components/StatusMessage';
 
 function EventsList() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,11 +11,13 @@ function EventsList() {
   const sortedEvents = [...state].sort((a, b) => a.date.localeCompare(b.date));
 
   if (eventsLoading) {
-    return 'Loading…';
+    return <StatusMessage loading>Loading your events…</StatusMessage>;
   }
 
   if (eventsError) {
-    return `Couldn't load your events: ${eventsError}`;
+    return (
+      <StatusMessage>{`Couldn't load your events: ${eventsError}`}</StatusMessage>
+    );
   }
 
   return (
