@@ -152,3 +152,14 @@ select {
   min-height: 50vh;         
   text-align: center;
 }
+
+.status-hint {
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+.status-message {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}

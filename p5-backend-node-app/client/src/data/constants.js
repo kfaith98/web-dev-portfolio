@@ -24,6 +24,9 @@ export const STATUS_STYLES = {
 
 export const FALLBACK = { background: "#F3F4F6", color: "#374151" }; // neutral gray
 
+export const COLD_START_HINT =
+  'Still working on it. The server sleeps when idle and can take up to a minute to wake up.';
+
 export const formatPeso = (n) =>
   new Intl.NumberFormat("en-PH", {
     style: "currency",

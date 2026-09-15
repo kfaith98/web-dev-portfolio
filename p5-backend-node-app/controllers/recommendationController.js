@@ -28,7 +28,9 @@ export const getRecommendations = async (req, res, next) => {
 
     const allCategories = Supplier.schema.path('category').enumValues;
     const coveredCategories = new Set(
-      activeArrangements.map((arrangement) => arrangement.supplierId.category),
+      activeArrangements
+        .filter((arrangement) => arrangement.status !== 'declined')
+        .map((arrangement) => arrangement.supplierId.category),
     );
     const gapCategories = allCategories.filter(
       (category) => !coveredCategories.has(category),

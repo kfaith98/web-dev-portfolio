@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { EventsContext } from '../context/EventsContext';
 import SupplierCard from '../components/SupplierCard';
 import SupplierModal from '../components/SupplierModal';
+import StatusMessage from '../components/StatusMessage';
+import RecommendationsPanel from '../components/RecommendationsPanel';
 import {
   CATEGORIES,
   STATUSES,
@@ -15,8 +17,10 @@ import styles from '../css/EventDetail.module.css';
 // EventDetail.jsx
 function EventDetail() {
   const { id } = useParams();
-  const { state } = useContext(EventsContext);
+  const { state, eventsLoading, eventsError, reloadEvents } =
+    useContext(EventsContext);
   const [isOpen, setIsOpen] = useState(false);
+  const [changeCount, setChangeCount] = useState(0);
   const [categoryFilter, setCategoryFilter] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
   const [sortKey, setSortKey] = useState('');
@@ -36,18 +40,30 @@ function EventDetail() {
     }
   }
 
+  async function handleChanged() {
+    await loadArrangements();
+    reloadEvents();
+    setChangeCount((count) => count + 1);
+  }
+
   useEffect(() => {
     loadArrangements();
   }, [id]);
 
   const event = state.find((e) => e._id === id);
 
-  if (loading) {
-    return 'Loading…';
+  if (loading || eventsLoading) {
+    return <StatusMessage loading>Loading event…</StatusMessage>;
+  }
+
+  if (eventsError) {
+    return (
+      <StatusMessage>{`Couldn't load your events: ${eventsError}`}</StatusMessage>
+    );
   }
 
   if (!event) {
-    return 'Event not found.';
+    return <StatusMessage>Event not found.</StatusMessage>;
   }
 
   const suppliers = arrangements;
@@ -74,7 +90,9 @@ function EventDetail() {
     });
 
   const handleEmptyStates = () => {
-    if (visibleSuppliers.length === 0 && suppliers.length > 0) {
+    if (error) {
+      return `Couldn't load suppliers: ${error}`;
+    } else if (visibleSuppliers.length === 0 && suppliers.length > 0) {
       return 'No suppliers match these filters.';
     } else if (visibleSuppliers.length === 0) {
       return 'No suppliers yet for this event.';
@@ -98,16 +116,18 @@ function EventDetail() {
               <h1>{event.name}</h1>
               <p>Date: {formatDate(event.date)}</p>
               <p>Venue: {event.venue}</p>
-              <p>Total Cost: {formatPeso(totalBudget)}</p>
+              {!error && <p>Total Cost: {formatPeso(totalBudget)}</p>}
             </div>
 
-            <div className={styles['event-summary']}>
-              <p className={styles['total-suppliers']}>
-                {suppliers.length} total supplier
-                {suppliers.length !== 1 && 's'}
-              </p>
-              <p>{supplierStatus.join(' · ')}</p>
-            </div>
+            {!error && (
+              <div className={styles['event-summary']}>
+                <p className={styles['total-suppliers']}>
+                  {suppliers.length} total supplier
+                  {suppliers.length !== 1 && 's'}
+                </p>
+                <p>{supplierStatus.join(' · ')}</p>
+              </div>
+            )}
           </div>
 
           <div className={styles['filter-sort-section']}>
@@ -162,11 +182,13 @@ function EventDetail() {
             >
               Add Supplier
             </button>
+
+            <RecommendationsPanel key={changeCount} eventId={event._id} />
           </div>
         </div>
 
         <div className={styles['right-column']}>
-          {visibleSuppliers.length === 0 ? (
+          {error || visibleSuppliers.length === 0 ? (
             <div className="empty-state">
               <p>{handleEmptyStates()}</p>
             </div>
@@ -177,7 +199,7 @@ function EventDetail() {
                   key={supplier._id}
                   supplier={supplier}
                   eventId={event._id}
-                  onChanged={loadArrangements}
+                  onChanged={handleChanged}
                 />
               ))}
             </div>
@@ -187,7 +209,7 @@ function EventDetail() {
             <SupplierModal
               eventId={event._id}
               onClose={() => setIsOpen(false)}
-              onChanged={loadArrangements}
+              onChanged={handleChanged}
             />
           )}
         </div>

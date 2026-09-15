@@ -1,5 +1,15 @@
 const BASE_URL = import.meta.env.VITE_API_URL;
 
+export function clearSession() {
+  localStorage.removeItem('token');
+  localStorage.removeItem('username');
+}
+
+// Free Render instances sleep when idle; ping the health route so it starts booting early
+export function wakeServer() {
+  fetch(new URL(BASE_URL).origin).catch(() => {});
+}
+
 async function request(endpoint, options = {}) {
   const token = localStorage.getItem('token');
 
@@ -20,6 +30,14 @@ async function request(endpoint, options = {}) {
   const isJson = res.headers.get('content-type')?.includes('application/json');
 
   const data = isJson ? await res.json() : null;
+
+  // Expired or invalid token: drop it and send the user back to login.
+  // Only when a token was sent, so a wrong password at login still shows its error.
+  if (res.status === 401 && token) {
+    clearSession();
+    window.location.assign('/');
+    throw new Error('Your session expired. Please log in again.');
+  }
 
   if (!res.ok) {
     throw new Error(data?.message || 'Request failed');
@@ -87,16 +105,29 @@ export async function getArrangements(eventId) {
 }
 
 export async function updateArrangement(eventId, arrangementId, updates) {
-  const res = await request(`/events/${eventId}/arrangements/${arrangementId}`, {
-    method: 'PUT',
-    body: JSON.stringify(updates),
-  });
+  const res = await request(
+    `/events/${eventId}/arrangements/${arrangementId}`,
+    {
+      method: 'PUT',
+      body: JSON.stringify(updates),
+    },
+  );
   return res.data ?? res;
 }
 
 export async function deleteArrangement(eventId, arrangementId) {
-  const res = await request(`/events/${eventId}/arrangements/${arrangementId}`, {
-    method: 'DELETE',
+  const res = await request(
+    `/events/${eventId}/arrangements/${arrangementId}`,
+    {
+      method: 'DELETE',
+    },
+  );
+  return res.data ?? res;
+}
+
+export async function getRecommendations(eventId) {
+  const res = await request(`/events/${eventId}/recommendations`, {
+    method: 'POST',
   });
   return res.data ?? res;
 }

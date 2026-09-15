@@ -34,7 +34,11 @@ Rules:
 - Return exactly one object per supplier in the candidate list — never add, never omit.
 - Rank most urgent first. Judge urgency by how hard the gap is to fill late
   and how central it is to the event.
-- reasoning: one sentence, producer-to-producer, not salesy.
+- reasoning: one sentence, producer-to-producer, not salesy. Never reuse a sentence
+  across suppliers. When two suppliers share a category, explain the need on the
+  first and call the second an alternative for that category.
+- Only use facts present in the data. Do not invent a supplier's reputation,
+  portfolio, or availability.
 - Do not mention or estimate any peso amounts.
 `;
 

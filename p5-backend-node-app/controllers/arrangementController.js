@@ -33,10 +33,11 @@ export const getArrangements = async (req, res, next) => {
 
 export const getArrangementById = async (req, res, next) => {
   try {
-    const { id } = req.params;
-    const arrangement = await Arrangement.findOne({ _id: id }).populate(
-      'supplierId',
-    );
+    const { id, eventId } = req.params;
+    const arrangement = await Arrangement.findOne({
+      _id: id,
+      eventId: eventId,
+    }).populate('supplierId');
 
     if (!arrangement) {
       return res.status(404).json({
@@ -52,11 +53,11 @@ export const getArrangementById = async (req, res, next) => {
 
 export const updateArrangement = async (req, res, next) => {
   try {
-    const { id } = req.params;
+    const { id, eventId } = req.params;
     const { supplierId, budget, status, notes } = req.body;
     const updates = { supplierId, budget, status, notes };
-    const updatedArrangement = await Arrangement.findByIdAndUpdate(
-      id,
+    const updatedArrangement = await Arrangement.findOneAndUpdate(
+      { _id: id, eventId: eventId },
       updates,
       {
         new: true,
@@ -78,9 +79,11 @@ export const updateArrangement = async (req, res, next) => {
 
 export const deleteArrangement = async (req, res, next) => {
   try {
-    const deletedArrangement = await Arrangement.findByIdAndDelete(
-      req.params.id,
-    );
+    const { id, eventId } = req.params;
+    const deletedArrangement = await Arrangement.findOneAndDelete({
+      _id: id,
+      eventId: eventId,
+    });
 
     if (!deletedArrangement) {
       return res.status(404).json({
