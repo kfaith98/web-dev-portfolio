@@ -15,7 +15,7 @@ import styles from '../css/EventDetail.module.css';
 // EventDetail.jsx
 function EventDetail() {
   const { id } = useParams();
-  const { state } = useContext(EventsContext);
+  const { state, eventsLoading, eventsError } = useContext(EventsContext);
   const [isOpen, setIsOpen] = useState(false);
   const [categoryFilter, setCategoryFilter] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
@@ -42,8 +42,12 @@ function EventDetail() {
 
   const event = state.find((e) => e._id === id);
 
-  if (loading) {
+  if (loading || eventsLoading) {
     return 'Loading…';
+  }
+
+  if (eventsError) {
+    return `Couldn't load your events: ${eventsError}`;
   }
 
   if (!event) {
@@ -74,7 +78,9 @@ function EventDetail() {
     });
 
   const handleEmptyStates = () => {
-    if (visibleSuppliers.length === 0 && suppliers.length > 0) {
+    if (error) {
+      return `Couldn't load suppliers: ${error}`;
+    } else if (visibleSuppliers.length === 0 && suppliers.length > 0) {
       return 'No suppliers match these filters.';
     } else if (visibleSuppliers.length === 0) {
       return 'No suppliers yet for this event.';
@@ -98,16 +104,18 @@ function EventDetail() {
               <h1>{event.name}</h1>
               <p>Date: {formatDate(event.date)}</p>
               <p>Venue: {event.venue}</p>
-              <p>Total Cost: {formatPeso(totalBudget)}</p>
+              {!error && <p>Total Cost: {formatPeso(totalBudget)}</p>}
             </div>
 
-            <div className={styles['event-summary']}>
-              <p className={styles['total-suppliers']}>
-                {suppliers.length} total supplier
-                {suppliers.length !== 1 && 's'}
-              </p>
-              <p>{supplierStatus.join(' · ')}</p>
-            </div>
+            {!error && (
+              <div className={styles['event-summary']}>
+                <p className={styles['total-suppliers']}>
+                  {suppliers.length} total supplier
+                  {suppliers.length !== 1 && 's'}
+                </p>
+                <p>{supplierStatus.join(' · ')}</p>
+              </div>
+            )}
           </div>
 
           <div className={styles['filter-sort-section']}>
@@ -166,7 +174,7 @@ function EventDetail() {
         </div>
 
         <div className={styles['right-column']}>
-          {visibleSuppliers.length === 0 ? (
+          {error || visibleSuppliers.length === 0 ? (
             <div className="empty-state">
               <p>{handleEmptyStates()}</p>
             </div>

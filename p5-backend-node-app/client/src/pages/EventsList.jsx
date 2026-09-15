@@ -1,22 +1,30 @@
-import { useState, useContext } from "react";
-import { EventsContext } from "../context/EventsContext";
-import EventCard from "../components/EventCard";
-import EventModal from "../components/EventModal";
-import styles from "../css/EventsList.module.css";
+import { useState, useContext } from 'react';
+import { EventsContext } from '../context/EventsContext';
+import EventCard from '../components/EventCard';
+import EventModal from '../components/EventModal';
+import styles from '../css/EventsList.module.css';
 
 function EventsList() {
   const [isOpen, setIsOpen] = useState(false);
-  const { state } = useContext(EventsContext);
+  const { state, eventsLoading, eventsError } = useContext(EventsContext);
   const sortedEvents = [...state].sort((a, b) => a.date.localeCompare(b.date));
+
+  if (eventsLoading) {
+    return 'Loading…';
+  }
+
+  if (eventsError) {
+    return `Couldn't load your events: ${eventsError}`;
+  }
 
   return (
     <div>
-      <div className={styles["event-container"]}>
-        <div className={styles["events-header"]}>
+      <div className={styles['event-container']}>
+        <div className={styles['events-header']}>
           <h1>My Events</h1>
           <button
             onClick={() => setIsOpen(true)}
-            className={`btn-primary ${styles["add-event"]}`}
+            className={`btn-primary ${styles['add-event']}`}
           >
             Add Event
           </button>
@@ -27,7 +35,7 @@ function EventsList() {
             <p>No events yet. Add one to get started.</p>
           </div>
         ) : (
-          <div className={styles["event-card"]}>
+          <div className={styles['event-card']}>
             {sortedEvents.map((event) => (
               <EventCard key={event._id} event={event} />
             ))}

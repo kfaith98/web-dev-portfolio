@@ -1,4 +1,4 @@
-import { createContext, useReducer, useEffect } from 'react';
+import { createContext, useReducer, useEffect, useState } from 'react';
 import { eventsReducer } from '../reducer';
 import { getEvents, getArrangements } from '../api';
 
@@ -10,6 +10,8 @@ function init() {
 
 export function EventsProvider({ children }) {
   const [state, dispatch] = useReducer(eventsReducer, undefined, init);
+  const [eventsLoading, setEventsLoading] = useState(true);
+  const [eventsError, setEventsError] = useState(null);
 
   useEffect(() => {
     async function loadEvents() {
@@ -28,13 +30,18 @@ export function EventsProvider({ children }) {
         dispatch({ type: 'SET_EVENTS', events: withCounts });
       } catch (err) {
         console.error(err);
+        setEventsError(err.message);
+      } finally {
+        setEventsLoading(false);
       }
     }
     loadEvents();
   }, []);
 
   return (
-    <EventsContext.Provider value={{ state, dispatch }}>
+    <EventsContext.Provider
+      value={{ state, dispatch, eventsLoading, eventsError }}
+    >
       {children}
     </EventsContext.Provider>
   );
