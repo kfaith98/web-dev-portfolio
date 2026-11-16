@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
@@ -32,6 +33,17 @@ app.use(
 
 app.get('/', (req, res) => {
   res.send('On The Books API is running...');
+});
+
+// Health check: pinged by cron-job.org to keep Render awake
+// and the Atlas cluster active. Must stay ABOVE any auth middleware.
+app.get('/health', async (req, res) => {
+  try {
+    await mongoose.connection.db.admin().ping();
+    res.status(200).json({ status: 'ok' });
+  } catch (err) {
+    res.status(500).json({ status: 'error', message: 'Database unreachable' });
+  }
 });
 
 // Auth Route
